@@ -53,7 +53,7 @@ func _moveCursor(Velocity: Vector2, DeltaTime: float):
 	RootNode.position += CurrentVelocity
 	
 	# Clamp to viewport when using controller
-	var ViewPortSize : Vector2 = get_viewport().size
+	var ViewPortSize : Vector2 = get_viewport().get_visible_rect().size
 	RootNode.position.x = clamp(RootNode.position.x, 0, ViewPortSize.x)
 	RootNode.position.y = clamp(RootNode.position.y, 0, ViewPortSize.y)
 
