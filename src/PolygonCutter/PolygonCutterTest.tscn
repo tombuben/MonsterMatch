@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx16cxgbal8r4"]
+
+[ext_resource type="Texture2D" uid="uid://cuywiqsqy6o7q" path="res://assets/R.jpg" id="1_3urcs"]
+[ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="2_avfvt"]
+
+[node name="PolygonCutterTest" type="Node2D"]
+
+[node name="CuttablePolygon" type="Polygon2D" parent="."]
+texture = ExtResource("1_3urcs")
+polygon = PackedVector2Array(7, 594, 188, 67, 646, 603)
+script = ExtResource("2_avfvt")
