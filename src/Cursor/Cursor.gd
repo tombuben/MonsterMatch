@@ -101,7 +101,7 @@ func _process(DeltaTime: float):
 	else:
 		Velocity = _processController(DeltaTime)
 		
-	print(Velocity.length())
+	#print(Velocity.length())
 		
 	_moveCursor(Velocity, DeltaTime)
 	
