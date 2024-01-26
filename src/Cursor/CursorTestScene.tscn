@@ -1,13 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cbb1y1qnxe17w"]
 
-[ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="1_yyo4d"]
+[ext_resource type="PackedScene" uid="uid://dg4rnssbs2yhv" path="res://src/Cursor/TestCursor.tscn" id="1_4hbur"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="LeftCursor" parent="." instance=ExtResource("1_yyo4d")]
-position = Vector2(391, 362)
-IsLeftCursor = true
-metadata/IsLeft = false
-
-[node name="RightCursor" parent="." instance=ExtResource("1_yyo4d")]
-position = Vector2(945, 281)
+[node name="TestCursor" parent="." instance=ExtResource("1_4hbur")]
+position = Vector2(721, 372)

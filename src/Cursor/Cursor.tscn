@@ -1,12 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://2jica8njwnl1"]
+[gd_scene load_steps=2 format=3 uid="uid://2jica8njwnl1"]
 
 [ext_resource type="Script" path="res://src/Cursor/Cursor.gd" id="1_s765b"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_exu32"]
-
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_s765b")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(100, 100)
-mesh = SubResource("SphereMesh_exu32")
