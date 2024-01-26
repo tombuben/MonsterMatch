@@ -4,12 +4,3 @@
 
 [node name="MakeupBrush" type="Node2D"]
 script = ExtResource("1_w0qod")
-
-[node name="Line2D" type="Line2D" parent="."]
-unique_name_in_owner = true
-width = 45.0
-default_color = Color(0.764706, 0.584314, 0.933333, 1)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.01
-autostart = true

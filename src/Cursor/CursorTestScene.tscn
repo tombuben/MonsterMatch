@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbb1y1qnxe17w"]
+[gd_scene load_steps=3 format=3 uid="uid://cbb1y1qnxe17w"]
 
-[ext_resource type="PackedScene" uid="uid://dg4rnssbs2yhv" path="res://src/Cursor/TestCursor.tscn" id="1_4hbur"]
+[ext_resource type="PackedScene" uid="uid://jgxqcf7r8elt" path="res://src/Cursor/TestCursor.tscn" id="1_4hbur"]
+[ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="2_aq386"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TestCursor" parent="." instance=ExtResource("1_4hbur")]
 position = Vector2(721, 372)
+
+[node name="MakeupBrush" parent="TestCursor" node_paths=PackedStringArray("brush_stroke_container") instance=ExtResource("2_aq386")]
+brush_stroke_container = NodePath("../..")
