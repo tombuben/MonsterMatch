@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg4rnssbs2yhv"]
+[gd_scene load_steps=3 format=3 uid="uid://jgxqcf7r8elt"]
 
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="1_i6dxh"]
 
