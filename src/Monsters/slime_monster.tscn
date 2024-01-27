@@ -97,13 +97,19 @@ _data = {
 [node name="Monster" instance=ExtResource("1_hd2cv")]
 
 [node name="SlimeBody" type="Sprite2D" parent="." index="0"]
+position = Vector2(958, 533.625)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_2u153")
 
-[node name="Polygon2D" parent="." index="2"]
+[node name="Polygon2D" parent="." index="1"]
+position = Vector2(958, 533.625)
 polygon = PackedVector2Array(102, -253, 37, -264, -33, -248, -102, -208, -161, -154, -206, -75, -224, 8, -239, 91, -248, 154, -235, 208, -161, 225, -60, 243, 17, 259, 104, 268, 183, 275, 241, 259, 221, 181, 232, 100, 245, 12, 250, -69, 228, -145, 192, -199, 140, -235)
 
+[node name="BrushStrokeContainer" parent="." index="2"]
+position = Vector2(958, 533.625)
+
 [node name="SlimeTopLayers" type="Sprite2D" parent="." index="3"]
+position = Vector2(958, 533.625)
 scale = Vector2(0.15, 0.15)
 script = ExtResource("3_vxca4")
 
