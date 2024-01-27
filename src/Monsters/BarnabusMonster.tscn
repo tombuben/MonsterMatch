@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh4yv6ik2l2xy"]
+[gd_scene load_steps=11 format=3 uid="uid://bh4yv6ik2l2xy"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
-[ext_resource type="Texture2D" uid="uid://b81j5wymr3qrp" path="res://assets/Barnabus/Barnabus_base.png" id="2_hlb8q"]
+[ext_resource type="Texture2D" uid="uid://bqge7ew6yuhpn" path="res://assets/Barnabus/Barnabus_base_new.png" id="2_15hjn"]
 [ext_resource type="Texture2D" uid="uid://dsbwu7hno4yi1" path="res://assets/Barnabus/Barnabus_eyes.png" id="3_2aamf"]
+[ext_resource type="Texture2D" uid="uid://bolr6lm2u6jed" path="res://assets/Barnabus/Barnabus_teeth_new.png" id="3_2xdtm"]
 [ext_resource type="Texture2D" uid="uid://do2tftx0t4g0l" path="res://assets/Barnabus/Barnabus_eyes_closed.png" id="4_53heu"]
 [ext_resource type="Texture2D" uid="uid://7bxqyqiqcu74" path="res://assets/Barnabus/Barnabus_hair.png" id="5_x76h7"]
 [ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="6_2n0yj"]
@@ -16,7 +17,7 @@ MonsterEnum = 1
 [node name="BarnabusBase" type="Sprite2D" parent="." index="0"]
 position = Vector2(1009, 455)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_hlb8q")
+texture = ExtResource("2_15hjn")
 
 [node name="Eyes" type="Node2D" parent="." index="1"]
 position = Vector2(1012, 401)
@@ -37,7 +38,12 @@ polygon = PackedVector2Array(-192, -698.63, -183, -586.63, -180, -516.63, -180, 
 [node name="BrushStrokeContainer" parent="." index="3"]
 position = Vector2(-8, -33)
 
-[node name="ChestHair" type="Polygon2D" parent="." index="4" node_paths=PackedStringArray("beardRoots")]
+[node name="Teeth" type="Sprite2D" parent="." index="4"]
+position = Vector2(1009, 574.458)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_2xdtm")
+
+[node name="ChestHair" type="Polygon2D" parent="." index="5" node_paths=PackedStringArray("beardRoots")]
 texture = ExtResource("5_x76h7")
 texture_offset = Vector2(127.36, 502.64)
 texture_scale = Vector2(4, 4)
@@ -45,12 +51,12 @@ polygon = PackedVector2Array(618, 1078, 625, 1021, 634, 1001, 639, 972, 685, 100
 script = ExtResource("6_2n0yj")
 beardRoots = NodePath("../ChestHairRoots/CollisionPolygon2D")
 
-[node name="ChestHairRoots" type="Area2D" parent="." index="5"]
+[node name="ChestHairRoots" type="Area2D" parent="." index="6"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChestHairRoots" index="0"]
 polygon = PackedVector2Array(621, 1078, 621, 989, 708, 935, 772, 966, 792.859, 985.865, 792, 995, 811, 1015, 818, 1037, 816, 1048, 773, 1024, 758, 1030, 754, 1036, 749, 1039, 768, 1056, 775, 1062, 789, 1076, 853, 1081, 833, 1063, 823, 1050, 821, 1038, 818, 1024, 815, 1014, 817, 1006, 823, 1004, 852, 999, 852, 979, 863, 982, 869, 1003, 840, 1009, 848, 1022, 856, 1030, 863, 1037, 862, 1040, 850, 1035, 840, 1025, 832, 1017, 824, 1008, 819, 1009, 821, 1029, 834, 1062, 856, 1081, 1204, 1073, 1235, 1078, 1268, 1066, 1248, 1054, 1242, 1049, 1229, 1043, 1210, 1041, 1200, 1033, 1202, 1021, 1223, 1029, 1241, 1024, 1241, 1020, 1250, 1006, 1256, 994, 1255, 981, 1231, 988, 1215, 993, 1214, 986, 1229, 979, 1241, 978, 1233, 967, 1218, 955, 1207, 959, 1177, 947, 1220, 924, 1309, 920, 1401, 974, 1416, 1047, 1389, 1122, 750, 1116)
 
-[node name="Eyebrows" type="Polygon2D" parent="." index="6" node_paths=PackedStringArray("beardRoots")]
+[node name="Eyebrows" type="Polygon2D" parent="." index="7" node_paths=PackedStringArray("beardRoots")]
 texture = ExtResource("5_x76h7")
 texture_offset = Vector2(125, 500)
 texture_scale = Vector2(4, 4)
@@ -58,12 +64,12 @@ polygon = PackedVector2Array(805, 318, 802, 339, 822, 335, 797, 361, 785, 386, 8
 script = ExtResource("6_2n0yj")
 beardRoots = NodePath("../EyebrowRoots/CollisionPolygon2D")
 
-[node name="EyebrowRoots" type="Area2D" parent="." index="7"]
+[node name="EyebrowRoots" type="Area2D" parent="." index="8"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyebrowRoots" index="0"]
 polygon = PackedVector2Array(952, 396, 927, 388, 932, 379, 966, 391, 983, 386, 998, 362, 1009, 359, 1003, 392, 1037, 392, 1030, 368, 1049, 373, 1060, 391, 1092, 385, 1115, 377, 1118, 385, 1066, 412, 993, 412)
 
-[node name="Beard" type="Polygon2D" parent="." index="8" node_paths=PackedStringArray("beardRoots")]
+[node name="Beard" type="Polygon2D" parent="." index="9" node_paths=PackedStringArray("beardRoots")]
 texture = ExtResource("7_hc24y")
 texture_offset = Vector2(114.205, -35.2)
 texture_scale = Vector2(4, 4)
@@ -71,12 +77,12 @@ polygon = PackedVector2Array(815, 726, 805, 706, 793, 658, 793, 636, 792, 619, 8
 script = ExtResource("6_2n0yj")
 beardRoots = NodePath("../BeardRoots/CollisionPolygon2D")
 
-[node name="BeardRoots" type="Area2D" parent="." index="9"]
+[node name="BeardRoots" type="Area2D" parent="." index="10"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BeardRoots" index="0"]
 polygon = PackedVector2Array(844, 623, 920, 670, 1040, 684, 1132, 667, 1186, 626, 1208, 564, 1211, 468, 1178, 458, 1169, 524, 1161, 579, 1121, 618, 1047, 616, 986, 608, 944, 623, 888, 621, 860, 593, 856, 525, 860, 462, 838, 452, 826, 454, 830, 479, 831, 541, 835, 588)
 
-[node name="Hat" type="RigidBody2D" parent="." index="10"]
+[node name="Hat" type="RigidBody2D" parent="." index="11"]
 position = Vector2(1011, 135)
 collision_layer = 512
 collision_mask = 0
@@ -90,7 +96,7 @@ texture = ExtResource("8_2oix0")
 scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(-1000, 464, -1216, 272, -1376, 60, -1416, -56, -1196, -60, -1024, -44, -868, -80, -752, -196, -620, -384, -460, -564, -308, -648, -208, -672, -120, -672, -44, -648, -32, -600, -24, -512, 12, -496, 36, -648, 108, -668, 204, -672, 328, -648, 508, -528, 628, -380, 724, -216, 816, -136, 968, -48, 1164, -56, 1332, -56, 1412, -52, 1392, 28, 1304, 168, 1160, 332, 1000, 472, 908, 512, 816, 528, 772, 512, 668, 524, 484, 556, 312, 604, 104, 656, -32, 672, -196, 624, -368, 580, -552, 536, -712, 516, -792, 516, -876, 524)
 
-[node name="Patch" type="RigidBody2D" parent="." index="11"]
+[node name="Patch" type="RigidBody2D" parent="." index="12"]
 position = Vector2(1012, 385)
 collision_layer = 512
 collision_mask = 0
@@ -104,5 +110,5 @@ texture = ExtResource("9_eiydd")
 scale = Vector2(0.25, 0.25)
 polygon = PackedVector2Array(88, 172, 156, 248, 272, 332, 396, 388, 484, 408, 596, 404, 644, 380, 716, 252, 760, 104, 816, 88, 828, 12, 760, 16, 728, -76, 596, -152, 468, -192, 336, -184, 216, -148, 120, -88, 68, -36, -160, -124, -364, -200, -508, -264, -640, -316, -716, -364, -812, -416, -820, -380, -824, -316, -752, -268, -600, -196, -388, -100, -252, -56, -80, -8, 32, 36, 44, 104)
 
-[node name="DrawValidityMatrix" parent="." index="12"]
+[node name="DrawValidityMatrix" parent="." index="13"]
 layer_0/tile_data = PackedInt32Array(3014733, 1, 65536, 3014734, 1, 65536, 3080270, 1, 65536, 3080269, 1, 65536, 3080268, 1, 65536, 3080267, 1, 65536, 3014731, 1, 65536, 3014732, 1, 65536, 3014735, 1, 65536, 3014736, 1, 65536, 3014737, 1, 65536, 3014740, 1, 65536, 3014739, 1, 65536, 3014738, 1, 65536, 3014741, 1, 65536, 3014742, 1, 65536, 3014743, 1, 65536, 3080278, 1, 65536, 3080277, 1, 65536, 3080276, 1, 65536, 3080275, 1, 65536, 3080274, 1, 65536, 3080273, 1, 65536, 3080272, 1, 65536, 3080271, 1, 65536, 3080279, 1, 65536, 3080280, 1, 65536, 3080281, 1, 65536, 3080282, 1, 65536, 3080283, 1, 65536, 3080284, 1, 65536, 3014748, 1, 65536, 3014747, 1, 65536, 3014746, 1, 65536, 3014745, 1, 65536, 3014744, 1, 65536, 2949201, 1, 65536, 2949202, 1, 65536, 2949203, 1, 65536, 2949204, 1, 65536, 2949205, 1, 65536, 2949206, 1, 65536, 2949207, 1, 65536, 2949208, 1, 65536, 2949209, 1, 65536, 2949210, 1, 65536, 2949211, 1, 65536, 2949212, 1, 65536, 2949200, 1, 65536, 2949199, 1, 65536, 2949196, 1, 65536, 2949195, 1, 65536, 2949197, 1, 65536, 2949198, 1, 65536, 2949194, 1, 65536, 3014730, 1, 65536, 3080266, 1, 65536, 3014729, 1, 65536, 2949193, 1, 65536, 3080265, 1, 65536, 3145801, 1, 65536, 3211337, 1, 65536, 3276873, 1, 65536, 3342409, 1, 65536, 3342410, 1, 65536, 3342411, 1, 65536, 3342412, 1, 65536, 3407949, 1, 65536, 3342413, 1, 65536, 3342414, 1, 65536, 3342415, 1, 65536, 3342416, 1, 65536, 3342417, 1, 65536, 3342418, 1, 65536, 3342419, 1, 65536, 3342420, 1, 65536, 3342421, 1, 65536, 3342422, 1, 65536, 3342423, 1, 65536, 3342424, 1, 65536, 3342425, 1, 65536, 3342426, 1, 65536, 3342427, 1, 65536, 3342428, 1, 65536, 3342429, 1, 65536, 3342430, 1, 65536, 3276894, 1, 65536, 3211358, 1, 65536, 3145822, 1, 65536, 3080286, 1, 65536, 3080285, 1, 65536, 3014749, 1, 65536, 2949213, 1, 65536, 3014750, 1, 65536, 3014751, 1, 65536, 3080287, 1, 65536, 3145823, 1, 65536, 3211359, 1, 65536, 3276895, 1, 65536, 3342431, 1, 65536, 3407966, 1, 65536, 3407965, 1, 65536, 3407964, 1, 65536, 3407963, 1, 65536, 3407962, 1, 65536, 3407961, 1, 65536, 3407960, 1, 65536, 3407959, 1, 65536, 3407958, 1, 65536, 3407957, 1, 65536, 3407956, 1, 65536, 3407955, 1, 65536, 3407954, 1, 65536, 3407953, 1, 65536, 3407952, 1, 65536, 3407951, 1, 65536, 3407950, 1, 65536, 3407948, 1, 65536, 3407947, 1, 65536, 3407946, 1, 65536, 3276872, 1, 65536, 3211336, 1, 65536, 3145800, 1, 65536, 3080264, 1, 65536, 3014728, 1, 65536, 3342408, 1, 65536, 3080263, 1, 65536, 3145799, 1, 65536, 3211335, 1, 65536, 3276871, 1, 65536, 3342407, 1, 65536, 3473484, 1, 65536, 3473485, 1, 65536, 3473486, 1, 65536, 3473487, 1, 65536, 3473488, 1, 65536, 3473494, 1, 65536, 3473495, 1, 65536, 3473493, 1, 65536, 3473492, 1, 65536, 3473491, 1, 65536, 3473490, 1, 65536, 3473489, 1, 65536, 3473496, 1, 65536, 3473497, 1, 65536, 3473498, 1, 65536, 3473499, 1, 65536)
