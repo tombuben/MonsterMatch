@@ -15,9 +15,10 @@ var Cursor
 func _doState() -> void:
 	match(game_state):
 		INTRO:
-			var oldMonster = MonsterHolder.get_child(0)
-			if oldMonster != null:
-				MonsterHolder.remove_child(oldMonster)
+			if MonsterHolder.get_child_count() > 0:
+				var oldMonster = MonsterHolder.get_child(0)
+				if oldMonster != null:
+					MonsterHolder.remove_child(oldMonster)
 			
 			var newMoster = CurrentScene.instantiate()
 			MonsterHolder.add_child(newMoster)
@@ -57,7 +58,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
 		_goToNextState()
 		_doState()

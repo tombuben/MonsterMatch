@@ -31,7 +31,7 @@ func world_cut():
 		if parent.has_method("cut"):
 			parent.cut(last_position, global_position, cut_size)
 
-func _process(delta):
+func _process(_delta):
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):

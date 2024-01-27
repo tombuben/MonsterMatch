@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("LuckaDebugButton"):
 		var setup: int = randi() % 4
 		print(setup)
@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 			pass
 	
 	var CursorPos: Vector2 = Vector2(0, 0)
-	var Cursor : Node2D = get_node("/root/Salon/Cursor")
+	var Cursor : Node2D = get_node_or_null("/root/Salon/Cursor")
 	if Cursor != null:
 		CursorPos = Cursor.global_position
 	else:

@@ -27,7 +27,7 @@ func _isPointCloseToCursor(pointPos: Vector2):
 	var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
 	return pointPos.distance_to(drawing_position) < tolerance
 
-func _process(delta):
+func _process(_delta):
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):

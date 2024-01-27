@@ -47,12 +47,12 @@ func fade(t):
 func lerp(t, a, b):
 	return a + t * (b - a)
 
-func grad(hash, x):
-	var h = hash & 15
-	var grad = 1 + (h & 7)  # Gradient value 1-8
+func grad(hashVal, x):
+	var h = hashVal & 15
+	var grad_val = 1 + (h & 7)  # Gradient value 1-8
 	if h & 8:
-		grad = -grad
-	return (grad * x)
+		grad_val = -grad_val
+	return (grad_val * x)
 
 func _clampCursorVelocity(Velocity: Vector2):
 	var ClampedVelocity : Vector2
@@ -159,7 +159,6 @@ func _process(DeltaTime: float):
 		#Velocity.y += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
 		Velocity.x += random_x
 		Velocity.y += random_y
-		time_passed
 
 	if Globals.InvertedControls:
 		Velocity.x = -Velocity.x
