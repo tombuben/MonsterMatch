@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dg0vsldhw10a6"]
+
+[node name="Dragable" type="Area2D"]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

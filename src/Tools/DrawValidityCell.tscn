@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bh5hp1kmkdp4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e2qe"]
-size = Vector2(12, 12)
+size = Vector2(6, 6)
 
 [node name="ValidityCheckCell" type="Area2D"]
 

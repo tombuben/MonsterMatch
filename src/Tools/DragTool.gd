@@ -21,6 +21,7 @@ func _process(_delta):
 			if Input.is_action_just_pressed("UseToolRight") and highlighted_item != null:
 				dragging_item = highlighted_item
 				brush_state = DRAGGING
+				
 		DRAGGING:	
 			if Input.is_action_just_released("UseToolRight") or dragging_item == null:
 				brush_state = IDLE
@@ -40,9 +41,9 @@ func _on_area_2d_body_exited(body):
 
 
 func _on_area_2d_area_entered(area):
-	highlighted_item = area.get_parent()
+	highlighted_item = area
 
 
 func _on_area_2d_area_exited(area):
-	if area.get_parent() == highlighted_item:
+	if area == highlighted_item:
 		highlighted_item = null
