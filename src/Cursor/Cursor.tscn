@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://2jica8njwnl1"]
+[gd_scene load_steps=6 format=3 uid="uid://2jica8njwnl1"]
 
 [ext_resource type="Script" path="res://src/Cursor/Cursor.gd" id="1_s765b"]
+[ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="2_15k58"]
+[ext_resource type="PackedScene" uid="uid://c425npey2td8r" path="res://src/Tools/DragTool.tscn" id="3_3vuia"]
+[ext_resource type="PackedScene" path="res://src/Tools/CutterBrush.tscn" id="4_h7xci"]
+[ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="5_nd7ao"]
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_s765b")
+
+[node name="ToolHolder" type="Node2D" parent="." node_paths=PackedStringArray("up_tool", "down_tool", "left_tool", "right_tool")]
+script = ExtResource("2_15k58")
+up_tool = NodePath("UpTool")
+down_tool = NodePath("DownTool")
+left_tool = NodePath("LeftTool")
+right_tool = NodePath("RightTool")
+
+[node name="UpTool" type="Node2D" parent="ToolHolder"]
+
+[node name="DragTool" parent="ToolHolder/UpTool" instance=ExtResource("3_3vuia")]
+
+[node name="DownTool" type="Node2D" parent="ToolHolder"]
+visible = false
+
+[node name="CutterBrush" parent="ToolHolder/DownTool" instance=ExtResource("4_h7xci")]
+
+[node name="LeftTool" type="Node2D" parent="ToolHolder"]
+visible = false
+
+[node name="MakeupBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_nd7ao")]
+
+[node name="RightTool" type="Node2D" parent="ToolHolder"]
+
+[node name="MakeupBrush" parent="ToolHolder/RightTool" instance=ExtResource("5_nd7ao")]
+visible = false
+is_erase_brush = true
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolHolder/RightTool"]
+position = Vector2(96, 81)
+color = Color(1, 0.372549, 0.631373, 1)
+polygon = PackedVector2Array(-66, 87, -94, -79, 25, -72, 85, 59)
