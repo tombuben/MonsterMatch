@@ -65,7 +65,6 @@ func _moveCursor(Velocity: Vector2, Sensitivity: float, DeltaTime: float):
 	position.y = clamp(position.y, 0, ViewPortSize.y)
 
 func _processMouse(DeltaTime: float) -> Vector2:
-	var MousePos: Vector2 = get_viewport().get_mouse_position()
 	var MouseDirection: Vector2 = MouseDelta.normalized()
 	var MousePower: float = MouseDelta.length() / MouseSpeedDivisor
 	var ClampedMousePower: float = clamp(MousePower, 0, MaxMouseSpeed)

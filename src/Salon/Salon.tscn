@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cri726vtnvk0q"]
 
-[ext_resource type="Texture2D" uid="uid://8wmef72i15c3" path="res://assets/bean.png" id="1_mj5as"]
+[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_o8mbq"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_33te6"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
@@ -11,24 +11,16 @@
 [node name="BackgroundColor" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="Monster" type="TextureRect" parent="CenterContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_mj5as")
-
-[node name="BrushContainer" type="Node2D" parent="."]
+[node name="Monster" parent="." instance=ExtResource("1_o8mbq")]
+position = Vector2(970, 1032)
 
 [node name="Cursor" parent="." instance=ExtResource("2_ilg5p")]
+position = Vector2(671, 395)
 
 [node name="ToolHolder" type="Node2D" parent="Cursor" node_paths=PackedStringArray("up_tool", "down_tool", "left_tool", "right_tool")]
-position = Vector2(815, 423)
 script = ExtResource("3_33te6")
 up_tool = NodePath("UpTool")
 down_tool = NodePath("DownTool")
@@ -49,23 +41,15 @@ visible = false
 [node name="LeftTool" type="Node2D" parent="Cursor/ToolHolder"]
 visible = false
 
-[node name="MakeupBrush" parent="Cursor/ToolHolder/LeftTool" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
-brush_stroke_container = NodePath("../../../../BrushContainer")
-draw_area = NodePath("../../../../Polygon2D")
+[node name="MakeupBrush" parent="Cursor/ToolHolder/LeftTool" instance=ExtResource("3_l5x4e")]
 
 [node name="RightTool" type="Node2D" parent="Cursor/ToolHolder"]
 
-[node name="MakeupBrush" parent="Cursor/ToolHolder/RightTool" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
+[node name="MakeupBrush" parent="Cursor/ToolHolder/RightTool" instance=ExtResource("3_l5x4e")]
 visible = false
-brush_stroke_container = NodePath("../../../../BrushContainer")
-draw_area = NodePath("../../../../Polygon2D")
 is_erase_brush = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/RightTool"]
 position = Vector2(96, 81)
 color = Color(1, 0.372549, 0.631373, 1)
 polygon = PackedVector2Array(-66, 87, -94, -79, 25, -72, 85, 59)
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(1131, 687, 1146, 616, 1155, 538, 1144, 466, 1114, 413, 1069, 387, 1022, 367, 976, 366, 928, 383, 886, 413, 855, 441, 832, 485, 810, 530, 797, 591, 792, 634, 793, 677, 797, 717, 825, 768, 885, 791, 956, 797, 1028, 783, 1076, 756, 1111, 715)

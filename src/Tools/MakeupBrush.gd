@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var brush_stroke_container : Node2D
+var brush_stroke_container : Node2D
 @export var point_distance_diff : float = 10
-@export var draw_area : Polygon2D
+var draw_area : Polygon2D
 
 @export var is_erase_brush : bool
 
@@ -17,43 +17,55 @@ var last_point_pos : Vector2
 
 const tolerance : float = 10
 
+func _ready() -> void:
+	brush_stroke_container = Globals.BrushContainer
+	draw_area = Globals.DrawArea
+
 func _isPointCloseToCursor(pointPos: Vector2):
-	return pointPos.distance_to(global_position) < tolerance
+	var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
+	return pointPos.distance_to(drawing_position) < tolerance
 
 func _process(delta):
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
-				if Geometry2D.is_point_in_polygon(global_position, draw_area.polygon):
+				var local_position = draw_area.get_global_transform().affine_inverse() * global_position
+				if Geometry2D.is_point_in_polygon(local_position, draw_area.polygon):
 					if is_erase_brush:
 						brush_state = ERASING
 					else:
 						last_brush_stroke = BRUSH_STROKE.instantiate()
 						brush_stroke_container.add_child(last_brush_stroke)
 					
-						last_brush_stroke.add_point(global_position)
-						last_brush_stroke.add_point(global_position + Vector2.RIGHT)
+						var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
 					
-						last_point_pos = global_position
+						last_brush_stroke.add_point(drawing_position)
+						last_brush_stroke.add_point(drawing_position + Vector2.RIGHT)
+					
+						last_point_pos = drawing_position
 				
 						brush_state = DRAWING
 		DRAWING:
-			if !Geometry2D.is_point_in_polygon(global_position, draw_area.polygon):
+			var local_position = draw_area.get_global_transform().affine_inverse() * global_position
+			if !Geometry2D.is_point_in_polygon(local_position, draw_area.polygon):
 				last_brush_stroke = BRUSH_STROKE.instantiate()
 				brush_stroke_container.add_child(last_brush_stroke)
 				return
 			
-			if last_point_pos.distance_to(global_position) > point_distance_diff:
-				last_brush_stroke.add_point(global_position)
-				last_point_pos = global_position
+			var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
+			
+			if last_point_pos.distance_to(drawing_position) > point_distance_diff:
+				last_brush_stroke.add_point(drawing_position)
+				last_point_pos = drawing_position
 				
 			if Input.is_action_just_released("UseToolRight"):
-				last_brush_stroke.add_point(global_position)
-				last_brush_stroke.add_point(global_position + Vector2.RIGHT)
+				last_brush_stroke.add_point(drawing_position)
+				last_brush_stroke.add_point(drawing_position + Vector2.RIGHT)
 
 				brush_state = IDLE
 		ERASING:
-			if !Geometry2D.is_point_in_polygon(global_position, draw_area.polygon):
+			var local_position = draw_area.get_global_transform().affine_inverse() * global_position
+			if !Geometry2D.is_point_in_polygon(local_position, draw_area.polygon):
 				return
 
 			var closest_brush_stroke
@@ -62,7 +74,7 @@ func _process(delta):
 			var breaking: bool = false
 			var brush_strokes = brush_stroke_container.get_children()
 			for brush_stroke in brush_strokes:
-				if len(brush_stroke.points) <= 1:
+				if len(brush_stroke.points) <= 2:
 						brush_stroke_container.remove_child(brush_stroke)
 						continue
 				for i in len(brush_stroke.points):
