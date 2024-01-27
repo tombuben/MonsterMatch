@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbws6bxbm434o"]
+[gd_scene load_steps=3 format=3 uid="uid://cbws6bxbm434o"]
 
 [ext_resource type="Script" path="res://src/Tools/MakeupBrush.gd" id="1_w0qod"]
+[ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="2_55qay"]
 
 [node name="MakeupBrush" type="Node2D"]
 script = ExtResource("1_w0qod")
 point_distance_diff = 5.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_55qay")
+expand_mode = 1
