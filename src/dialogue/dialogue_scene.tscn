@@ -1,23 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsxck2vktrnmb"]
+[gd_scene load_steps=2 format=3 uid="uid://bsxck2vktrnmb"]
 
-[ext_resource type="Script" path="res://src/dialogue/dialogue.gd" id="1_a2nh1"]
-[ext_resource type="Texture2D" uid="uid://dodqwlhk7msfm" path="res://assets/orc.png" id="1_ndfpa"]
+[ext_resource type="Script" path="res://src/dialogue/dialogue_scene.gd" id="1_ryv12"]
 
 [node name="DialogueScene" type="MarginContainer"]
-script = ExtResource("1_a2nh1")
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-visible = false
-layout_mode = 0
-offset_right = 67.0
-offset_bottom = 67.0
-scale = Vector2(28.6681, 16.0581)
-
-[node name="Hlava" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(955, 540)
-texture = ExtResource("1_ndfpa")
+script = ExtResource("1_ryv12")

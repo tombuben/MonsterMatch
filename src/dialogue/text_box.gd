@@ -33,7 +33,6 @@ func display_text(text_to_display: String):
 		#await resized # wait for x
 		#await resized # wait for y
 		
-	var test = ""
 	finished_displaying.emit()
 	return
 	

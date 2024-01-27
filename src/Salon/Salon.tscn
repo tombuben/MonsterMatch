@@ -1,15 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=11 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="PackedScene" uid="uid://y8ux72ol0oh2" path="res://src/Monsters/slime_monster.tscn" id="2_km51p"]
+[ext_resource type="PackedScene" uid="uid://bsxck2vktrnmb" path="res://src/dialogue/dialogue_scene.tscn" id="5_2kn52"]
+[ext_resource type="Script" path="res://src/Salon/LightsOut.gd" id="5_vfuqq"]
+[ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
+
+[sub_resource type="Animation" id="Animation_iaupg"]
+resource_name = "LightsOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightsOut:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_v6m74"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightsOut:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4k05"]
+_data = {
+"LightsOut": SubResource("Animation_iaupg"),
+"RESET": SubResource("Animation_v6m74")
+}
 
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
 MonsterHolder = NodePath("MonsterHolder")
 Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p")])
 CursorScene = ExtResource("2_ilg5p")
+DialogueScene = ExtResource("5_2kn52")
+TimerScene = ExtResource("6_187t4")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 offset_right = 1920.0
@@ -18,3 +59,17 @@ mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
 [node name="MonsterHolder" type="Node2D" parent="."]
+
+[node name="LightsOut" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.94902)
+script = ExtResource("5_vfuqq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LightsOut"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_a4k05")
+}
