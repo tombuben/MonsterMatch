@@ -8,6 +8,6 @@ scenes/1/scene = ExtResource("1_ctpap")
 [sub_resource type="TileSet" id="TileSet_1h3bx"]
 sources/1 = SubResource("TileSetScenesCollectionSource_hskhm")
 
-[node name="TileMap" type="TileMap"]
+[node name="DrawValidityMatrix" type="TileMap"]
 tile_set = SubResource("TileSet_1h3bx")
 format = 2
