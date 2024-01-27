@@ -12,7 +12,7 @@ var game_state = INTRO
 
 var Cursor
 
-func _goToNextState() -> void:
+func _doState() -> void:
 	match(game_state):
 		INTRO:
 			var oldMonster = MonsterHolder.get_child(0)
@@ -21,15 +21,23 @@ func _goToNextState() -> void:
 			
 			var newMoster = CurrentScene.instantiate()
 			MonsterHolder.add_child(newMoster)
-			
+		MAKEUP:
 			Cursor = CursorScene.instantiate()
 			Cursor.global_position = Vector2(600, 400)
 			add_child(Cursor)
-			
-			game_state = MAKEUP
-		MAKEUP:
+		OUTRO:
 			remove_child(Cursor)
 			Cursor = null
+		INTERMEZZO:
+			pass
+		CREDITS:
+			pass
+	
+func _goToNextState() -> void:
+	match(game_state):
+		INTRO:
+			game_state = MAKEUP
+		MAKEUP:
 			game_state = OUTRO
 		OUTRO:
 			game_state = INTERMEZZO
@@ -40,14 +48,14 @@ func _goToNextState() -> void:
 				game_state = INTRO
 			else:
 				game_state = CREDITS
-	print(game_state)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_doState()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
 		_goToNextState()
+		_doState()
