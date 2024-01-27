@@ -46,7 +46,9 @@ func _doState() -> void:
 			remove_child(Cursor)
 			remove_child(GameTimer)
 			Cursor = null
+			Dialogue._outro()
 		INTERMEZZO:
+			remove_child(Dialogue)
 			pass
 		CREDITS:
 			pass
@@ -55,20 +57,26 @@ func _goToNextState() -> void:
 	match(game_state):
 		INTRO:
 			game_state = MAKEUP
+			Globals.CurrentGameState = game_state
 		MAKEUP:
 			game_state = OUTRO
+			Globals.CurrentGameState = game_state
 		OUTRO:
 			game_state = INTERMEZZO
+			Globals.CurrentGameState = game_state
 		INTERMEZZO:
 			if CurrentSceneIndex < len(Scenes) - 1:
 				CurrentSceneIndex += 1
 				CurrentScene = Scenes[CurrentSceneIndex]
 				game_state = INTRO
+				Globals.CurrentGameState = game_state
 			else:
 				game_state = CREDITS
+				Globals.CurrentGameState = game_state
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.CurrentGameState = game_state
 	_doState()
 
 

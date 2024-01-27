@@ -11,5 +11,7 @@ var BrushContainer: Node2D
 var DrawArea: Polygon2D
 var DrawValidityMatrix: TileMap
 
-var DialogueTimeStamps: Dictionary
-var CurrentMonster
+var DialogueTimeStamps = {}
+var CurrentMonster: MonsterTypeEnum
+
+var CurrentGameState

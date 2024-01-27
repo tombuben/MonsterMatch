@@ -26,13 +26,19 @@ var dialogueEnd = []
 var CurrentMonster
 
 func _ready():
-	Globals.DialogueTimeStamps = LinesTimeStamps
 	CurrentMonster = Globals.CurrentMonster
-	dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [CurrentMonster, 1])
-	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [CurrentMonster, 1])
-	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [CurrentMonster, 1])
+	dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
+	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
+	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
+	
+	for line in dialogueMakeup:
+		Globals.DialogueTimeStamps[int(line["time"])] = line["text"]
+	
 	if is_dialog_active == false:
 		start_dialog(global_position, dialogueStart)
+
+func _outro():
+		start_dialog(global_position, dialogueEnd)
 
 func load_dialogues(json_file_path):
 	var file = FileAccess.open(json_file_path, FileAccess.READ)
@@ -42,9 +48,8 @@ func load_dialogues(json_file_path):
 	return finish
 
 func _on_timer_scene_trigger_dialogue(timeStamp: int):
-	var line: Array[String]
-	line.assign(LinesTimeStamps[timeStamp])
-	start_dialog(global_position, line)
+	var lines = [Globals.DialogueTimeStamps[timeStamp]]
+	start_dialog(global_position, lines)
 
 func start_dialog(position: Vector2, lines: Array):
 	if is_dialog_active:
@@ -67,8 +72,14 @@ func _show_text_box():
 			#text_box.global_position = text_box_position
 		#"user":
 			#text_box.global_position = user_text_box_position
+	match Globals.CurrentGameState:
+		0:
+			text_box.display_text(dialog_lines[current_line_index]["text"])
+		1:
+			text_box.display_text(dialog_lines[0])
+		2:
+			text_box.display_text(dialog_lines[current_line_index]["text"])
 	
-	text_box.display_text(dialog_lines[current_line_index]["text"])
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
