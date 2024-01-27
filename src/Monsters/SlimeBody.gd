@@ -56,7 +56,12 @@ func _process(_delta: float) -> void:
 	else:
 		CursorPos = get_viewport().get_mouse_position()
 		
-	var LeftToMouse: Vector2 = (LeftIris.global_position - CursorPos).normalized()
-	var RightToMouse: Vector2 = (RightIris.global_position - CursorPos).normalized()
-	LeftIris.position = LeftIrisStartPos - LeftToMouse * 80
-	RightIris.position = RightIrisStartPos - RightToMouse * 120
+	var LeftToMouse: Vector2 = (LeftIris.global_position - CursorPos)
+	if LeftToMouse.length() > 40:
+		var LeftToMouseNormalized: Vector2 = LeftToMouse.normalized()
+		LeftIris.position = LeftIrisStartPos - LeftToMouseNormalized * 80
+	
+	var RightToMouse: Vector2 = (RightIris.global_position - CursorPos)
+	if RightToMouse.length() > 40:
+		var RightToMouseNormalized: Vector2 = RightToMouse.normalized()
+		RightIris.position = RightIrisStartPos - RightToMouseNormalized * 120
