@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://src/Singletons/Globals.gd"
+DialogManager="*res://src/Singletons/DialogManager.gd"
 
 [display]
 
