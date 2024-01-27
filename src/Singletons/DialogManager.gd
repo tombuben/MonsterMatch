@@ -3,16 +3,17 @@ extends Node
 
 @onready var text_box_scene = preload("res://src/dialogue/text_box.tscn")
 
-var dialog_lines: Array[String] = []
+var dialog_lines = []
 var current_line_index = 0
 
 var text_box
 var text_box_position = Vector2(1219,250)
+var user_text_box_position = Vector2(138,750)
 
 var is_dialog_active = false
 var can_advance_line = false
 
-func start_dialog(position: Vector2, lines: Array[String]):
+func start_dialog(position: Vector2, lines: Array):
 	if is_dialog_active:
 		return
 	
@@ -26,8 +27,14 @@ func _show_text_box():
 	text_box = text_box_scene.instantiate()
 	text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(text_box)
-	text_box.global_position = text_box_position
-	text_box.display_text(dialog_lines[current_line_index])
+	
+	match dialog_lines[current_line_index]["speaker"]:
+		"char":
+			text_box.global_position = text_box_position
+		"user":
+			text_box.global_position = user_text_box_position
+	
+	text_box.display_text(dialog_lines[current_line_index]["text"])
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
