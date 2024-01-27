@@ -7,8 +7,33 @@ script = ExtResource("1_641hq")
 BrushContainer = NodePath("BrushStrokeContainer")
 DrawArea = NodePath("Polygon2D")
 
-[node name="BrushStrokeContainer" type="Node2D" parent="."]
-
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-143, -647, -148, -587, -144, -536, -131, -496, -125, -463, -128, -422, -123, -390, -96, -359, -61, -359, -28, -363, -18, -373, 23, -374, 35, -364, 79, -365, 98, -359, 127, -390, 133, -420, 133, -480, 140, -513, 146, -558, 141, -599, 136, -636, 133, -645, 77, -631, 37, -621, -16, -619, -59, -630, -101, -639)
+[node name="Monster" type="Node2D"]
+
+[node name="HeadBottom" type="Sprite2D" parent="."]
+position = Vector2(1, -501)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_ogc68")
+
+[node name="DrawArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DrawArea"]
+polygon = PackedVector2Array(-143, -647, -148, -587, -144, -536, -131, -496, -125, -463, -128, -422, -123, -390, -96, -359, -61, -359, -28, -363, -18, -373, 23, -374, 35, -364, 79, -365, 98, -359, 127, -390, 133, -420, 133, -480, 140, -513, 146, -558, 141, -599, 139, -631, 134, -646, 77, -631, 37, -621, -16, -619, -59, -630, -101, -639)
+
+[node name="BrushStrokeContainer" type="Node2D" parent="DrawArea"]
+
+[node name="HeadTop" type="Sprite2D" parent="."]
+position = Vector2(1, -501)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_3cr3k")
+
+[node name="DialogManager" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogManager"]
+libraries = {
+"": SubResource("AnimationLibrary_wbuxp")
+}
+
+[node name="Timer" type="Timer" parent="DialogManager"]

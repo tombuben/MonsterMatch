@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciqsl7sss2ysm"]
+[gd_scene load_steps=6 format=3 uid="uid://ciqsl7sss2ysm"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_d7n06"]
+[ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_fomn7"]
+[ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_e6jh6"]
+[ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="4_fp45a"]
+[ext_resource type="PackedScene" path="res://src/Tools/CutterBrush.tscn" id="5_rh11q"]
 
 [node name="Salon" type="Node2D"]
 
@@ -14,3 +18,36 @@ color = Color(0.313726, 0.141176, 0.184314, 1)
 
 [node name="Monster" parent="." instance=ExtResource("1_d7n06")]
 position = Vector2(948, 1080)
+
+[node name="Cursor" parent="." instance=ExtResource("2_fomn7")]
+position = Vector2(403, 288)
+
+[node name="ToolHolder" type="Node2D" parent="Cursor" node_paths=PackedStringArray("up_tool", "down_tool", "left_tool", "right_tool")]
+script = ExtResource("3_e6jh6")
+up_tool = NodePath("UpTool")
+down_tool = NodePath("DownTool")
+left_tool = NodePath("LeftTool")
+right_tool = NodePath("RightTool")
+
+[node name="UpTool" type="Node2D" parent="Cursor/ToolHolder"]
+
+[node name="MakeupBrush" parent="Cursor/ToolHolder/UpTool" instance=ExtResource("4_fp45a")]
+
+[node name="DownTool" type="Node2D" parent="Cursor/ToolHolder"]
+visible = false
+
+[node name="CutterBrush" parent="Cursor/ToolHolder/DownTool" instance=ExtResource("5_rh11q")]
+
+[node name="LeftTool" type="Node2D" parent="Cursor/ToolHolder"]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/LeftTool"]
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-21, 44, -76, -53, 22, -85, 63, 20)
+
+[node name="RightTool" type="Node2D" parent="Cursor/ToolHolder"]
+visible = false
+
+[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/RightTool"]
+color = Color(0.898039, 0.403922, 0.823529, 1)
+polygon = PackedVector2Array(-101, 40, 88, -51, 149, 117, -60, 195)

@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var RootNode: Node
 
 @export var UseRightJoy: bool = true
 @export var UseLeftJoy: bool = true

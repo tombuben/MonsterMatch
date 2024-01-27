@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://oow4wtkcv43d"]
+
+[ext_resource type="PackedScene" uid="uid://bh5hp1kmkdp4f" path="res://src/Tools/DrawValidityCell.tscn" id="1_ctpap"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hskhm"]
+scenes/1/scene = ExtResource("1_ctpap")
+
+[sub_resource type="TileSet" id="TileSet_1h3bx"]
+sources/1 = SubResource("TileSetScenesCollectionSource_hskhm")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_1h3bx")
+format = 2
