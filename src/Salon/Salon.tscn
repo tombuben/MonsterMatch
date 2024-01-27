@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=7 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_o8mbq"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_33te6"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
-[ext_resource type="PackedScene" path="res://src/Tools/CutterBrush.tscn" id="4_xbqhy"]
+[ext_resource type="PackedScene" uid="uid://c425npey2td8r" path="res://src/Tools/DragTool.tscn" id="4_q7u7u"]
+[ext_resource type="PackedScene" uid="uid://si8jmklvdabq" path="res://src/Tools/CutterBrush.tscn" id="4_xbqhy"]
 
 [node name="Salon" type="Node2D"]
 
@@ -29,9 +30,7 @@ right_tool = NodePath("RightTool")
 
 [node name="UpTool" type="Node2D" parent="Cursor/ToolHolder"]
 
-[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/UpTool"]
-color = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(-21, 44, -76, -53, 22, -85, 63, 20)
+[node name="DragTool" parent="Cursor/ToolHolder/UpTool" instance=ExtResource("4_q7u7u")]
 
 [node name="DownTool" type="Node2D" parent="Cursor/ToolHolder"]
 visible = false

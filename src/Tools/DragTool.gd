@@ -1,6 +1,6 @@
 extends Node2D
 
-var highlighted_item : RigidBody2D
+var highlighted_item : Node2D
 
 
 enum {IDLE, DRAGGING}
@@ -17,6 +17,7 @@ func _ready():
 func _process(delta):
 	match brush_state:
 		IDLE:
+			print(highlighted_item)
 			if Input.is_action_just_pressed("UseToolRight") and highlighted_item != null:
 				brush_state = DRAGGING
 		DRAGGING:
@@ -33,4 +34,13 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	if brush_state != DRAGGING && body == highlighted_item:
+		highlighted_item = null
+
+
+func _on_area_2d_area_entered(area):
+	highlighted_item = area.get_parent()
+
+
+func _on_area_2d_area_exited(area):
+	if brush_state != DRAGGING && area.get_parent() == highlighted_item:
 		highlighted_item = null
