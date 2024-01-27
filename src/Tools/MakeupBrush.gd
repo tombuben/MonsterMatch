@@ -7,7 +7,7 @@ var validity_matrix : ValidityMatrix
 
 @export var is_erase_brush : bool
 
-@onready var BRUSH_STROKE : = preload("res://src/Tools/BrushStroke.tscn")
+@export var BRUSH_STROKE : PackedScene
 
 var last_brush_stroke : Line2D
 
