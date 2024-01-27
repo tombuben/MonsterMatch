@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://y8ux72ol0oh2"]
+
+[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_hd2cv"]
+[ext_resource type="Texture2D" uid="uid://bnhk1l7sqogxh" path="res://assets/slime/slime_body.png" id="2_2u153"]
+[ext_resource type="Texture2D" uid="uid://b0sqkgyfaqt0i" path="res://assets/slime/slime_eye_right.png" id="3_toyp8"]
+[ext_resource type="Script" path="res://src/Monsters/SlimeBody.gd" id="3_vxca4"]
+[ext_resource type="Texture2D" uid="uid://dvt7ndb14i4p2" path="res://assets/slime/slime_eye_iris.png" id="4_nqkfm"]
+[ext_resource type="Texture2D" uid="uid://cyg26tnha0xnn" path="res://assets/slime/slime_eye_left.png" id="5_gernd"]
+[ext_resource type="Texture2D" uid="uid://c48fq8gjsuenn" path="res://assets/slime/slime_mouth.png" id="6_wiwn2"]
+
+[sub_resource type="Animation" id="Animation_d3udd"]
+resource_name = "slime_anim"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouth:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-193.333, 880), Vector2(-220, 840), Vector2(-193.333, 786.667), Vector2(-133.333, 773.333), Vector2(-53.3333, 820), Vector2(26.6667, 833.333), Vector2(100, 813.333), Vector2(-6.66667, 820), Vector2(53.3333, 946.667), Vector2(-173.333, 913.333), Vector2(-193.333, 880)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightEye:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4.5, 7, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(826.667, 26.6667), Vector2(760, -46.6667), Vector2(806.667, -60), Vector2(886.667, 113.333), Vector2(826.667, 26.6667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftEye:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 5, 7, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-560, -366.667), Vector2(-646.667, -480), Vector2(-473.333, -440), Vector2(-453.333, -280), Vector2(-560, -366.667)]
+}
+
+[sub_resource type="Animation" id="Animation_37pcc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouth:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-286.667, 733.333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightEye:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(826.667, 26.6667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftEye:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-560, -366.667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahw8q"]
+_data = {
+"RESET": SubResource("Animation_37pcc"),
+"slime_anim": SubResource("Animation_d3udd")
+}
+
+[node name="Monster" instance=ExtResource("1_hd2cv")]
+
+[node name="HeadBottom" parent="." index="1"]
+visible = false
+
+[node name="SlimeBody" type="Sprite2D" parent="." index="2"]
+position = Vector2(871, 524)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_2u153")
+script = ExtResource("3_vxca4")
+
+[node name="RightEye" type="Sprite2D" parent="SlimeBody" index="0"]
+position = Vector2(826.667, 26.6667)
+texture = ExtResource("3_toyp8")
+
+[node name="Iris" type="Sprite2D" parent="SlimeBody/RightEye" index="0"]
+position = Vector2(33.3333, 46.6667)
+texture = ExtResource("4_nqkfm")
+
+[node name="LeftEye" type="Sprite2D" parent="SlimeBody" index="1"]
+position = Vector2(-560, -366.667)
+texture = ExtResource("5_gernd")
+
+[node name="Iris" type="Sprite2D" parent="SlimeBody/LeftEye" index="0"]
+position = Vector2(60, -33.3333)
+texture = ExtResource("4_nqkfm")
+
+[node name="Mouth" type="Sprite2D" parent="SlimeBody" index="2"]
+position = Vector2(-286.667, 733.333)
+texture = ExtResource("6_wiwn2")
+
+[node name="SlimeAnimationPlayer" type="AnimationPlayer" parent="SlimeBody" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_ahw8q")
+}
+autoplay = "slime_anim"
+
+[node name="EyePatch" parent="." index="4"]
+visible = false
+
+[node name="Area2D" parent="EyePatch" index="0"]
+visible = false
+
+[node name="CollisionPolygon2D" parent="EyePatch/Area2D" index="0"]
+visible = false
