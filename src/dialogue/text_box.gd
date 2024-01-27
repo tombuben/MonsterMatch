@@ -23,7 +23,6 @@ func _ready():
 		print("Timer not found")
 
 func display_text(text_to_display: String):
-	text = text_to_display
 	label.text = text_to_display
 	
 	await resized
@@ -31,18 +30,20 @@ func display_text(text_to_display: String):
 	
 	if size.x > MAX_WIDTH:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		await resized # wait for x
-		await resized # wait for y
-		#custom_minimum_size.y = size.y
+		#await resized # wait for x
+		#await resized # wait for y
 		
+	var test = ""
+	finished_displaying.emit()
+	return
+	
 	#global_position.x -= size.x / 2
 	#global_position.y -= size.y + 24
 	
 	#label.text = ""
 	#_display_letter()
 	
-	finished_displaying.emit()
-	return
+	
 	
 func _display_letter():
 	label.text += text[letter_index]
