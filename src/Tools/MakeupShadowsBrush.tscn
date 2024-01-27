@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcl1t3per6w27"]
+
+[ext_resource type="Script" path="res://src/Tools/MakeupBrush.gd" id="1_4gveg"]
+[ext_resource type="PackedScene" uid="uid://ce2w5hvo2uenr" path="res://src/Tools/BrushShadowsStroke.tscn" id="2_0jutr"]
+[ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="3_8tqa2"]
+
+[node name="MakeupShadowsBrush" type="Node2D"]
+script = ExtResource("1_4gveg")
+point_distance_diff = 5.0
+BRUSH_STROKE = ExtResource("2_0jutr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 154.0
+offset_bottom = 154.0
+texture = ExtResource("3_8tqa2")
+expand_mode = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-15, -21, -77, 1, 52, 84, 80, 60, 21, -64)

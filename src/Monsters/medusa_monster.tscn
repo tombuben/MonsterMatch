@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx02h70o5ru75"]
+
+[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_r600f"]
+[ext_resource type="Texture2D" uid="uid://cb3cur181twy" path="res://assets/hlava.png" id="2_frxlw"]
+
+[node name="MedusaMonster" instance=ExtResource("1_r600f")]
+
+[node name="Polygon2D" parent="." index="0"]
+polygon = PackedVector2Array(750, 763, 705, 466, 804, 267, 1059, 265, 1162, 450, 1095, 764)
+
+[node name="Hlava" type="Sprite2D" parent="." index="1"]
+position = Vector2(928, 535)
+texture = ExtResource("2_frxlw")

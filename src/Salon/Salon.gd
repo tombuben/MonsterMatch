@@ -40,6 +40,7 @@ func _doState() -> void:
 			
 			GameTimer = TimerScene.instantiate()
 			GameTimer.trigger_dialogue.connect(Dialogue._on_timer_scene_trigger_dialogue)
+			GameTimer.trigger_gamestate_change.connect(_trigger_state_change)
 			add_child(GameTimer)
 		OUTRO:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -85,3 +86,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
 		_goToNextState()
 		_doState()
+		
+func _trigger_state_change() -> void:
+	_goToNextState()
+	_doState()
