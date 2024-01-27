@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsdsqo75wksvc"]
 
-[ext_resource type="Script" path="res://dialogue/text_box.gd" id="1_sposj"]
+[ext_resource type="Script" path="res://src/dialogue/text_box.gd" id="1_sposj"]
 [ext_resource type="Texture2D" uid="uid://d4bw8g7acoqdt" path="res://assets/speech-bubble-white.png" id="2_gdshc"]
 
 [node name="TextBox" type="MarginContainer"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsxck2vktrnmb"]
 
 [ext_resource type="Texture2D" uid="uid://cb3cur181twy" path="res://assets/hlava.png" id="1_p87uq"]
-[ext_resource type="Script" path="res://dialogue/hlava.gd" id="2_ug38f"]
+[ext_resource type="Script" path="res://src/dialogue/hlava.gd" id="2_ug38f"]
 
 [node name="DialogueScene" type="MarginContainer"]
 
