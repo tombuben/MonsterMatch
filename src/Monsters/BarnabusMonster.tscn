@@ -18,7 +18,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_hlb8q")
 
 [node name="Eyes" type="Node2D" parent="." index="1"]
-position = Vector2(1012, 428)
+position = Vector2(1012, 401)
 
 [node name="Open" type="Sprite2D" parent="Eyes" index="0"]
 scale = Vector2(0.25, 0.25)
@@ -91,6 +91,8 @@ polygon = PackedVector2Array(-1000, 464, -1216, 272, -1376, 60, -1416, -56, -119
 
 [node name="Patch" type="RigidBody2D" parent="." index="11"]
 position = Vector2(1012, 385)
+collision_layer = 512
+collision_mask = 0
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Patch" index="0"]
