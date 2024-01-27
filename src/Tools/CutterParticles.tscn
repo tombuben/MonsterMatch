@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfs5h3so0sef7"]
+
+[ext_resource type="Texture2D" uid="uid://j58jyyhf155h" path="res://assets/Barnabus/beard_particle.png" id="1_k3erm"]
+
+[sub_resource type="Curve" id="Curve_1k1o3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y5ik2"]
+curve = SubResource("Curve_1k1o3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qlvj5"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_max = 360.0
+spread = 71.182
+initial_velocity_max = 248.49
+orbit_velocity_max = 0.412
+gravity = Vector3(0, 120, 0)
+alpha_curve = SubResource("CurveTexture_y5ik2")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+process_material = SubResource("ParticleProcessMaterial_qlvj5")
+texture = ExtResource("1_k3erm")
+lifetime = 2.5
+speed_scale = 1.37
+explosiveness = 1.0

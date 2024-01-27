@@ -7,6 +7,7 @@ var brush_state = IDLE
 @export var cut_size : float = 15
 
 @onready var last_position : Vector2 = global_position
+@onready var particles : GPUParticles2D = %GPUParticles2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,11 +37,14 @@ func _process(_delta):
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
 				brush_state = CUTTING
+				particles.emitting = true
 		CUTTING:
 			world_cut()
+			
 	
 	if Input.is_action_just_released("UseToolRight"):
 		brush_state = IDLE
+		particles.emitting = false
 		
 	last_position = global_position
 

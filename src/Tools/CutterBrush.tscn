@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://si8jmklvdabq"]
+[gd_scene load_steps=3 format=3 uid="uid://si8jmklvdabq"]
 
 [ext_resource type="Script" path="res://src/Tools/CutterBrush.gd" id="1_etect"]
+[ext_resource type="PackedScene" uid="uid://dfs5h3so0sef7" path="res://src/Tools/CutterParticles.tscn" id="2_6m86y"]
 
 [node name="CutterBrush" type="Node2D"]
 script = ExtResource("1_etect")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(0, 1, 9, 33, 18, 25, 40, 48, 48, 44)
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("2_6m86y")]
+unique_name_in_owner = true
