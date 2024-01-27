@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=16 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -54,6 +54,69 @@ glow_levels/3 = 6.43
 glow_levels/4 = 6.88
 glow_levels/5 = 6.72
 glow_levels/6 = 4.07
+
+[sub_resource type="Animation" id="Animation_pgilc"]
+resource_name = "countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["3", "3", "2", "1", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%CanvasLayer/..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_trigger_state_change"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l74du"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pkgn"]
+_data = {
+"RESET": SubResource("Animation_l74du"),
+"countdown": SubResource("Animation_pgilc")
+}
 
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
@@ -127,3 +190,19 @@ environment = SubResource("Environment_6lltp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+
+[node name="CountDown" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 843.0
+offset_top = 339.0
+offset_right = 983.0
+offset_bottom = 675.0
+
+[node name="Label" type="Label" parent="CanvasLayer/CountDown"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 345
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/CountDown"]
+libraries = {
+"": SubResource("AnimationLibrary_3pkgn")
+}

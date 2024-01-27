@@ -1,6 +1,7 @@
 extends MarginContainer
 
 @onready var text_box_scene = preload("res://src/dialogue/text_box.tscn")
+@onready var parent_node: Node2D = get_parent().get_parent()
 
 var jsonPath = "res://src/dialogue/jsons/"
 
@@ -8,16 +9,11 @@ var dialog_lines = []
 var current_line_index = 0
 
 var text_box
-var text_box_position = Vector2(1219,250)
+var text_box_position = Vector2(1319,250)
 var user_text_box_position = Vector2(138,750)
 
 var is_dialog_active = false
 var can_advance_line = false
-
-var LinesTimeStamps = {
-	4: ["Line that happens at time 4"],
-	11: ["Line that happens at time 11"]
-}
 
 var dialogueStart = []
 var dialogueMakeup = []
@@ -67,11 +63,6 @@ func _show_text_box():
 	
 	add_child(text_box)
 	
-	#match dialog_lines[current_line_index]["speaker"]:
-		#"char":
-			#text_box.global_position = text_box_position
-		#"user":
-			#text_box.global_position = user_text_box_position
 	match Globals.CurrentGameState:
 		0:
 			text_box.display_text(dialog_lines[current_line_index]["text"])
@@ -84,18 +75,31 @@ func _show_text_box():
 	
 func _on_text_box_finished_displaying():
 	can_advance_line = true
-	await get_tree().create_timer(1.0).timeout
-	text_box.queue_free()
+	
+	if(Globals.CurrentGameState == 1):
+		await get_tree().create_timer(3.0).timeout
+		_next_line()	
+
+func _input(event):
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if Input.is_key_pressed(KEY_SHIFT) and just_pressed and Globals.CurrentGameState != 1 and text_box != null:
+		_next_line()
+
+func _next_line():
+	if (text_box != null):
+		text_box.queue_free()
 	
 	current_line_index += 1		
 	if current_line_index >= dialog_lines.size():
 		is_dialog_active = false
 		current_line_index = 0
+		
+		if (Globals.CurrentGameState == 0):
+			_start_countdown()
 		return
 	
 	_show_text_box()
 	
-	
-	
-	
+func _start_countdown():
+	parent_node._countdown()
 	
