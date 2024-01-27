@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqbvu7hpr7ld7"]
+
+[ext_resource type="Texture2D" uid="uid://dv1nnkekr7vur" path="res://assets/Barnabus/fly.png" id="1_bgorr"]
+[ext_resource type="Script" path="res://src/Monsters/Obstacles/fly.gd" id="2_q35yt"]
+
+[node name="Fly" type="Sprite2D"]
+position = Vector2(332.155, 458)
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("1_bgorr")
+script = ExtResource("2_q35yt")
