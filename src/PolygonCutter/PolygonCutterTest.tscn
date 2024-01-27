@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx16cxgbal8r4"]
+[gd_scene load_steps=5 format=3 uid="uid://bx16cxgbal8r4"]
 
 [ext_resource type="Texture2D" uid="uid://cuywiqsqy6o7q" path="res://assets/R.jpg" id="1_3urcs"]
 [ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="2_avfvt"]
+[ext_resource type="PackedScene" uid="uid://jgxqcf7r8elt" path="res://src/Cursor/TestCursor.tscn" id="3_css3d"]
+[ext_resource type="PackedScene" uid="uid://si8jmklvdabq" path="res://src/Tools/CutterBrush.tscn" id="4_gbrqy"]
 
 [node name="PolygonCutterTest" type="Node2D"]
 
-[node name="CuttablePolygon" type="Polygon2D" parent="."]
+[node name="CuttablePolygon" type="Polygon2D" parent="." node_paths=PackedStringArray("beardRoots")]
 texture = ExtResource("1_3urcs")
 polygon = PackedVector2Array(7, 594, 188, 67, 646, 603)
 script = ExtResource("2_avfvt")
+beardRoots = NodePath("../beardArea/CollisionPolygon2D")
+
+[node name="TestCursor" parent="." instance=ExtResource("3_css3d")]
+position = Vector2(721, 372)
+
+[node name="CutterBrush" parent="TestCursor" instance=ExtResource("4_gbrqy")]
+
+[node name="beardArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="beardArea"]
+polygon = PackedVector2Array(104, 175, 222, 222, 373, 203, 420, 322, 252, 351, 314, 395, 393, 413, 485, 405, 450, 60, 176, 46)
