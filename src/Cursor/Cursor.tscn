@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2jica8njwnl1"]
+[gd_scene load_steps=8 format=3 uid="uid://2jica8njwnl1"]
 
 [ext_resource type="Script" path="res://src/Cursor/Cursor.gd" id="1_s765b"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="2_15k58"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://si8jmklvdabq" path="res://src/Tools/CutterBrush.tscn" id="4_h7xci"]
 [ext_resource type="PackedScene" uid="uid://bmtlmmmgvi1u7" path="res://src/Tools/MakeupLineBrush.tscn" id="5_2jram"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="5_nd7ao"]
+[ext_resource type="PackedScene" uid="uid://bcl1t3per6w27" path="res://src/Tools/MakeupShadowsBrush.tscn" id="7_46361"]
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_s765b")
@@ -30,6 +31,8 @@ right_tool = NodePath("RightTool")
 [node name="MakeupBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_nd7ao")]
 
 [node name="MakeupLineBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_2jram")]
+
+[node name="MakeupShadowsBrush" parent="ToolHolder/LeftTool" instance=ExtResource("7_46361")]
 
 [node name="RightTool" type="Node2D" parent="ToolHolder"]
 
