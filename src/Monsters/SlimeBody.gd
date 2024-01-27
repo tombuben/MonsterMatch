@@ -1,6 +1,5 @@
 extends Sprite2D
 
-@onready var Cursor : Node2D = get_node("/root/Salon/Cursor")
 @onready var LeftIris : Node2D = get_node("LeftEyeSlot/LeftEye/Open/Iris")
 @onready var RightIris : Node2D = get_node("RightEyeSlot/RightEye/Open/Iris")
 
@@ -50,10 +49,14 @@ func _process(delta: float) -> void:
 		elif setup == 3:
 			pass
 	
-	#var MousePos: Vector2 = get_viewport().get_mouse_position()
+	var CursorPos: Vector2 = Vector2(0, 0)
+	var Cursor : Node2D = get_node("/root/Salon/Cursor")
 	if Cursor != null:
-		var CursorPos: Vector2 = Cursor.global_position
-		var LeftToMouse: Vector2 = (LeftIris.global_position - CursorPos).normalized()
-		var RightToMouse: Vector2 = (RightIris.global_position - CursorPos).normalized()
-		LeftIris.position = LeftIrisStartPos - LeftToMouse * 80
-		RightIris.position = RightIrisStartPos - RightToMouse * 120
+		CursorPos = Cursor.global_position
+	else:
+		CursorPos = get_viewport().get_mouse_position()
+		
+	var LeftToMouse: Vector2 = (LeftIris.global_position - CursorPos).normalized()
+	var RightToMouse: Vector2 = (RightIris.global_position - CursorPos).normalized()
+	LeftIris.position = LeftIrisStartPos - LeftToMouse * 80
+	RightIris.position = RightIrisStartPos - RightToMouse * 120

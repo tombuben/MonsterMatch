@@ -25,7 +25,9 @@ func _doState() -> void:
 			Cursor = CursorScene.instantiate()
 			Cursor.global_position = Vector2(600, 400)
 			add_child(Cursor)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		OUTRO:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			remove_child(Cursor)
 			Cursor = null
 		INTERMEZZO:
