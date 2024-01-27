@@ -1,34 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cupldv6vvhyn5"]
+[gd_scene load_steps=2 format=3 uid="uid://cupldv6vvhyn5"]
 
 [ext_resource type="Script" path="res://src/Monsters/base_monster.gd" id="1_641hq"]
-[ext_resource type="Texture2D" uid="uid://dg643nbh708on" path="res://assets/Orc_pirate.png" id="1_ogc68"]
-[ext_resource type="Texture2D" uid="uid://voev2ecysu5x" path="res://assets/PaskaPresOko.png" id="2_3cr3k"]
 
-[node name="Monster" type="Node2D" node_paths=PackedStringArray("BrushContainer", "DrawArea")]
+[node name="BarnabusMonster" type="Node2D" node_paths=PackedStringArray("BrushContainer", "DrawArea")]
 script = ExtResource("1_641hq")
 BrushContainer = NodePath("BrushStrokeContainer")
 DrawArea = NodePath("Polygon2D")
 
 [node name="BrushStrokeContainer" type="Node2D" parent="."]
 
-[node name="HeadBottom" type="Sprite2D" parent="."]
-position = Vector2(1, -501)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_ogc68")
-
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-143, -647, -148, -587, -144, -536, -131, -496, -125, -463, -128, -422, -123, -390, -96, -359, -61, -359, -28, -363, -18, -373, 23, -374, 35, -364, 79, -365, 98, -359, 127, -390, 133, -420, 133, -480, 140, -513, 146, -558, 141, -599, 136, -636, 133, -645, 77, -631, 37, -621, -16, -619, -59, -630, -101, -639)
-
-[node name="EyePatch" type="Sprite2D" parent="."]
-position = Vector2(0, -500.625)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_3cr3k")
-
-[node name="Area2D" type="Area2D" parent="EyePatch"]
-position = Vector2(6.66667, -2.5)
-collision_layer = 512
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyePatch/Area2D"]
-polygon = PackedVector2Array(-1086.67, -813.333, -880, -700, -653.333, -606.667, -393.333, -493.333, -160, -420, 46.6667, -353.333, 80, -240, 206.667, -73.3333, 393.333, 53.3335, 553.333, 126.667, 720, 153.333, 826.667, 140, 906.667, 53.3335, 980, -113.333, 1020, -260, 1093.33, -280, 1100, -380, 1013.33, -373.333, 980, -493.333, 786.667, -606.667, 606.667, -653.333, 473.333, -646.667, 326.667, -613.333, 206.667, -540, 100, -453.333, -120, -526.667, -393.333, -626.667, -606.667, -713.333, -840, -820, -1080, -946.667)

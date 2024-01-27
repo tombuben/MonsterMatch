@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cri726vtnvk0q"]
 
-[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_o8mbq"]
+[ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_33te6"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
@@ -15,8 +15,7 @@ offset_bottom = 1080.0
 mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
-[node name="Monster" parent="." instance=ExtResource("1_o8mbq")]
-position = Vector2(970, 1032)
+[node name="Monster" parent="." instance=ExtResource("1_ucilr")]
 
 [node name="Cursor" parent="." instance=ExtResource("2_ilg5p")]
 position = Vector2(671, 395)

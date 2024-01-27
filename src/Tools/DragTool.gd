@@ -17,7 +17,6 @@ func _ready():
 func _process(delta):
 	match brush_state:
 		IDLE:
-			print(highlighted_item)
 			if Input.is_action_just_pressed("UseToolRight") and highlighted_item != null:
 				brush_state = DRAGGING
 		DRAGGING:

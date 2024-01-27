@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh4yv6ik2l2xy"]
+
+[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
+[ext_resource type="Texture2D" uid="uid://dg643nbh708on" path="res://assets/Orc_pirate.png" id="2_e7ysd"]
+[ext_resource type="Texture2D" uid="uid://voev2ecysu5x" path="res://assets/PaskaPresOko.png" id="3_j6p1u"]
+
+[node name="Monster" instance=ExtResource("1_3oco5")]
+
+[node name="HeadBottom" type="Sprite2D" parent="." index="0"]
+position = Vector2(1024, 568.625)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_e7ysd")
+
+[node name="Polygon2D" parent="." index="2"]
+position = Vector2(1023, 1069.63)
+color = Color(1, 0, 1, 0)
+
+[node name="EyePatch" type="Sprite2D" parent="." index="3"]
+position = Vector2(1023, 569)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_j6p1u")
+
+[node name="Area2D" type="Area2D" parent="EyePatch" index="0"]
+position = Vector2(6.66667, -2.5)
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyePatch/Area2D" index="0"]
+polygon = PackedVector2Array(-1086.67, -813.333, -880, -700, -653.333, -606.667, -393.333, -493.333, -160, -420, 46.6667, -353.333, 80, -240, 206.667, -73.3333, 393.333, 53.3335, 553.333, 126.667, 720, 153.333, 826.667, 140, 906.667, 53.3335, 980, -113.333, 1020, -260, 1093.33, -280, 1100, -380, 1013.33, -373.333, 980, -493.333, 786.667, -606.667, 606.667, -653.333, 473.333, -646.667, 326.667, -613.333, 206.667, -540, 100, -453.333, -120, -526.667, -393.333, -626.667, -606.667, -713.333, -840, -820, -1080, -946.667)
