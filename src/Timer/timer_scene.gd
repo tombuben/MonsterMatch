@@ -2,7 +2,7 @@ extends Control
 
 @onready var label = $Countdown/Label
 
-var timerStart = 30
+var timerStart = 15
 var timerCurrent = 0
 
 signal trigger_dialogue()

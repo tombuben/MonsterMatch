@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=7 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
-[ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
+[ext_resource type="PackedScene" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="PackedScene" uid="uid://y8ux72ol0oh2" path="res://src/Monsters/slime_monster.tscn" id="2_km51p"]
+[ext_resource type="PackedScene" uid="uid://bsxck2vktrnmb" path="res://src/dialogue/dialogue_scene.tscn" id="5_2kn52"]
+[ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
 
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
 MonsterHolder = NodePath("MonsterHolder")
 Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p")])
 CursorScene = ExtResource("2_ilg5p")
+DialogueScene = ExtResource("5_2kn52")
+TimerScene = ExtResource("6_187t4")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 offset_right = 1920.0
