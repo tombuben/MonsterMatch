@@ -16,13 +16,13 @@ func _ready():
 	trigger.add_child(colliderPolygon)
 	
 
-func cut(start_screen_point : Vector2, end_screen_point : Vector2):
+func cut(start_screen_point : Vector2, end_screen_point : Vector2, cut_size : float):
 	var polyline = PackedVector2Array()
 	
 	polyline.append(get_global_transform().affine_inverse() * start_screen_point)
 	polyline.append(get_global_transform().affine_inverse() * end_screen_point)
 	
-	polyline = Geometry2D.offset_polyline(polyline, 2)[0]
+	polyline = Geometry2D.offset_polyline(polyline, cut_size)[0]
 	var cutpolygons = Geometry2D.clip_polygons(polygon, polyline)
 	
 	if len(cutpolygons) == 1:
@@ -39,6 +39,8 @@ func cut(start_screen_point : Vector2, end_screen_point : Vector2):
 			var node = CuttablePolygon.new()
 			node.polygon = newpoly
 			node.texture = texture
+			node.texture_offset = texture_offset
+			node.texture_scale = texture_scale
 			node.beardRoots = beardRoots
 			
 			if len(intersections) == 0:

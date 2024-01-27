@@ -4,6 +4,8 @@ extends Node2D
 enum {IDLE, CUTTING}
 var brush_state = IDLE
 
+@export var cut_size : float = 15
+
 @onready var last_position : Vector2 = global_position
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +29,7 @@ func world_cut():
 		var collider = colliderData["collider"]
 		var parent = collider.get_parent()
 		if parent.has_method("cut"):
-			parent.cut(last_position, global_position)
+			parent.cut(last_position, global_position, cut_size)
 
 func _process(delta):
 	match brush_state:

@@ -1,29 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh4yv6ik2l2xy"]
+[gd_scene load_steps=8 format=3 uid="uid://bh4yv6ik2l2xy"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
-[ext_resource type="Texture2D" uid="uid://dg643nbh708on" path="res://assets/Orc_pirate.png" id="2_e7ysd"]
-[ext_resource type="Texture2D" uid="uid://voev2ecysu5x" path="res://assets/PaskaPresOko.png" id="3_j6p1u"]
+[ext_resource type="Texture2D" uid="uid://b81j5wymr3qrp" path="res://assets/Barnabus/Barnabus_base.png" id="2_hlb8q"]
+[ext_resource type="Texture2D" uid="uid://dsbwu7hno4yi1" path="res://assets/Barnabus/Barnabus_eyes.png" id="3_2aamf"]
+[ext_resource type="Texture2D" uid="uid://do2tftx0t4g0l" path="res://assets/Barnabus/Barnabus_eyes_closed.png" id="4_53heu"]
+[ext_resource type="Texture2D" uid="uid://7bxqyqiqcu74" path="res://assets/Barnabus/Barnabus_hair.png" id="5_x76h7"]
+[ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="6_2n0yj"]
+[ext_resource type="Texture2D" uid="uid://dgi00dhn0xpht" path="res://assets/Barnabus/Barnabus_beard.png" id="7_hc24y"]
 
 [node name="Monster" instance=ExtResource("1_3oco5")]
 
-[node name="HeadBottom" type="Sprite2D" parent="." index="0"]
-position = Vector2(1024, 568.625)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_e7ysd")
+[node name="BarnabusBase" type="Sprite2D" parent="." index="0"]
+position = Vector2(1009, 455)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_hlb8q")
 
-[node name="Polygon2D" parent="." index="2"]
-position = Vector2(1023, 1069.63)
+[node name="Eyes" type="Node2D" parent="." index="1"]
+position = Vector2(1012, 428)
+
+[node name="Open" type="Sprite2D" parent="Eyes" index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_2aamf")
+
+[node name="Closed" type="Sprite2D" parent="Eyes" index="1"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_53heu")
+
+[node name="BrushStrokeContainer" parent="." index="2"]
+position = Vector2(-8, -33)
+
+[node name="Polygon2D" parent="." index="3"]
+position = Vector2(1015, 1036.63)
 color = Color(1, 0, 1, 0)
 
-[node name="EyePatch" type="Sprite2D" parent="." index="3"]
-position = Vector2(1023, 569)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("3_j6p1u")
+[node name="ChestHair" type="Polygon2D" parent="." index="4" node_paths=PackedStringArray("beardRoots")]
+texture = ExtResource("5_x76h7")
+texture_offset = Vector2(127.36, 502.64)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(618, 1078, 625, 1021, 634, 1001, 639, 972, 685, 1000, 719, 1008, 727, 1026, 750, 1028, 758, 1033, 751, 1037, 775, 1059, 792, 1079, 793, 1076, 773, 1054, 754, 1037, 759, 1034, 762, 1033, 765, 1033, 786, 1037, 821, 1055, 848, 1076, 818, 1051, 792, 1033, 772, 1030, 730, 1019, 726, 1007, 687, 994, 642, 969, 695, 923, 762, 951, 791, 983, 804, 997, 812, 1013, 830, 1056, 855, 1077, 833, 1056, 824, 1035, 820, 1010, 823, 1010, 837, 1026, 854, 1041, 870, 1047, 876, 1048, 862, 1042, 849, 1034, 842, 1028, 835, 1021, 826, 1008, 824, 1005, 822, 1003, 814, 1007, 798, 986, 781, 965, 782, 954, 791, 958, 803, 964, 822, 966, 834, 971, 845, 978, 854, 993, 852, 981, 860, 984, 867, 1004, 857, 1003, 842, 1009, 844, 1017, 855, 1030, 873, 1045, 880, 1048, 868, 1036, 859, 1026, 848, 1015, 849, 1013, 862, 1012, 884, 1020, 871, 1003, 877, 1003, 890, 1006, 873, 986, 857, 972, 838, 961, 828, 957, 834, 953, 854, 947, 876, 944, 900, 946, 920, 954, 937, 963, 951, 976, 948, 960, 954, 931, 967, 920, 969, 934, 979, 967, 1001, 987, 1003, 974, 1007, 965, 1011, 964, 1012, 971, 1022, 990, 1030, 971, 1049, 953, 1069, 946, 1071, 951, 1057, 965, 1052, 975, 1049, 985, 1072, 972, 1091, 959, 1100, 948, 1105, 936, 1109, 941, 1109, 959, 1103, 978, 1115, 969, 1137, 959, 1164, 956, 1185, 957, 1219, 966, 1234, 974, 1232, 977, 1227, 976, 1218, 980, 1210, 985, 1200, 997, 1193, 1008, 1191, 1011, 1184, 1020, 1171, 1033, 1184, 1025, 1193, 1016, 1197, 1009, 1197, 1023, 1195, 1032, 1192, 1040, 1187, 1047, 1199, 1045, 1215, 1045, 1223, 1046, 1241, 1053, 1255, 1063, 1254, 1065, 1245, 1065, 1232, 1070, 1215, 1083, 1233, 1082, 1251, 1070, 1262, 1067, 1260, 1060, 1247, 1053, 1240, 1049, 1232, 1043, 1217, 1041, 1211, 1035, 1223, 1033, 1227, 1028, 1237, 1026, 1248, 1006, 1256, 996, 1262, 982, 1256, 979, 1246, 981, 1231, 988, 1220, 992, 1206, 1003, 1204, 1011, 1203, 1018, 1204, 1024, 1210, 1010, 1217, 999, 1226, 994, 1245, 986, 1256, 985, 1254, 990, 1247, 1000, 1237, 1017, 1225, 1027, 1202, 1033, 1201, 1005, 1203, 998, 1206, 995, 1209, 994, 1212, 992, 1221, 983, 1229, 980, 1234, 981, 1241, 978, 1244, 975, 1228, 967, 1196, 954, 1188, 944, 1207, 934, 1241, 924, 1307, 924, 1363, 965, 1398, 997, 1359, 1105, 626, 1100)
+script = ExtResource("6_2n0yj")
+beardRoots = NodePath("../ChestHairRoots/CollisionPolygon2D")
 
-[node name="Area2D" type="Area2D" parent="EyePatch" index="0"]
-position = Vector2(6.66667, -2.5)
-collision_layer = 512
-collision_mask = 0
+[node name="ChestHairRoots" type="Area2D" parent="." index="5"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyePatch/Area2D" index="0"]
-polygon = PackedVector2Array(-1086.67, -813.333, -880, -700, -653.333, -606.667, -393.333, -493.333, -160, -420, 46.6667, -353.333, 80, -240, 206.667, -73.3333, 393.333, 53.3335, 553.333, 126.667, 720, 153.333, 826.667, 140, 906.667, 53.3335, 980, -113.333, 1020, -260, 1093.33, -280, 1100, -380, 1013.33, -373.333, 980, -493.333, 786.667, -606.667, 606.667, -653.333, 473.333, -646.667, 326.667, -613.333, 206.667, -540, 100, -453.333, -120, -526.667, -393.333, -626.667, -606.667, -713.333, -840, -820, -1080, -946.667)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ChestHairRoots" index="0"]
+polygon = PackedVector2Array(621, 1078, 621, 989, 708, 935, 772, 966, 792.859, 985.865, 792, 995, 811, 1015, 818, 1037, 816, 1048, 773, 1024, 758, 1030, 754, 1036, 749, 1039, 768, 1056, 775, 1062, 789, 1076, 853, 1081, 833, 1063, 823, 1050, 821, 1038, 818, 1024, 815, 1014, 817, 1006, 823, 1004, 852, 999, 852, 979, 863, 982, 869, 1003, 840, 1009, 848, 1022, 856, 1030, 863, 1037, 862, 1040, 850, 1035, 840, 1025, 832, 1017, 824, 1008, 819, 1009, 821, 1029, 834, 1062, 856, 1081, 1204, 1073, 1235, 1078, 1268, 1066, 1248, 1054, 1242, 1049, 1229, 1043, 1210, 1041, 1200, 1033, 1202, 1021, 1223, 1029, 1241, 1024, 1241, 1020, 1250, 1006, 1256, 994, 1255, 981, 1231, 988, 1215, 993, 1214, 986, 1229, 979, 1241, 978, 1233, 967, 1218, 955, 1207, 959, 1177, 947, 1220, 924, 1309, 920, 1401, 974, 1416, 1047, 1389, 1122, 750, 1116)
+
+[node name="Eyebrows" type="Polygon2D" parent="." index="6" node_paths=PackedStringArray("beardRoots")]
+texture = ExtResource("5_x76h7")
+texture_offset = Vector2(125, 500)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(805, 318, 802, 339, 822, 335, 797, 361, 785, 386, 821, 379, 822, 395, 865, 384, 929, 386, 975, 404, 1028, 399, 1045, 398, 1057, 403, 1120, 386, 1167, 381, 1216, 393, 1208, 375, 1226, 378, 1256, 391, 1246, 365, 1221, 340, 1261, 352, 1241, 328, 1215, 316, 1191, 316, 1169, 315, 1173, 288, 1148, 312, 1104, 326, 1079, 344, 1064, 362, 1072, 342, 1061, 347, 1049, 362, 1038, 350, 1036, 375, 1041, 395, 1001, 394, 1007, 362, 991, 371, 968, 345, 956, 323, 949, 327, 949, 345, 911, 324, 884, 314, 867, 297, 860, 316)
+script = ExtResource("6_2n0yj")
+beardRoots = NodePath("../EyebrowRoots/CollisionPolygon2D")
+
+[node name="EyebrowRoots" type="Area2D" parent="." index="7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EyebrowRoots" index="0"]
+polygon = PackedVector2Array(952, 396, 927, 388, 932, 379, 966, 391, 983, 386, 998, 362, 1009, 359, 1003, 392, 1037, 392, 1030, 368, 1049, 373, 1060, 391, 1092, 385, 1115, 377, 1118, 385, 1066, 412, 993, 412)
+
+[node name="Beard" type="Polygon2D" parent="." index="8" node_paths=PackedStringArray("beardRoots")]
+texture = ExtResource("7_hc24y")
+texture_offset = Vector2(114.205, -35.2)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(815, 726, 805, 706, 793, 658, 793, 636, 792, 619, 800, 585, 814, 554, 824, 539, 810, 543, 795, 543, 803, 533, 810, 527, 817, 517, 827, 500, 821, 495, 831, 481, 823, 477, 831, 469, 837, 456, 843, 457, 856, 480, 854, 520, 855, 540, 856, 580, 860, 600, 894, 631, 964, 627, 1005, 614, 1060, 622, 1124, 623, 1167, 582, 1182, 466, 1201, 466, 1214, 495, 1203, 504, 1217, 517, 1208, 530, 1235, 560, 1249, 635, 1230, 623, 1239, 652, 1234, 700, 1198, 757, 1175, 767, 1158, 809, 1147, 788, 1118, 820, 1087, 837, 1057, 858, 1039, 885, 1039, 869, 1034, 883, 994, 855, 960, 837, 940, 822, 955, 842, 902, 813, 859, 778, 843, 759, 824, 732, 817, 703)
+script = ExtResource("6_2n0yj")
+beardRoots = NodePath("../BeardRoots/CollisionPolygon2D")
+
+[node name="BeardRoots" type="Area2D" parent="." index="9"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BeardRoots" index="0"]
+polygon = PackedVector2Array(844, 623, 920, 670, 1040, 684, 1132, 667, 1186, 626, 1208, 564, 1211, 468, 1178, 458, 1169, 524, 1161, 579, 1121, 618, 1047, 616, 986, 608, 944, 623, 888, 621, 860, 593, 856, 525, 860, 462, 838, 452, 826, 454, 830, 479, 831, 541, 835, 588)
