@@ -1,0 +1,26 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Ahoy, matey! Sorry about the flies, they seem to follow me everywhere."
+	},
+	{
+	  "speaker": "user",
+	  "text": "No worries. What can I do ya for?"
+	},
+	{
+	  "speaker": "char",
+	  "text": "I have a date, I can’t believe it. You have to make me as different as you can."
+	},
+	{
+	  "speaker": "char",
+	  "text": "Nobody liked this old noggin’ so far, so I want you to make it different. Shave me, color me, the whole shebang!"
+	},
+	{
+	  "speaker": "user",
+	  "text": "Are you sure? It sounds a bit drastic for your first time."
+	},
+	{
+	  "speaker": "char",
+	  "text": "Go all out, I really want to impress this gal. I have no experience with makeup so I completely trust you!"
+	}
+  ]

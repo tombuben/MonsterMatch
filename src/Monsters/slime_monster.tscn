@@ -1,50 +1,77 @@
-[gd_scene load_steps=11 format=3 uid="uid://ha3sfx0q7vhg"]
+[gd_scene load_steps=14 format=3 uid="uid://y8ux72ol0oh2"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_hd2cv"]
-[ext_resource type="Texture2D" uid="uid://bnhk1l7sqogxh" path="res://assets/slime/slime_body.png" id="2_2u153"]
+[ext_resource type="Texture2D" uid="uid://bmrnd274hdmo8" path="res://assets/slime/slime_base.png" id="2_kvfoh"]
 [ext_resource type="Texture2D" uid="uid://b0sqkgyfaqt0i" path="res://assets/slime/slime_eye_right.png" id="3_toyp8"]
 [ext_resource type="Script" path="res://src/Monsters/SlimeBody.gd" id="3_vxca4"]
-[ext_resource type="Texture2D" uid="uid://dvt7ndb14i4p2" path="res://assets/slime/slime_eye_iris.png" id="4_nqkfm"]
+[ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="3_xehma"]
+[ext_resource type="Texture2D" uid="uid://drihe4a7f2bao" path="res://assets/slime/slime_arms.png" id="4_yq0jo"]
 [ext_resource type="Texture2D" uid="uid://cyg26tnha0xnn" path="res://assets/slime/slime_eye_left.png" id="5_gernd"]
+[ext_resource type="Texture2D" uid="uid://bmy4t00wyi2ia" path="res://assets/slime/slime_lentil_right.png" id="5_n7w6j"]
 [ext_resource type="Texture2D" uid="uid://c48fq8gjsuenn" path="res://assets/slime/slime_mouth.png" id="6_wiwn2"]
+[ext_resource type="Texture2D" uid="uid://bpdkpriuc7ura" path="res://assets/slime/slime_lentil_left.png" id="7_4k72b"]
 
 [sub_resource type="Animation" id="Animation_37pcc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mouth:position")
+tracks/0/path = NodePath("MouthSlot/Mouth:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-286.667, 733.333)]
+"values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RightEye:position")
+tracks/1/path = NodePath("RightEyeSlot/RightEye:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(826.667, 26.6667)]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LeftEye:position")
+tracks/2/path = NodePath("LeftEyeSlot/LeftEye:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-560, -366.667)]
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArmLeftSlot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1903.5, 2416), Vector2(-700.5, 1832)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ArmRightSlot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1903.5, 2416), Vector2(659.5, 2024)]
 }
 
 [sub_resource type="Animation" id="Animation_d3udd"]
@@ -54,7 +81,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mouth:position")
+tracks/0/path = NodePath("MouthSlot:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,7 +93,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RightEye:position")
+tracks/1/path = NodePath("RightEyeSlot:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -78,7 +105,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("LeftEye:position")
+tracks/2/path = NodePath("LeftEyeSlot:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -86,6 +113,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-560, -366.667), Vector2(-646.667, -480), Vector2(-473.333, -440), Vector2(-453.333, -280), Vector2(-560, -366.667)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArmLeftSlot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-752.5, 1932), Vector2(-432.5, 1692), Vector2(-716.5, 1788), Vector2(-660.5, 1972), Vector2(-624.5, 1972)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ArmRightSlot:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(691.5, 2124), Vector2(275.5, 1912), Vector2(639.5, 2016), Vector2(631.5, 1804), Vector2(207.5, 2168)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ahw8q"]
@@ -96,38 +147,100 @@ _data = {
 
 [node name="Monster" instance=ExtResource("1_hd2cv")]
 
-[node name="SlimeBody" type="Sprite2D" parent="." index="0"]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_2u153")
+[node name="CuttablePolygon" type="Polygon2D" parent="." index="0" node_paths=PackedStringArray("beardRoots")]
+texture = ExtResource("2_kvfoh")
+texture_offset = Vector2(422.56, 157.655)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(641, 1094, 629, 890, 658, 686, 673, 629, 685, 486, 701, 428, 726, 359, 773, 277, 832, 212, 897, 172, 961, 144, 1016, 132, 1081, 140, 1144, 158, 1195, 194, 1249, 260, 1278, 315, 1299, 406, 1297, 495, 1284, 586, 1265, 676, 1282, 759, 1305, 846, 1330, 949, 1345, 1086)
+script = ExtResource("3_xehma")
+beardRoots = NodePath("../CuttableSolid/CollisionPolygon2D")
 
+<<<<<<< HEAD
 [node name="Polygon2D" parent="." index="1"]
+=======
+[node name="SolidMaterial" type="Polygon2D" parent="." index="1"]
+texture = ExtResource("2_kvfoh")
+texture_offset = Vector2(422.56, 157.655)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(700, 1093, 684, 988, 700, 795, 732, 671, 729, 594, 751, 476, 794, 367, 835, 277, 900, 223, 964, 190, 1028, 182, 1095, 194, 1167, 216, 1204, 254, 1233, 298, 1247, 342, 1256, 403, 1257, 476, 1248, 555, 1233, 622, 1215, 697, 1237, 782, 1260, 868, 1273, 944, 1288, 1087)
+
+[node name="CuttableSolid" type="Area2D" parent="." index="2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CuttableSolid" index="0"]
+polygon = PackedVector2Array(699, 1087, 683, 1013, 689, 897, 707, 774, 726, 687, 731, 672, 731, 591, 751, 483, 776, 411, 838, 280, 900, 224, 966, 189, 1028, 182, 1092, 196, 1126, 205, 1170, 220, 1204, 253, 1227, 285, 1245, 330, 1255, 383, 1255, 436, 1252, 525, 1235, 618, 1215, 697, 1249, 830, 1270, 946, 1287, 1055, 1292, 1119)
+
+[node name="SlimeBody" type="Sprite2D" parent="." index="3"]
+visible = false
+position = Vector2(980.125, 470)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kvfoh")
+
+[node name="Polygon2D" parent="." index="4"]
+position = Vector2(980.125, 470)
+>>>>>>> 615ff21da027523101999cd2bca1c419b884cd29
 polygon = PackedVector2Array(102, -253, 37, -264, -33, -248, -102, -208, -161, -154, -206, -75, -224, 8, -239, 91, -248, 154, -235, 208, -161, 225, -60, 243, 17, 259, 104, 268, 183, 275, 241, 259, 221, 181, 232, 100, 245, 12, 250, -69, 228, -145, 192, -199, 140, -235)
 
-[node name="SlimeTopLayers" type="Sprite2D" parent="." index="3"]
-scale = Vector2(0.15, 0.15)
+[node name="BrushStrokeContainer" parent="." index="5"]
+position = Vector2(944.875, 682)
+
+[node name="SlimeTopLayers" type="Sprite2D" parent="." index="6"]
+position = Vector2(980.125, 470)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("3_vxca4")
 
-[node name="RightEye" type="Sprite2D" parent="SlimeTopLayers" index="0"]
-position = Vector2(826.667, 26.6667)
+[node name="RightEyeSlot" type="Node2D" parent="SlimeTopLayers" index="0"]
+position = Vector2(773.956, -50.654)
+
+[node name="RightEye" type="Sprite2D" parent="SlimeTopLayers/RightEyeSlot" index="0"]
 texture = ExtResource("3_toyp8")
 
-[node name="Iris" type="Sprite2D" parent="SlimeTopLayers/RightEye" index="0"]
-position = Vector2(33.3333, 46.6667)
-texture = ExtResource("4_nqkfm")
+[node name="Open" type="Node2D" parent="SlimeTopLayers/RightEyeSlot/RightEye" index="0"]
 
-[node name="LeftEye" type="Sprite2D" parent="SlimeTopLayers" index="1"]
-position = Vector2(-560, -366.667)
+[node name="Iris" type="Sprite2D" parent="SlimeTopLayers/RightEyeSlot/RightEye/Open" index="0"]
+position = Vector2(33.3333, 46.6667)
+texture = ExtResource("5_n7w6j")
+
+[node name="LeftEyeSlot" type="Node2D" parent="SlimeTopLayers" index="1"]
+position = Vector2(-603.471, -470.032)
+
+[node name="LeftEye" type="Sprite2D" parent="SlimeTopLayers/LeftEyeSlot" index="0"]
 texture = ExtResource("5_gernd")
 
-[node name="Iris" type="Sprite2D" parent="SlimeTopLayers/LeftEye" index="0"]
-position = Vector2(60, -33.3333)
-texture = ExtResource("4_nqkfm")
+[node name="Open" type="Node2D" parent="SlimeTopLayers/LeftEyeSlot/LeftEye" index="0"]
 
-[node name="Mouth" type="Sprite2D" parent="SlimeTopLayers" index="2"]
-position = Vector2(-286.667, 733.333)
+[node name="Iris" type="Sprite2D" parent="SlimeTopLayers/LeftEyeSlot/LeftEye/Open" index="0"]
+position = Vector2(60, -33.3333)
+texture = ExtResource("7_4k72b")
+
+[node name="MouthSlot" type="Node2D" parent="SlimeTopLayers" index="2"]
+position = Vector2(-150.68, 771.514)
+
+[node name="Mouth" type="Sprite2D" parent="SlimeTopLayers/MouthSlot" index="0"]
 texture = ExtResource("6_wiwn2")
 
-[node name="SlimeAnimationPlayer" type="AnimationPlayer" parent="SlimeTopLayers" index="3"]
+[node name="ArmLeftSlot" type="Node2D" parent="SlimeTopLayers" index="3"]
+position = Vector2(1903.5, 2416)
+
+[node name="LeftArm" type="Node2D" parent="SlimeTopLayers/ArmLeftSlot" index="0"]
+position = Vector2(-88, 216)
+
+[node name="LeftArmPoly" type="Polygon2D" parent="SlimeTopLayers/ArmLeftSlot/LeftArm" index="0"]
+position = Vector2(2780, 304)
+texture = ExtResource("4_yq0jo")
+polygon = PackedVector2Array(-3088.5, 24, -3180.5, -772, -2240.5, -872, -2040.5, -492, -2368.5, -88)
+
+[node name="ArmRightSlot" type="Node2D" parent="SlimeTopLayers" index="4"]
+position = Vector2(1903.5, 2416)
+
+[node name="RightArm" type="Node2D" parent="SlimeTopLayers/ArmRightSlot" index="0"]
+position = Vector2(216, 63.9998)
+
+[node name="RightArmPoly" type="Polygon2D" parent="SlimeTopLayers/ArmRightSlot/RightArm" index="0"]
+position = Vector2(1068, 344)
+texture = ExtResource("4_yq0jo")
+polygon = PackedVector2Array(-1768, -272, -1856, -944, -1008, -1008, -752, -512, -744, -36)
+
+[node name="SlimeAnimationPlayer" type="AnimationPlayer" parent="SlimeTopLayers" index="5"]
 libraries = {
 "": SubResource("AnimationLibrary_ahw8q")
 }

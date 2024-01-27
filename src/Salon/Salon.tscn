@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=5 format=3 uid="uid://cri726vtnvk0q"]
 
+[ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
-[ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_33te6"]
-[ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
-[ext_resource type="PackedScene" uid="uid://c425npey2td8r" path="res://src/Tools/DragTool.tscn" id="4_q7u7u"]
-[ext_resource type="PackedScene" uid="uid://si8jmklvdabq" path="res://src/Tools/CutterBrush.tscn" id="4_xbqhy"]
+[ext_resource type="PackedScene" uid="uid://y8ux72ol0oh2" path="res://src/Monsters/slime_monster.tscn" id="2_km51p"]
 
-[node name="Salon" type="Node2D"]
+[node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
+script = ExtResource("1_rvt7j")
+MonsterHolder = NodePath("MonsterHolder")
+Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p")])
+CursorScene = ExtResource("2_ilg5p")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 offset_right = 1920.0
@@ -15,39 +17,4 @@ offset_bottom = 1080.0
 mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
-[node name="Monster" parent="." instance=ExtResource("1_ucilr")]
-
-[node name="Cursor" parent="." instance=ExtResource("2_ilg5p")]
-position = Vector2(671, 395)
-
-[node name="ToolHolder" type="Node2D" parent="Cursor" node_paths=PackedStringArray("up_tool", "down_tool", "left_tool", "right_tool")]
-script = ExtResource("3_33te6")
-up_tool = NodePath("UpTool")
-down_tool = NodePath("DownTool")
-left_tool = NodePath("LeftTool")
-right_tool = NodePath("RightTool")
-
-[node name="UpTool" type="Node2D" parent="Cursor/ToolHolder"]
-
-[node name="DragTool" parent="Cursor/ToolHolder/UpTool" instance=ExtResource("4_q7u7u")]
-
-[node name="DownTool" type="Node2D" parent="Cursor/ToolHolder"]
-visible = false
-
-[node name="CutterBrush" parent="Cursor/ToolHolder/DownTool" instance=ExtResource("4_xbqhy")]
-
-[node name="LeftTool" type="Node2D" parent="Cursor/ToolHolder"]
-visible = false
-
-[node name="MakeupBrush" parent="Cursor/ToolHolder/LeftTool" instance=ExtResource("3_l5x4e")]
-
-[node name="RightTool" type="Node2D" parent="Cursor/ToolHolder"]
-
-[node name="MakeupBrush" parent="Cursor/ToolHolder/RightTool" instance=ExtResource("3_l5x4e")]
-visible = false
-is_erase_brush = true
-
-[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/RightTool"]
-position = Vector2(96, 81)
-color = Color(1, 0.372549, 0.631373, 1)
-polygon = PackedVector2Array(-66, 87, -94, -79, 25, -72, 85, 59)
+[node name="MonsterHolder" type="Node2D" parent="."]
