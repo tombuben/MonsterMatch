@@ -57,12 +57,12 @@ func _unhandled_input(event):
 func _moveCursor(Velocity: Vector2, Sensitivity: float, DeltaTime: float):
 	var CurrentVelocity: Vector2 = Vector2(Velocity.x * Sensitivity * DeltaTime, Velocity.y * Sensitivity * DeltaTime)
 	CurrentVelocity = _clampCursorVelocity(CurrentVelocity)
-	RootNode.position += CurrentVelocity
+	position += CurrentVelocity
 	
 	# Clamp to viewport when using controller
 	var ViewPortSize : Vector2 = get_viewport().get_visible_rect().size
-	RootNode.position.x = clamp(RootNode.position.x, 0, ViewPortSize.x)
-	RootNode.position.y = clamp(RootNode.position.y, 0, ViewPortSize.y)
+	position.x = clamp(position.x, 0, ViewPortSize.x)
+	position.y = clamp(position.y, 0, ViewPortSize.y)
 
 func _processMouse(DeltaTime: float) -> Vector2:
 	var MousePos: Vector2 = get_viewport().get_mouse_position()
