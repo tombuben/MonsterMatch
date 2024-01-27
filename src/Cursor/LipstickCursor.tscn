@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xkndbwn5lpbd"]
+
+[ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="1_lfxoe"]
+[ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="2_fbqpg"]
+
+[node name="LipstickCursor" type="Node2D"]
+
+[node name="Cursor" parent="." node_paths=PackedStringArray("RootNode") instance=ExtResource("1_lfxoe")]
+RootNode = NodePath("..")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_fbqpg")
+expand_mode = 1
