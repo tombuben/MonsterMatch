@@ -2,6 +2,7 @@ extends Node2D
 
 @export var BrushContainer : Node2D
 @export var DrawArea : Polygon2D
+@export var MonsterEnum : Globals.MonsterTypeEnum
 
 @onready var DrawValidityMatrix : ValidityMatrix = %DrawValidityMatrix
 
@@ -10,6 +11,7 @@ func _ready() -> void:
 	Globals.BrushContainer = BrushContainer
 	Globals.DrawArea = DrawArea
 	Globals.DrawValidityMatrix = DrawValidityMatrix
+	Globals.CurrentMonster = MonsterEnum
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
