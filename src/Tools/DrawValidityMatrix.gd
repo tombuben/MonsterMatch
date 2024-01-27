@@ -1,13 +1,16 @@
 extends TileMap
 class_name ValidityMatrix
 
-
-#func _process(delta):
-	#if Input.is_action_pressed("UseToolRight"):
-		#add_cell(get_global_mouse_position())
-
-
 func add_cell(pos: Vector2):
 	var map_pos : Vector2i = local_to_map(to_local(pos))
 	set_cell(0, map_pos, 1, Vector2i(0, 0), 1)
-	
+
+func remove_cell(pos: Vector2):
+	var map_pos : Vector2i = local_to_map(to_local(pos))
+	erase_cell(0, map_pos)
+	#set_cell(0, map_pos, 1, Vector2i(0, 0), 0)
+	# Neighbors
+	#set_cell(0, map_pos + Vector2i.UP, 1, Vector2i(0, 0), 0)
+	#set_cell(0, map_pos + Vector2i.DOWN, 1, Vector2i(0, 0), 0)
+	#set_cell(0, map_pos + Vector2i.LEFT, 1, Vector2i(0, 0), 0)
+	#set_cell(0, map_pos + Vector2i.RIGHT, 1, Vector2i(0, 0), 0)

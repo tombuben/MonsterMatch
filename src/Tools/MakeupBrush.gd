@@ -40,9 +40,11 @@ func _process(delta):
 						brush_stroke_container.add_child(last_brush_stroke)
 					
 						var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
-					
+						
+						#Draw logic
 						last_brush_stroke.add_point(drawing_position)
 						last_brush_stroke.add_point(drawing_position + Vector2.RIGHT)
+						validity_matrix.add_cell(global_position)
 					
 						last_point_pos = drawing_position
 				
@@ -57,6 +59,7 @@ func _process(delta):
 			var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
 			
 			if last_point_pos.distance_to(drawing_position) > point_distance_diff:
+				#Draw logic 
 				last_brush_stroke.add_point(drawing_position)
 				last_point_pos = drawing_position
 				validity_matrix.add_cell(global_position)
@@ -107,6 +110,8 @@ func _process(delta):
 						right_brush_stroke.add_point(closest_brush_stroke.points[i])
 						
 				brush_stroke_container.remove_child(closest_brush_stroke)
+			
+			validity_matrix.remove_cell(global_position)
 
 			if Input.is_action_just_released("UseToolRight"):
 				brush_state = IDLE
