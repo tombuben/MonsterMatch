@@ -16,6 +16,8 @@ extends Node2D
 @export var CursorSpeed: float = 1200
 @export var CursorMaxSpeed: float = 1800
 
+@export var ShakyHandIntensity: float = 0.1
+
 const MouseTestTolerance: float = 0.01
 
 var CursorVelocity: Vector2 = Vector2(0, 0)
@@ -103,6 +105,14 @@ func _process(DeltaTime: float):
 		
 	#print(Velocity.length())
 		
+	if Globals.ShakyHands:
+		Velocity.x += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
+		Velocity.y += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
+
+	if Globals.InvertedControls:
+		Velocity.x = -Velocity.x
+		Velocity.y = -Velocity.y
+
 	_moveCursor(Velocity, DeltaTime)
 	
 	MouseDelta = Vector2(0, 0)
