@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvt7ndb14i4p2"
-path="res://.godot/imported/slime_eye_iris.png-e4ff483cce0818be6f12c8bc2942c97d.ctex"
+uid="uid://bmrnd274hdmo8"
+path="res://.godot/imported/slime_base.png-6bed882c91e14d33601c4b9c52335819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/slime/slime_eye_iris.png"
-dest_files=["res://.godot/imported/slime_eye_iris.png-e4ff483cce0818be6f12c8bc2942c97d.ctex"]
+source_file="res://assets/slime/slime_base.png"
+dest_files=["res://.godot/imported/slime_base.png-6bed882c91e14d33601c4b9c52335819.ctex"]
 
 [params]
 
