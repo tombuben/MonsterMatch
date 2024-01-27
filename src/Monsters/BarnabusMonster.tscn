@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh4yv6ik2l2xy"]
+[gd_scene load_steps=10 format=3 uid="uid://bh4yv6ik2l2xy"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
 [ext_resource type="Texture2D" uid="uid://b81j5wymr3qrp" path="res://assets/Barnabus/Barnabus_base.png" id="2_hlb8q"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://7bxqyqiqcu74" path="res://assets/Barnabus/Barnabus_hair.png" id="5_x76h7"]
 [ext_resource type="Script" path="res://src/PolygonCutter/CuttablePolygon.gd" id="6_2n0yj"]
 [ext_resource type="Texture2D" uid="uid://dgi00dhn0xpht" path="res://assets/Barnabus/Barnabus_beard.png" id="7_hc24y"]
+[ext_resource type="Texture2D" uid="uid://dxlt5nsqgl5fq" path="res://assets/Barnabus/Barnabus_hat.png" id="8_2oix0"]
+[ext_resource type="Texture2D" uid="uid://byhy1uyty118q" path="res://assets/Barnabus/Barnabus_patch.png" id="9_eiydd"]
 
 [node name="Monster" instance=ExtResource("1_3oco5")]
 
@@ -32,6 +34,7 @@ position = Vector2(-8, -33)
 [node name="Polygon2D" parent="." index="3"]
 position = Vector2(1015, 1036.63)
 color = Color(1, 0, 1, 0)
+polygon = PackedVector2Array(-192, -698.63, -183, -586.63, -180, -516.63, -180, -461.63, -175, -403.63, -150, -374.63, -127, -354.63, -91, -338.63, -64, -328.63, -31, -320.63, 1, -313.63, 31, -321.63, 58, -335.63, 83, -342.63, 110, -351.63, 148, -372.63, 172, -399.63, 178, -467.63, 174, -515.63, 174, -547.63, 174, -585.63, 186, -633.63, 182, -753.63, 142, -851.63, 92, -881.63, -9, -895.63, -108, -874.63, -180, -798.63)
 
 [node name="ChestHair" type="Polygon2D" parent="." index="4" node_paths=PackedStringArray("beardRoots")]
 texture = ExtResource("5_x76h7")
@@ -71,3 +74,29 @@ beardRoots = NodePath("../BeardRoots/CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BeardRoots" index="0"]
 polygon = PackedVector2Array(844, 623, 920, 670, 1040, 684, 1132, 667, 1186, 626, 1208, 564, 1211, 468, 1178, 458, 1169, 524, 1161, 579, 1121, 618, 1047, 616, 986, 608, 944, 623, 888, 621, 860, 593, 856, 525, 860, 462, 838, 452, 826, 454, 830, 479, 831, 541, 835, 588)
+
+[node name="Hat" type="RigidBody2D" parent="." index="10"]
+position = Vector2(1011, 135)
+collision_layer = 512
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Hat" index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_2oix0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hat" index="1"]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(-1000, 464, -1216, 272, -1376, 60, -1416, -56, -1196, -60, -1024, -44, -868, -80, -752, -196, -620, -384, -460, -564, -308, -648, -208, -672, -120, -672, -44, -648, -32, -600, -24, -512, 12, -496, 36, -648, 108, -668, 204, -672, 328, -648, 508, -528, 628, -380, 724, -216, 816, -136, 968, -48, 1164, -56, 1332, -56, 1412, -52, 1392, 28, 1304, 168, 1160, 332, 1000, 472, 908, 512, 816, 528, 772, 512, 668, 524, 484, 556, 312, 604, 104, 656, -32, 672, -196, 624, -368, 580, -552, 536, -712, 516, -792, 516, -876, 524)
+
+[node name="Patch" type="RigidBody2D" parent="." index="11"]
+position = Vector2(1012, 385)
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Patch" index="0"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_eiydd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Patch" index="1"]
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(88, 172, 156, 248, 272, 332, 396, 388, 484, 408, 596, 404, 644, 380, 716, 252, 760, 104, 816, 88, 828, 12, 760, 16, 728, -76, 596, -152, 468, -192, 336, -184, 216, -148, 120, -88, 68, -36, -160, -124, -364, -200, -508, -264, -640, -316, -716, -364, -812, -416, -820, -380, -824, -316, -752, -268, -600, -196, -388, -100, -252, -56, -80, -8, 32, 36, 44, 104)
