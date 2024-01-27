@@ -155,9 +155,6 @@ polygon = PackedVector2Array(641, 1094, 629, 890, 658, 686, 673, 629, 685, 486, 
 script = ExtResource("3_xehma")
 beardRoots = NodePath("../CuttableSolid/CollisionPolygon2D")
 
-<<<<<<< HEAD
-[node name="Polygon2D" parent="." index="1"]
-=======
 [node name="SolidMaterial" type="Polygon2D" parent="." index="1"]
 texture = ExtResource("2_kvfoh")
 texture_offset = Vector2(422.56, 157.655)
@@ -177,7 +174,6 @@ texture = ExtResource("2_kvfoh")
 
 [node name="Polygon2D" parent="." index="4"]
 position = Vector2(980.125, 470)
->>>>>>> 615ff21da027523101999cd2bca1c419b884cd29
 polygon = PackedVector2Array(102, -253, 37, -264, -33, -248, -102, -208, -161, -154, -206, -75, -224, 8, -239, 91, -248, 154, -235, 208, -161, 225, -60, 243, 17, 259, 104, 268, 183, 275, 241, 259, 221, 181, 232, 100, 245, 12, 250, -69, 228, -145, 192, -199, 140, -235)
 
 [node name="BrushStrokeContainer" parent="." index="5"]
