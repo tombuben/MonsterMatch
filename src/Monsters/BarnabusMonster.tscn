@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://byhy1uyty118q" path="res://assets/Barnabus/Barnabus_patch.png" id="9_eiydd"]
 
 [node name="Monster" instance=ExtResource("1_3oco5")]
+MonsterEnum = 1
 
 [node name="BarnabusBase" type="Sprite2D" parent="." index="0"]
 position = Vector2(1009, 455)
