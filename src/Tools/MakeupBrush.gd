@@ -65,6 +65,9 @@ func _process(delta):
 			var breaking: bool = false
 			var brush_strokes = brush_stroke_container.get_children()
 			for brush_stroke in brush_strokes:
+				if len(brush_stroke.points) <= 1:
+						brush_stroke_container.remove_child(brush_stroke)
+						continue
 				for i in len(brush_stroke.points):
 					if _isPointCloseToCursor(brush_stroke.points[i]):
 						closest_brush_stroke = brush_stroke
@@ -75,11 +78,8 @@ func _process(delta):
 						break
 				
 			if closest_brush_stroke != null:
-				if len(closest_brush_stroke.points) == 1:
+				if len(closest_brush_stroke.points) <= 3:
 					brush_stroke_container.remove_child(closest_brush_stroke)
-					return
-				elif len(closest_brush_stroke.points) == 2:
-					closest_brush_stroke.remove_point(closest_point_index)
 					return
 				
 				var left_brush_stroke = BRUSH_STROKE.instantiate()
