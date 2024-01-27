@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://src/Singletons/Globals.gd"
 DialogManager="*res://src/Singletons/DialogManager.gd"
+ValidationServer="*res://src/Singletons/ValidationServer.gd"
 
 [display]
 
@@ -107,6 +108,11 @@ SelectRightTool={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+LuckaSwapMakeupBrush={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":71,"key_label":0,"unicode":103,"echo":false,"script":null)
 ]
 }
 LuckaDebugButton={
