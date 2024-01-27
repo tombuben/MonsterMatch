@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cri726vtnvk0q"]
+
+[ext_resource type="Texture2D" uid="uid://8wmef72i15c3" path="res://assets/bean.png" id="1_mj5as"]
+[ext_resource type="PackedScene" uid="uid://xkndbwn5lpbd" path="res://src/Cursor/LipstickCursor.tscn" id="2_kk5tb"]
+[ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
+
+[node name="Salon" type="Node2D"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.313726, 0.141176, 0.184314, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Monster" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_mj5as")
+
+[node name="Container" type="Node2D" parent="."]
+
+[node name="LipstickCursor" parent="." instance=ExtResource("2_kk5tb")]
+position = Vector2(815, 423)
+
+[node name="MakeupBrush" parent="LipstickCursor" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
+show_behind_parent = true
+position = Vector2(9, 4)
+brush_stroke_container = NodePath("../../Container")
+draw_area = NodePath("../../Polygon2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(1131, 687, 1146, 616, 1155, 538, 1144, 466, 1114, 413, 1069, 387, 1022, 367, 976, 366, 928, 383, 886, 413, 855, 441, 832, 485, 810, 530, 797, 591, 792, 634, 793, 677, 797, 717, 825, 768, 885, 791, 956, 797, 1028, 783, 1076, 756, 1111, 715)

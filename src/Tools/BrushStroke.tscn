@@ -1,7 +1,16 @@
-[gd_scene format=3 uid="uid://cirp6h7oof6ov"]
+[gd_scene load_steps=3 format=3 uid="uid://cirp6h7oof6ov"]
+
+[sub_resource type="Gradient" id="Gradient_mlcco"]
+offsets = PackedFloat32Array(0, 0.384354, 0.602041, 1)
+colors = PackedColorArray(0.894922, 0.894922, 0.894922, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.894118, 0.894118, 0.894118, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lak3m"]
+gradient = SubResource("Gradient_mlcco")
 
 [node name="BrushStroke" type="Line2D"]
-width = 45.0
-default_color = Color(0.784314, 0.501961, 0.941176, 1)
+width = 30.0
+default_color = Color(0.709804, 0.992157, 0.988235, 1)
+texture = SubResource("GradientTexture1D_lak3m")
+texture_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2

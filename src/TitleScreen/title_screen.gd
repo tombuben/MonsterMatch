@@ -15,4 +15,4 @@ func _on_quit_button_button_up():
 
 
 func _on_play_button_button_up():
-	get_tree().change_scene_to_file("res://src/Cursor/CursorTestScene.tscn")
+	get_tree().change_scene_to_file("res://src/Salon/Salon.tscn")
