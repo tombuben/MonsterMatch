@@ -18,10 +18,15 @@ extends Node2D
 
 @export var ShakyHandIntensity: float = 0.1
 
-const MouseTestTolerance: float = 0.01
+@export var DynamicSensitivityRange: Vector2 = Vector2(-800, +1800)
+
+const Tolerance: float = 0.01
 
 var CursorVelocity: Vector2 = Vector2(0, 0)
 var MouseDelta: Vector2 = Vector2(0, 0)
+
+var CurrentDynamicSensitivity: float = 0
+var DynamicSensitivityTarget: float = 0
 
 func _clampCursorVelocity(Velocity: Vector2):
 	var ClampedVelocity : Vector2
@@ -49,8 +54,8 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		MouseDelta = event.relative
 
-func _moveCursor(Velocity: Vector2, DeltaTime: float):
-	var CurrentVelocity: Vector2 = Vector2(Velocity.x * CursorSpeed * DeltaTime, Velocity.y * CursorSpeed * DeltaTime)
+func _moveCursor(Velocity: Vector2, Sensitivity: float, DeltaTime: float):
+	var CurrentVelocity: Vector2 = Vector2(Velocity.x * Sensitivity * DeltaTime, Velocity.y * Sensitivity * DeltaTime)
 	CurrentVelocity = _clampCursorVelocity(CurrentVelocity)
 	RootNode.position += CurrentVelocity
 	
@@ -93,7 +98,7 @@ func _processController(DeltaTime: float) -> Vector2:
 	return CurrentCursorVelocity
 
 func _process(DeltaTime: float):
-	var UsingMouse: bool = MouseDelta.length() > MouseTestTolerance
+	var UsingMouse: bool = MouseDelta.length() > Tolerance
 	
 	# TODO keys
 	
@@ -113,6 +118,16 @@ func _process(DeltaTime: float):
 		Velocity.x = -Velocity.x
 		Velocity.y = -Velocity.y
 
-	_moveCursor(Velocity, DeltaTime)
+	var Sensitivity: float = CursorSpeed
+	
+	if Globals.DynamicSensitivity:
+		if	(CurrentDynamicSensitivity - DynamicSensitivityTarget) < Tolerance:
+			DynamicSensitivityTarget = randf_range(DynamicSensitivityRange.x, DynamicSensitivityRange.y)
+		CurrentDynamicSensitivity = lerp(CurrentDynamicSensitivity, DynamicSensitivityTarget, 5 * DeltaTime)
+		#CurrentDynamicSensitivity = ease(CurrentDynamicSensitivity, 2)
+		Sensitivity += CurrentDynamicSensitivity
+		print(Sensitivity)
+
+	_moveCursor(Velocity, Sensitivity, DeltaTime)
 	
 	MouseDelta = Vector2(0, 0)
