@@ -31,8 +31,10 @@ right_tool = NodePath("RightTool")
 [node name="MakeupBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_nd7ao")]
 
 [node name="MakeupLineBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_2jram")]
+is_erase_brush = false
 
 [node name="MakeupShadowsBrush" parent="ToolHolder/LeftTool" instance=ExtResource("7_46361")]
+is_erase_brush = false
 
 [node name="RightTool" type="Node2D" parent="ToolHolder"]
 

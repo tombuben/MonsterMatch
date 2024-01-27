@@ -1,23 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cupldv6vvhyn5"]
-
-[ext_resource type="Script" path="res://src/Monsters/base_monster.gd" id="1_641hq"]
+[gd_scene load_steps=3 format=3 uid="uid://cupldv6vvhyn5"]
 
 [ext_resource type="Script" path="res://src/Monsters/base_monster.gd" id="1_641hq"]
 [ext_resource type="PackedScene" uid="uid://oow4wtkcv43d" path="res://src/Tools/DrawValidityMatrix.tscn" id="3_r1ppo"]
 
 [node name="Monster" type="Node2D" node_paths=PackedStringArray("BrushContainer", "DrawArea")]
-
 script = ExtResource("1_641hq")
 BrushContainer = NodePath("BrushStrokeContainer")
 DrawArea = NodePath("Polygon2D")
-
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(-143, -647, -148, -587, -144, -536, -131, -496, -125, -463, -128, -422, -123, -390, -96, -359, -61, -359, -28, -363, -18, -373, 23, -374, 35, -364, 79, -365, 98, -359, 127, -390, 133, -420, 133, -480, 140, -513, 146, -558, 141, -599, 136, -636, 133, -645, 77, -631, 37, -621, -16, -619, -59, -630, -101, -639)
 
 [node name="BrushStrokeContainer" type="Node2D" parent="."]
+
 [node name="DrawValidityMatrix" parent="." instance=ExtResource("3_r1ppo")]
 unique_name_in_owner = true
-
-

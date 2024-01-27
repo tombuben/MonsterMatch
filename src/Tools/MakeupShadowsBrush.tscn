@@ -7,7 +7,6 @@
 [node name="MakeupShadowsBrush" type="Node2D"]
 script = ExtResource("1_4gveg")
 point_distance_diff = 5.0
-is_erase_brush = null
 BRUSH_STROKE = ExtResource("2_0jutr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
