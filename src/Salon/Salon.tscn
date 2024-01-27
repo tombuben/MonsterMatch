@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=12 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -44,6 +44,15 @@ _data = {
 "RESET": SubResource("Animation_v6m74")
 }
 
+[sub_resource type="Environment" id="Environment_6lltp"]
+glow_enabled = true
+glow_levels/1 = 1.36
+glow_levels/2 = 3.3
+glow_levels/3 = 6.43
+glow_levels/4 = 6.88
+glow_levels/5 = 6.72
+glow_levels/6 = 4.07
+
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
 MonsterHolder = NodePath("MonsterHolder")
@@ -60,12 +69,8 @@ color = Color(0.313726, 0.141176, 0.184314, 1)
 
 [node name="MonsterHolder" type="Node2D" parent="."]
 
-[node name="LightsOut" type="ColorRect" parent="."]
+[node name="LightsOut" type="CanvasModulate" parent="."]
 visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2
-color = Color(0, 0, 0, 0.94902)
 script = ExtResource("5_vfuqq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LightsOut"]
@@ -73,3 +78,13 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_a4k05")
 }
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="LightsOut"]
+energy = 0.9
+blend_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6lltp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true

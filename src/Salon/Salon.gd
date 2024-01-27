@@ -31,7 +31,7 @@ func _doState() -> void:
 			Dialogue.global_position = Vector2(1219,250)
 			Dialogue.scale.x = 0.5
 			Dialogue.scale.y = 0.5
-			add_child(Dialogue)
+			%CanvasLayer.add_child(Dialogue)
 		MAKEUP:
 			Cursor = CursorScene.instantiate()
 			Cursor.global_position = Vector2(600, 400)

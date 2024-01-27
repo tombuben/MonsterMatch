@@ -196,6 +196,9 @@ texture = ExtResource("3_toyp8")
 position = Vector2(33.3333, 46.6667)
 texture = ExtResource("5_n7w6j")
 
+[node name="PointLight2D" type="PointLight2D" parent="SlimeTopLayers/RightEyeSlot" index="1"]
+texture = ExtResource("3_toyp8")
+
 [node name="LeftEyeSlot" type="Node2D" parent="SlimeTopLayers" index="1"]
 position = Vector2(-603.471, -470.032)
 
@@ -207,6 +210,9 @@ texture = ExtResource("5_gernd")
 [node name="Iris" type="Sprite2D" parent="SlimeTopLayers/LeftEyeSlot/LeftEye/Open" index="0"]
 position = Vector2(60, -33.3333)
 texture = ExtResource("7_4k72b")
+
+[node name="PointLight2D" type="PointLight2D" parent="SlimeTopLayers/LeftEyeSlot" index="1"]
+texture = ExtResource("5_gernd")
 
 [node name="MouthSlot" type="Node2D" parent="SlimeTopLayers" index="2"]
 position = Vector2(-150.68, 771.514)

@@ -19,9 +19,12 @@ spread = 71.182
 initial_velocity_max = 248.49
 orbit_velocity_max = 0.412
 gravity = Vector3(0, 120, 0)
+scale_min = 0.13
+scale_max = 0.5
 alpha_curve = SubResource("CurveTexture_y5ik2")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
 process_material = SubResource("ParticleProcessMaterial_qlvj5")
 texture = ExtResource("1_k3erm")
 lifetime = 2.5

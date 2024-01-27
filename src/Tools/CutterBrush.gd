@@ -9,9 +9,17 @@ var brush_state = IDLE
 @onready var last_position : Vector2 = global_position
 @onready var particles : GPUParticles2D = %GPUParticles2D
 
-# Called when the node enters the scene tree for the first time.
+@onready var beard_particle_texture := preload("res://assets/Barnabus/beard_particle.png")
+@onready var godot_particle_texture := preload("res://icon.svg")
+
 func _ready():
-	pass # Replace with function body.
+	var monster := Globals.CurrentMonster
+	
+	match monster:
+		Globals.MonsterTypeEnum.PIRATE:
+			particles.texture = beard_particle_texture
+		Globals.MonsterTypeEnum.SLIME:
+			particles.texture = godot_particle_texture
 
 func world_cut():
 	
@@ -31,14 +39,15 @@ func world_cut():
 		var parent = collider.get_parent()
 		if parent.has_method("cut"):
 			parent.cut(last_position, global_position, cut_size)
+			particles.emitting = true
 
 func _process(_delta):
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
 				brush_state = CUTTING
-				particles.emitting = true
 		CUTTING:
+			particles.emitting = false
 			world_cut()
 			
 	

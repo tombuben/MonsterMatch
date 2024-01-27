@@ -1,4 +1,4 @@
-extends ColorRect
+extends CanvasModulate
 
 @onready var player = get_node("AnimationPlayer")
 
