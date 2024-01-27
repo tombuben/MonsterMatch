@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsdsqo75wksvc"]
+
+[ext_resource type="Script" path="res://dialogue/text_box.gd" id="1_sposj"]
+[ext_resource type="Texture2D" uid="uid://d4bw8g7acoqdt" path="res://assets/speech-bubble-white.png" id="2_gdshc"]
+
+[node name="TextBox" type="MarginContainer"]
+offset_left = 817.0
+offset_top = 37.0
+offset_right = 1149.0
+offset_bottom = 261.0
+scale = Vector2(0.479998, 0.479998)
+script = ExtResource("1_sposj")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_gdshc")
+region_rect = Rect2(0, 0, 321, 321)
+patch_margin_left = 123
+patch_margin_top = 107
+patch_margin_right = 80
+patch_margin_bottom = 106
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 102
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -15
+theme_override_font_sizes/font_size = 71
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
