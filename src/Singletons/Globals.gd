@@ -7,3 +7,4 @@ var DynamicSensitivity: bool = false
 
 var BrushContainer: Node2D
 var DrawArea: Polygon2D
+var DrawValidityMatrix: TileMap

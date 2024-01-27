@@ -3,6 +3,7 @@ extends Node2D
 var brush_stroke_container : Node2D
 @export var point_distance_diff : float = 10
 var draw_area : Polygon2D
+var validity_matrix : ValidityMatrix
 
 @export var is_erase_brush : bool
 
@@ -20,6 +21,7 @@ const tolerance : float = 10
 func _ready() -> void:
 	brush_stroke_container = Globals.BrushContainer
 	draw_area = Globals.DrawArea
+	validity_matrix = Globals.DrawValidityMatrix
 
 func _isPointCloseToCursor(pointPos: Vector2):
 	var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
@@ -57,6 +59,7 @@ func _process(delta):
 			if last_point_pos.distance_to(drawing_position) > point_distance_diff:
 				last_brush_stroke.add_point(drawing_position)
 				last_point_pos = drawing_position
+				validity_matrix.add_cell(global_position)
 				
 			if Input.is_action_just_released("UseToolRight"):
 				last_brush_stroke.add_point(drawing_position)
