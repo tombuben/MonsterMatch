@@ -8,12 +8,12 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	up_tool.process_mode = Node.PROCESS_MODE_INHERIT
-	up_tool.visible = true
+	up_tool.process_mode = Node.PROCESS_MODE_DISABLED
+	up_tool.visible = false
 	down_tool.process_mode = Node.PROCESS_MODE_DISABLED
 	down_tool.visible = false
-	left_tool.process_mode = Node.PROCESS_MODE_DISABLED
-	left_tool.visible = false
+	left_tool.process_mode = Node.PROCESS_MODE_INHERIT
+	left_tool.visible = true
 	right_tool.process_mode = Node.PROCESS_MODE_DISABLED
 	right_tool.visible = false
 

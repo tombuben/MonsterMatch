@@ -21,9 +21,6 @@ func _isPointCloseToCursor(pointPos: Vector2):
 	return pointPos.distance_to(global_position) < tolerance
 
 func _process(delta):
-	if Input.is_action_pressed("LuckaSwapMakeupBrush"):
-		is_erase_brush = not is_erase_brush
-	
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):

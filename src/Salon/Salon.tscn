@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://2jica8njwnl1" path="res://src/Cursor/Cursor.tscn" id="2_ilg5p"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="3_33te6"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="3_l5x4e"]
-[ext_resource type="PackedScene" uid="uid://si8jmklvdabq" path="res://src/Tools/CutterBrush.tscn" id="4_xbqhy"]
+[ext_resource type="PackedScene" path="res://src/Tools/CutterBrush.tscn" id="4_xbqhy"]
 
 [node name="Salon" type="Node2D"]
 
@@ -37,9 +37,9 @@ right_tool = NodePath("RightTool")
 
 [node name="UpTool" type="Node2D" parent="Cursor/ToolHolder"]
 
-[node name="MakeupBrush" parent="Cursor/ToolHolder/UpTool" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
-brush_stroke_container = NodePath("../../../../BrushContainer")
-draw_area = NodePath("../../../../Polygon2D")
+[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/UpTool"]
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(-21, 44, -76, -53, 22, -85, 63, 20)
 
 [node name="DownTool" type="Node2D" parent="Cursor/ToolHolder"]
 visible = false
@@ -49,16 +49,22 @@ visible = false
 [node name="LeftTool" type="Node2D" parent="Cursor/ToolHolder"]
 visible = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/LeftTool"]
-color = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(-21, 44, -76, -53, 22, -85, 63, 20)
+[node name="MakeupBrush" parent="Cursor/ToolHolder/LeftTool" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
+brush_stroke_container = NodePath("../../../../BrushContainer")
+draw_area = NodePath("../../../../Polygon2D")
 
 [node name="RightTool" type="Node2D" parent="Cursor/ToolHolder"]
+
+[node name="MakeupBrush" parent="Cursor/ToolHolder/RightTool" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("3_l5x4e")]
 visible = false
+brush_stroke_container = NodePath("../../../../BrushContainer")
+draw_area = NodePath("../../../../Polygon2D")
+is_erase_brush = true
 
 [node name="Polygon2D" type="Polygon2D" parent="Cursor/ToolHolder/RightTool"]
-color = Color(0.898039, 0.403922, 0.823529, 1)
-polygon = PackedVector2Array(-101, 40, 88, -51, 149, 117, -60, 195)
+position = Vector2(96, 81)
+color = Color(1, 0.372549, 0.631373, 1)
+polygon = PackedVector2Array(-66, 87, -94, -79, 25, -72, 85, 59)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
