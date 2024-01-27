@@ -19,6 +19,9 @@ extends Node2D
 
 @export var DynamicSensitivityRange: Vector2 = Vector2(-800, +1800)
 
+# Permutation array for the noise functions
+var p : Array[int]
+
 const Tolerance: float = 0.01
 
 var CursorVelocity: Vector2 = Vector2(0, 0)
@@ -26,6 +29,30 @@ var MouseDelta: Vector2 = Vector2(0, 0)
 
 var CurrentDynamicSensitivity: float = 0
 var DynamicSensitivityTarget: float = 0
+
+var time_passed: float = 0.0
+var frequency: float = 0.5
+var amplitude: float = 0.01
+
+func noise1d(x):
+	# Simple 1D Perlin noise function
+	var X = int(x) & 255
+	x -= int(x)
+	var u = fade(x)
+	return lerp(grad(p[X], x), grad(p[X + 1], x - 1), u)
+
+func fade(t):
+	return t * t * t * (t * (t * 6 - 15) + 10)
+
+func lerp(t, a, b):
+	return a + t * (b - a)
+
+func grad(hash, x):
+	var h = hash & 15
+	var grad = 1 + (h & 7)  # Gradient value 1-8
+	if h & 8:
+		grad = -grad
+	return (grad * x)
 
 func _clampCursorVelocity(Velocity: Vector2):
 	var ClampedVelocity : Vector2
@@ -47,7 +74,15 @@ func _rk4(Accel: Vector2, Velocity: Vector2, DeltaTime: float) -> Vector2:
 	return Velocity
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Initialize permutation array with a fixed seed (you can customize this)
+	p.clear()
+	for i in range(256):
+		p.push_back(i)
+	for i in range(256):
+		var r = randi() % 256
+		var tmp = p[i]
+		p[i] = p[r]
+		p[r] = tmp
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -98,6 +133,17 @@ func _processController(DeltaTime: float) -> Vector2:
 func _process(DeltaTime: float):
 	var UsingMouse: bool = MouseDelta.length() > Tolerance
 	
+	# Update time based on delta
+	time_passed += DeltaTime * frequency
+
+	# Calculate smooth random values using Perlin noise
+	var random_x = noise1d(time_passed)
+	var random_y = noise1d(time_passed + 1.0)  # Add an offset for different axes
+
+	# Adjust the amplitude to control the strength of the effect
+	random_x *= amplitude
+	random_y *= amplitude
+	
 	# TODO keys
 	
 	var Velocity: Vector2
@@ -109,8 +155,11 @@ func _process(DeltaTime: float):
 	#print(Velocity.length())
 		
 	if Globals.ShakyHands:
-		Velocity.x += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
-		Velocity.y += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
+		#Velocity.x += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
+		#Velocity.y += randf_range(-ShakyHandIntensity, +ShakyHandIntensity)
+		Velocity.x += random_x
+		Velocity.y += random_y
+		time_passed
 
 	if Globals.InvertedControls:
 		Velocity.x = -Velocity.x

@@ -2,7 +2,7 @@ extends Node
 
 enum MonsterTypeEnum { SLIME, PIRATE, MEDUSA }
 
-var ShakyHands: bool = false
+var ShakyHands: bool = true
 var InvertedControls: bool = false
 
 var DynamicSensitivity: bool = false
