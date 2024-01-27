@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm52flr03kbgq"]
+
+[ext_resource type="Script" path="res://src/Tools/DragTool.gd" id="1_6o71y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpl1s"]
+radius = 24.0832
+
+[node name="DragTool" type="Node2D"]
+script = ExtResource("1_6o71y")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wpl1s")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(11, -7)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-29, 0, -29, -44, -21, -3, -15, -45, -12, -2, 1, -39, -3, -2, 10, -33, 0, 19, 15, 15, -10, 44, -29, 38)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

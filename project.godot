@@ -114,6 +114,11 @@ LuckaSwapMakeupBrush={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_9="DragTool"
+2d_physics/layer_10="Draggables"
+
 [rendering]
 
 textures/canvas_textures/default_texture_repeat=1
