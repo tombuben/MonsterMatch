@@ -8,6 +8,8 @@
 script = ExtResource("1_4gveg")
 point_distance_diff = 5.0
 BRUSH_STROKE = ExtResource("2_0jutr")
+colors = Array[Color]([Color(0.231373, 0.109804, 0.270588, 0.0980392), Color(0.262745, 0.113725, 0.14902, 0.0980392), Color(0.203922, 0.164706, 0.0705882, 0.0980392), Color(0.0862745, 0.196078, 0.137255, 0.0980392), Color(0.101961, 0.184314, 0.211765, 0.0980392)])
+toolBoxObject = "Shadow"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 26.0

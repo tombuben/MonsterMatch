@@ -14,9 +14,16 @@ var down_index = 0
 var left_index = 0
 var right_index = 0
 
-func set_enable(node, value):
+func set_enable(node : Node2D, value):
 	node.process_mode = Node.PROCESS_MODE_INHERIT if value else Node.PROCESS_MODE_DISABLED
 	node.visible = value
+	if (node.has_method("handle_visibility_change")):
+		node.handle_visibility_change(value)
+		
+	var children = node.get_children()
+	for child in children:
+		if (child.has_method("handle_visibility_change")):
+			child.handle_visibility_change(value)
 	
 func set_enabled_child(index : int, node : Node2D):
 	var children = node.get_children()

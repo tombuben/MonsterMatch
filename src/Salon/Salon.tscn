@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=14 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bsxck2vktrnmb" path="res://src/dialogue/dialogue_scene.tscn" id="5_2kn52"]
 [ext_resource type="Script" path="res://src/Salon/LightsOut.gd" id="5_vfuqq"]
 [ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
+[ext_resource type="Script" path="res://src/Salon/AutoReference.gd" id="8_y1li6"]
 
 [sub_resource type="Animation" id="Animation_iaupg"]
 resource_name = "LightsOut"
@@ -69,6 +70,43 @@ mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
 [node name="MonsterHolder" type="Node2D" parent="."]
+
+[node name="ToolTable" type="Node2D" parent="."]
+
+[node name="Lipstick" type="Node2D" parent="ToolTable"]
+position = Vector2(1380, 958)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Lipstick"]
+polygon = PackedVector2Array(-29, 116, -32, -61, 3, -71, 5, 121)
+
+[node name="Shadow" type="Node2D" parent="ToolTable"]
+position = Vector2(1188, 969)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Shadow"]
+polygon = PackedVector2Array(-8, 98, -15, 17, -22, -31, -20, -46, -10, -57, 1, -58, 11, -53, 16, -40, 15, -31, 9, 8, 23, 4)
+
+[node name="Line" type="Node2D" parent="ToolTable"]
+position = Vector2(1047, 940)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Line"]
+polygon = PackedVector2Array(-29, 122, -29, -14, 0, -12, 34, 115, 34, 130)
+
+[node name="Eraser" type="Node2D" parent="ToolTable"]
+position = Vector2(868, 969)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Eraser"]
+polygon = PackedVector2Array(-36, 72, -31, -117, 33, -116, 32, 70)
+
+[node name="Cutter" type="Node2D" parent="ToolTable"]
+position = Vector2(555, 916)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Cutter"]
+polygon = PackedVector2Array(-190, 153, -195, 85, -11, 73, 51, 104, 42, 105, 50, 110, 35, 114, 50, 118, 38, 124, 51, 130, 35, 136, 57, 139)
 
 [node name="LightsOut" type="CanvasModulate" parent="."]
 visible = false

@@ -9,6 +9,12 @@ var validity_matrix : ValidityMatrix
 
 @export var BRUSH_STROKE : PackedScene
 
+@export var colors : Array[Color]
+@export var selectedColorIndex : int
+@export var modulateImage : TextureRect
+
+@export var toolBoxObject : String
+
 var last_brush_stroke : Line2D
 
 enum {IDLE, DRAWING, ERASING}
@@ -22,12 +28,31 @@ func _ready() -> void:
 	brush_stroke_container = Globals.BrushContainer
 	draw_area = Globals.DrawArea
 	validity_matrix = Globals.DrawValidityMatrix
+	if modulateImage != null and len(colors) > selectedColorIndex:
+		modulateImage.modulate = colors[selectedColorIndex]
 
 func _isPointCloseToCursor(pointPos: Vector2):
 	var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
 	return pointPos.distance_to(drawing_position) < tolerance
 
+func instantiate_brush_stroke():
+	var stroke = BRUSH_STROKE.instantiate()
+	brush_stroke_container.add_child(stroke)
+	if selectedColorIndex < len(colors):
+		stroke.default_color = colors[selectedColorIndex]
+	return stroke
+
 func _process(_delta):
+	
+	if Input.is_action_just_pressed("SwitchColorRight"):
+		if len(colors) > 1:
+			selectedColorIndex = (selectedColorIndex + 1) % len(colors)
+			modulateImage.modulate = colors[selectedColorIndex]
+	if Input.is_action_just_pressed("SwitchColorLeft"):
+		if len(colors) > 1:
+			selectedColorIndex = (selectedColorIndex - 1 + len(colors)) % len(colors)
+			modulateImage.modulate = colors[selectedColorIndex]
+	
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
@@ -36,8 +61,7 @@ func _process(_delta):
 					if is_erase_brush:
 						brush_state = ERASING
 					else:
-						last_brush_stroke = BRUSH_STROKE.instantiate()
-						brush_stroke_container.add_child(last_brush_stroke)
+						last_brush_stroke = instantiate_brush_stroke()
 					
 						var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
 						
@@ -52,8 +76,7 @@ func _process(_delta):
 		DRAWING:
 			var local_position = draw_area.get_global_transform().affine_inverse() * global_position
 			if !Geometry2D.is_point_in_polygon(local_position, draw_area.polygon):
-				last_brush_stroke = BRUSH_STROKE.instantiate()
-				brush_stroke_container.add_child(last_brush_stroke)
+				last_brush_stroke = instantiate_brush_stroke()
 				return
 			
 			var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
@@ -98,9 +121,11 @@ func _process(_delta):
 					return
 				
 				var left_brush_stroke = BRUSH_STROKE.instantiate()
+				left_brush_stroke.default_color = closest_brush_stroke.default_color
 				brush_stroke_container.add_child(left_brush_stroke)
 				
 				var right_brush_stroke = BRUSH_STROKE.instantiate()
+				right_brush_stroke.default_color = closest_brush_stroke.default_color
 				brush_stroke_container.add_child(right_brush_stroke)
 					
 				for i in len(closest_brush_stroke.points):
@@ -116,3 +141,7 @@ func _process(_delta):
 			if Input.is_action_just_released("UseToolRight"):
 				brush_state = IDLE
 
+func handle_visibility_change(value : bool):
+	if Globals.quick_references.has(toolBoxObject):
+		Globals.quick_references[toolBoxObject].visible = !value
+	
