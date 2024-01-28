@@ -9,7 +9,7 @@ extends Node2D
 var CurrentSceneIndex : int = 0
 @onready var CurrentScene : PackedScene = Scenes[CurrentSceneIndex]
 
-var game_state = Globals.GameStateEnums.INTRO
+var game_state = Globals.GameStateEnums.FIRST_INTERMEZZO
 
 var Cursor
 var Dialogue
@@ -17,20 +17,44 @@ var GameTimer
 
 var date_count = 0
 
+var monesterNames = [
+	"Barnabus Swellbelly",
+	"Mucos Glimmer",
+	"Cressida Viper",
+]
+
 var dateTexts = [
 	"First",
 	"Second",
-	"Third",
-	"Fourth",
-	"Fifth",
-	"Sixth",
-	"Seventh",
-	"Eighth",
-	"Ninth"
+	"Third"
 ]
+
+func _makeScreenshot():
+	if MonsterHolder.get_child_count() > 0:
+		var oldMonster = MonsterHolder.get_child(0)
+		if oldMonster.has_method("prepare_for_photo"):
+			oldMonster.prepare_for_photo()
+		# wait frame for remove child to take effect
+		await get_tree().process_frame
+		var screenshot : Image = get_viewport().get_texture().get_image()
+		
+		var size = screenshot.get_size().y #square image
+		var offset = (screenshot.get_size().x - screenshot.get_size().y) / 2
+		var region := Rect2i(offset, 0, size, size)
+		var square = screenshot.get_region(region)
+		Globals.screenshots.append(square)
+		square.resize(400,400)
+
+func _playIntermezzo():
+	#$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
+		$CanvasLayer/Curtain/Label2.text = monesterNames[Globals.CurrentMonster]
+		$CanvasLayer/Curtain/Label3.text = "The %s Date" % dateTexts[Globals.DateCounter-1]
+		$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 
 func _doState() -> void:
 	match(game_state):
+		Globals.GameStateEnums.FIRST_INTERMEZZO:
+			_playIntermezzo()
 		Globals.GameStateEnums.INTRO:
 			if MonsterHolder.get_child_count() > 0:
 				var oldMonster = MonsterHolder.get_child(0)
@@ -39,15 +63,15 @@ func _doState() -> void:
 			
 			var newMoster = CurrentScene.instantiate()
 			MonsterHolder.add_child(newMoster)
-			
-			if (date_count != 0 && date_count % 2 == 0):
-				Globals.DateCounter += 1
-				
+			date_count += 1
+
 			Dialogue = DialogueScene.instantiate()
 			Dialogue.global_position = Vector2(1319,150)
 			Dialogue.scale.x = 0.5
 			Dialogue.scale.y = 0.5
 			%CanvasLayer.add_child(Dialogue)
+			if (date_count != 0 && date_count % 2 == 0):
+				Globals.DateCounter += 1
 		Globals.GameStateEnums.MAKEUP:
 			if (Globals.CurrentMonster == 0):
 				get_node("/root/Salon/LightsOut").turn_off_lights(true)
@@ -67,28 +91,11 @@ func _doState() -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			remove_child(Cursor)
 			Cursor = null
-			date_count += 1
 			Dialogue._outro()
 		Globals.GameStateEnums.INTERMEZZO:
 			%CanvasLayer.remove_child(Dialogue)
-			
-			if MonsterHolder.get_child_count() > 0:
-				var oldMonster = MonsterHolder.get_child(0)
-				if oldMonster.has_method("prepare_for_photo"):
-					oldMonster.prepare_for_photo()
-			# wait frame for remove child to take effect
-			await get_tree().process_frame
-			var screenshot : Image = get_viewport().get_texture().get_image()
-		
-			var size = screenshot.get_size().y #square image
-			var offset = (screenshot.get_size().x - screenshot.get_size().y) / 2
-			var region := Rect2i(offset, 0, size, size)
-			var square = screenshot.get_region(region)
-			Globals.screenshots.append(square)
-			square.resize(400,400)
-
-			$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
-			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
+			_makeScreenshot()
+			_playIntermezzo()
 			pass
 		Globals.GameStateEnums.EPILOG:
 			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
@@ -99,6 +106,9 @@ func _doState() -> void:
 	
 func _goToNextState() -> void:
 	match(game_state):
+		Globals.GameStateEnums.FIRST_INTERMEZZO:
+			game_state = Globals.GameStateEnums.INTRO
+			Globals.CurrentGameState = game_state
 		Globals.GameStateEnums.INTRO:
 			game_state = Globals.GameStateEnums.MAKEUP
 			Globals.CurrentGameState = game_state
@@ -106,8 +116,13 @@ func _goToNextState() -> void:
 			game_state = Globals.GameStateEnums.OUTRO
 			Globals.CurrentGameState = game_state
 		Globals.GameStateEnums.OUTRO:
-			game_state = Globals.GameStateEnums.INTERMEZZO
-			Globals.CurrentGameState = game_state
+			if CurrentSceneIndex < len(Scenes) - 1:
+				CurrentScene = Scenes[CurrentSceneIndex]
+				game_state = Globals.GameStateEnums.INTERMEZZO
+				Globals.CurrentGameState = game_state
+			else:
+				game_state = Globals.GameStateEnums.EPILOG
+				Globals.CurrentGameState = game_state
 		Globals.GameStateEnums.INTERMEZZO:
 			if CurrentSceneIndex < len(Scenes) - 1:
 				CurrentSceneIndex += 1
@@ -128,7 +143,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
 		$CanvasLayer/CountDown/AnimationPlayer.play("RESET")
 		$CanvasLayer/Curtain/AnimationPlayer.play("RESET")
-		Dialogue._skip_dialogue()
+		if Dialogue != null:
+			Dialogue._skip_dialogue()
+		get_node("/root/Salon/LightsOut").turn_off_lights(false)
 		_goToNextState()
 		_doState()
 		
