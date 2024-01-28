@@ -2,10 +2,12 @@ extends MarginContainer
 
 @onready var text_box_scene = preload("res://src/dialogue/text_box.tscn")
 @onready var parent_node: Node2D = get_parent().get_parent()
+@onready var speech_sfx: AudioStreamPlayer = $SpeechSFX
+
 
 var jsonPath = "res://src/dialogue/jsons/"
 
-var dialog_lines = []
+var dialog_lines : Array = []
 var current_line_index = 0
 
 var text_box
@@ -19,8 +21,8 @@ var dialogueStart = []
 var dialogueMakeup = []
 var dialogueEnd = []
 
-var CurrentMonster
-var CurrentDateCount
+var CurrentMonster : int
+var monster_sfx_name : String = "pirate_hm1"
 
 func _ready():
 	CurrentMonster = Globals.CurrentMonster
@@ -68,15 +70,21 @@ func _show_text_box():
 	match Globals.CurrentGameState:
 		0:
 			text_box.display_text(dialog_lines[current_line_index]["text"])
+			if dialog_lines[current_line_index].has("sfx"):
+				monster_sfx_name = dialog_lines[current_line_index]["sfx"]
 		1:
 			text_box.display_text(dialog_lines[0])
 		2:
 			text_box.display_text(dialog_lines[current_line_index]["text"])
+			if dialog_lines[current_line_index].has("sfx"):
+				monster_sfx_name = dialog_lines[current_line_index]["sfx"]
+			
 	
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
 	can_advance_line = true
+	play_speech_sfx()
 	
 	if(Globals.CurrentGameState == 1):
 		await get_tree().create_timer(3.0).timeout
@@ -110,4 +118,12 @@ func _skip_dialogue():
 
 func _start_countdown():
 	parent_node._countdown()
+
+func play_speech_sfx():
+	if !monster_sfx_name:
+		return
+	var current_monster_dir : String = Globals.MonsterSfxDirectory[CurrentMonster]
+	var stream : AudioStreamWAV = load("res://assets/Audio/SFX/%s/%s.wav" % [current_monster_dir, monster_sfx_name])
+	speech_sfx.set_stream(stream)
 	
+	speech_sfx.play()

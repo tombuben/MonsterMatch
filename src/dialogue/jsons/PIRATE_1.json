@@ -1,22 +1,27 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Ahoy, matey! Sorry about the flies, they seem to follow me everywhere."
+	  "text": "Ahoy, matey! Sorry about the flies, they seem to follow me everywhere.",
+	  "sfx": "pirate_huh"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Just smack them dead, serves them right. Hopefully not on my face though!"
+	  "text": "Just smack them dead, serves them right. Hopefully not on my face though!",
+	  "sfx": "pirate_laugh"
 	},
 	{
 	  "speaker": "char",
-	  "text": "What am I here for? I have a date, I can’t believe it. You have to make me as different as you can."
+	  "text": "What am I here for? I have a date, I can’t believe it. You have to make me as different as you can.",
+	  "sfx": "pirate_hm1"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Nobody liked this old noggin’ so far, so I want you to make it different. Shave me, color me, the whole shebang!"
+	  "text": "Nobody liked this old noggin’ so far, so I want you to make it different. Shave me, color me, the whole shebang!",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "Go all out, I really want to impress this gal. I have no experience with makeup so I completely trust you!"
+	  "text": "Go all out, I really want to impress this gal. I have no experience with makeup so I completely trust you!",
+	  "sfx": "pirate_huh2"
 	}
   ]

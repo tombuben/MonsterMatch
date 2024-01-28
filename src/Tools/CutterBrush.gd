@@ -11,7 +11,7 @@ var brush_state = IDLE
 @onready var razor_sfx : AudioStreamPlayer2D = %RazorSFX
 
 @onready var beard_particle_texture := preload("res://assets/Barnabus/beard_particle.png")
-@onready var godot_particle_texture := preload("res://icon.svg")
+@onready var godot_particle_texture := preload("res://assets/slime/slime_particle.png")
 
 func _ready():
 	var monster := Globals.CurrentMonster
@@ -23,7 +23,6 @@ func _ready():
 			particles.texture = godot_particle_texture
 
 func world_cut():
-	
 	var space_state = get_world_2d().direct_space_state
 	
 	var parameters = PhysicsShapeQueryParameters2D.new()

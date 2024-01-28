@@ -4,3 +4,6 @@
 
 [node name="DialogueScene" type="MarginContainer"]
 script = ExtResource("1_ryv12")
+
+[node name="SpeechSFX" type="AudioStreamPlayer" parent="."]
+bus = &"SoundEffects"

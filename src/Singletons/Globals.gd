@@ -13,6 +13,7 @@ var DrawValidityMatrix: TileMap
 
 var DialogueTimeStamps = {}
 var CurrentMonster: MonsterTypeEnum
+var MonsterSfxDirectory: Array[String] = ["slime", "pirate", "medusa"]
 
 var CurrentGameState
 
