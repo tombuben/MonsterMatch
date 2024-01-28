@@ -17,6 +17,8 @@ var GameTimer
 
 var date_count = 0
 
+var epilog_count = 0
+
 var monesterNames = [
 	"Barnabus Swellbelly",
 	"Mucos Glimmer",
@@ -106,7 +108,22 @@ func _doState() -> void:
 			_playIntermezzo()
 			pass
 		Globals.GameStateEnums.EPILOG:
-			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
+			if MonsterHolder.get_child_count() > 0:
+				var oldMonster = MonsterHolder.get_child(0)
+				if oldMonster != null:
+					MonsterHolder.remove_child(oldMonster)
+			
+			var newMoster = CurrentScene.instantiate()
+			MonsterHolder.add_child(newMoster)
+			
+			if (date_count != 0 && date_count % 2 == 0):
+				Globals.DateCounter += 1
+				
+			Dialogue = DialogueScene.instantiate()
+			Dialogue.global_position = Vector2(1319,150)
+			Dialogue.scale.x = 0.5
+			Dialogue.scale.y = 0.5
+			%CanvasLayer.add_child(Dialogue)
 			pass
 		Globals.GameStateEnums.CREDITS:
 			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
@@ -135,10 +152,19 @@ func _goToNextState() -> void:
 			if CurrentSceneIndex < len(Scenes) - 1:
 				CurrentSceneIndex += 1
 				CurrentScene = Scenes[CurrentSceneIndex]
-				game_state = Globals.GameStateEnums.INTRO
+				if (date_count >= 6):
+					game_state = Globals.GameStateEnums.EPILOG
+				else:
+					game_state = Globals.GameStateEnums.INTRO
+					
 				Globals.CurrentGameState = game_state
+		Globals.GameStateEnums.EPILOG:
+			if CurrentSceneIndex < len(Scenes) - 1:
+				CurrentSceneIndex += 1
+				CurrentScene = Scenes[CurrentSceneIndex]
+				%CanvasLayer.remove_child(Dialogue)			
 			else:
-				game_state = Globals.GameStateEnums.EPILOG
+				game_state = Globals.GameStateEnums.CREDITS
 				Globals.CurrentGameState = game_state
 
 # Called when the node enters the scene tree for the first time.
@@ -160,6 +186,12 @@ func _process(_delta: float) -> void:
 func _trigger_state_change() -> void:
 	_goToNextState()
 	_doState()
+
+func _epilog_trigger() -> void:
+	if (CurrentSceneIndex < len(Scenes) - 1):
+		_playIntermezzo()
+	else:
+		_trigger_state_change()
 
 func _countdown():	
 	$CanvasLayer/CountDown/AnimationPlayer.play("countdown")
