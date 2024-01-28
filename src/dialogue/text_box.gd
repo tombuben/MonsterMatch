@@ -23,6 +23,9 @@ func _ready():
 		print("Timer not found")
 
 func display_text(text_to_display: String):
+	if not label:
+		label = $MarginContainer/Label
+		
 	label.text = text_to_display
 	
 	await resized

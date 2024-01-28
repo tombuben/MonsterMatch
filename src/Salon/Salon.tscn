@@ -238,7 +238,7 @@ _data = {
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
 MonsterHolder = NodePath("MonsterHolder")
-Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("1_ucilr"), ExtResource("2_km51p")])
+Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("1_ucilr"), ExtResource("2_km51p")])
 CursorScene = ExtResource("2_ilg5p")
 DialogueScene = ExtResource("5_2kn52")
 TimerScene = ExtResource("6_187t4")

@@ -20,6 +20,7 @@ var can_advance_line = false
 var dialogueStart = []
 var dialogueMakeup = []
 var dialogueEnd = []
+var dialogueEpilog = []
 
 var CurrentMonster : int
 var CurrentDateCount : int
@@ -28,16 +29,23 @@ var monster_sfx_name : String = "pirate_hm1"
 func _ready():
 	CurrentMonster = Globals.CurrentMonster
 	CurrentDateCount = Globals.DateCounter
-	dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
-	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
-	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
 	
-	Globals.DialogueTimeStamps = {}
-	for line in dialogueMakeup:
-		if line.has("sfx"):
-			Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],line["sfx"]]
-		else:
-			Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],""]
+	if (Globals.CurrentGameState != Globals.GameStateEnums.EPILOG):		
+		dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
+		dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
+		dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
+		
+		Globals.DialogueTimeStamps = {}
+		for line in dialogueMakeup:
+			if line.has("sfx"):
+				Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],line["sfx"]]
+			else:
+				Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],""]
+	else:
+		dialogueEpilog = load_dialogues(jsonPath + "%s_epilog.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster]])
+		if is_dialog_active == false:
+			start_dialog(global_position, dialogueEpilog)
+			return
 	
 	if is_dialog_active == false:
 		start_dialog(global_position, dialogueStart)
@@ -84,7 +92,10 @@ func _show_text_box():
 			text_box.display_text(dialog_lines[current_line_index]["text"])
 			if dialog_lines[current_line_index].has("sfx"):
 				monster_sfx_name = dialog_lines[current_line_index]["sfx"]
-			
+		Globals.GameStateEnums.EPILOG:
+			text_box.display_text(dialog_lines[current_line_index]["text"])
+			if dialog_lines[current_line_index].has("sfx"):
+				monster_sfx_name = dialog_lines[current_line_index]["sfx"]			
 	
 	can_advance_line = false
 	
@@ -111,7 +122,7 @@ func _next_line():
 			
 		if (Globals.CurrentGameState == Globals.GameStateEnums.INTRO):
 			_start_countdown()
-		if (Globals.CurrentGameState == Globals.GameStateEnums.OUTRO):
+		if (Globals.CurrentGameState == Globals.GameStateEnums.OUTRO || Globals.CurrentGameState == Globals.GameStateEnums.EPILOG):
 			parent_node._trigger_state_change()
 		return
 	
