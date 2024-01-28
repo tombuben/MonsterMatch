@@ -87,7 +87,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		MouseDelta = event.relative
-		print(MouseDelta)
+		#print(MouseDelta)
 
 func _moveCursor(Velocity: Vector2, Sensitivity: float, DeltaTime: float):
 	var CurrentVelocity: Vector2 = Vector2(Velocity.x * Sensitivity * DeltaTime, Velocity.y * Sensitivity * DeltaTime)
