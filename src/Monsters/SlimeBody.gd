@@ -21,36 +21,38 @@ func _ready() -> void:
 	#await get_tree().create_timer(3.0).timeout
 	#get_node("/root/Salon/LightsOut").turn_off_lights(true)
 
+func swap_eyes():
+	var setup: int = randi() % 4
+	print(setup)
+
+	if setup == 0:
+		var leftEyeParent = LeftEye.get_parent()
+		leftEyeParent.remove_child(LeftEye)
+		var mouthParent = Mouth.get_parent()
+		mouthParent.remove_child(Mouth)
+		mouthParent.add_child(LeftEye)
+		leftEyeParent.add_child(Mouth)
+	elif setup == 1:
+		var rightEyeParent = RightEye.get_parent()
+		rightEyeParent.remove_child(RightEye)
+		var mouthParent = Mouth.get_parent()
+		mouthParent.remove_child(Mouth)
+		mouthParent.add_child(RightEye)
+		rightEyeParent.add_child(Mouth)
+	elif setup == 2:
+		var rightEyeParent = RightEye.get_parent()
+		rightEyeParent.remove_child(RightEye)
+		var leftArmParent = LeftArm.get_parent()
+		leftArmParent.remove_child(LeftArm)
+		leftArmParent.add_child(RightEye)
+		rightEyeParent.add_child(LeftArm)
+	elif setup == 3:
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("LuckaDebugButton"):
-		var setup: int = randi() % 4
-		print(setup)
-
-		if setup == 0:
-			var leftEyeParent = LeftEye.get_parent()
-			leftEyeParent.remove_child(LeftEye)
-			var mouthParent = Mouth.get_parent()
-			mouthParent.remove_child(Mouth)
-			mouthParent.add_child(LeftEye)
-			leftEyeParent.add_child(Mouth)
-		elif setup == 1:
-			var rightEyeParent = RightEye.get_parent()
-			rightEyeParent.remove_child(RightEye)
-			var mouthParent = Mouth.get_parent()
-			mouthParent.remove_child(Mouth)
-			mouthParent.add_child(RightEye)
-			rightEyeParent.add_child(Mouth)
-		elif setup == 2:
-			var rightEyeParent = RightEye.get_parent()
-			rightEyeParent.remove_child(RightEye)
-			var leftArmParent = LeftArm.get_parent()
-			leftArmParent.remove_child(LeftArm)
-			leftArmParent.add_child(RightEye)
-			rightEyeParent.add_child(LeftArm)
-		elif setup == 3:
-			pass
+		swap_eyes()
 	
 	var CursorPos: Vector2 = Vector2(0, 0)
 	var Cursor : Node2D = get_node_or_null("/root/Salon/Cursor")

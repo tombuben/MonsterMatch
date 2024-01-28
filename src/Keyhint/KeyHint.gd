@@ -24,6 +24,3 @@ func _input(event):
 		set_icon(true)
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		set_icon(false)
-		
-	print(event)
-

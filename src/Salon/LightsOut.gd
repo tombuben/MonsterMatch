@@ -15,9 +15,16 @@ func turn_off_lights(flicker : bool = false):
 		player.play("LightsOut")
 	else:
 		visible = false
+		
+	var monster = get_node("/root/Salon/MonsterHolder/Monster/SlimeTopLayers")
+	if (monster != null) and monster.has_method("swap_eyes"):
+		monster.swap_eyes()
 
 func turn_on_lights(flicker : bool = false):
 	visible = false
 
 func toggle():
-	visible = !visible
+	if visible:
+		turn_off_lights()
+	else:
+		visible = !visible
