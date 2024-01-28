@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh4yv6ik2l2xy"]
+[gd_scene load_steps=28 format=3 uid="uid://bh4yv6ik2l2xy"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
 [ext_resource type="Texture2D" uid="uid://bqge7ew6yuhpn" path="res://assets/Barnabus/Barnabus_base_new.png" id="2_15hjn"]
@@ -10,8 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://dgi00dhn0xpht" path="res://assets/Barnabus/Barnabus_beard.png" id="7_hc24y"]
 [ext_resource type="Texture2D" uid="uid://byhy1uyty118q" path="res://assets/Barnabus/Barnabus_patch.png" id="9_eiydd"]
 [ext_resource type="PackedScene" uid="uid://dg0vsldhw10a6" path="res://src/Tools/Dragable.tscn" id="10_w5j40"]
+[ext_resource type="Texture2D" uid="uid://c025y0ay3rt41" path="res://assets/Items/beardleft.png" id="11_ar328"]
+[ext_resource type="Texture2D" uid="uid://m4d7pesmk35f" path="res://assets/Items/beardmid.png" id="12_1i8am"]
 [ext_resource type="Script" path="res://src/Monsters/Obstacles/Flies.gd" id="12_m27wh"]
 [ext_resource type="PackedScene" uid="uid://bqbvu7hpr7ld7" path="res://src/Monsters/Obstacles/fly.tscn" id="12_o8snn"]
+[ext_resource type="Texture2D" uid="uid://dcdjxeh5wbnra" path="res://assets/Items/beardright.png" id="13_q1opc"]
+[ext_resource type="Texture2D" uid="uid://bvgx8igiqgp1j" path="res://assets/Items/bleubeard.png" id="14_4102u"]
+[ext_resource type="Texture2D" uid="uid://cmwtoys0w4by8" path="res://assets/Items/blondebeard.png" id="15_qg84e"]
+[ext_resource type="Texture2D" uid="uid://dn7w3rrpx6182" path="res://assets/Items/circle1.png" id="16_caso2"]
+[ext_resource type="Texture2D" uid="uid://gl3gdpa08110" path="res://assets/Items/circle2.png" id="17_dr0c1"]
+[ext_resource type="Texture2D" uid="uid://p42drujjadxb" path="res://assets/Items/earring.png" id="18_v3rh0"]
+[ext_resource type="Texture2D" uid="uid://braxd4umv4gl4" path="res://assets/Items/eyehair.png" id="19_gmtge"]
+[ext_resource type="Texture2D" uid="uid://b2k68l56mjydp" path="res://assets/Items/hat.png" id="20_qcfoc"]
+[ext_resource type="Texture2D" uid="uid://d02wcqldsi1fx" path="res://assets/Items/moon.png" id="21_pbbmj"]
+[ext_resource type="Texture2D" uid="uid://cxjn5reaxvqyv" path="res://assets/Items/panacek.png" id="22_kw3xc"]
+[ext_resource type="Texture2D" uid="uid://bm0qndibpcefr" path="res://assets/Items/smile.png" id="23_8pl8l"]
+[ext_resource type="Texture2D" uid="uid://4rtl7tc1ju5d" path="res://assets/Items/star.png" id="24_cgbvv"]
+[ext_resource type="Texture2D" uid="uid://c0xo0jsyvldni" path="res://assets/Items/tear.png" id="25_kkf3h"]
 
 [node name="Monster" node_paths=PackedStringArray("RemoveForPhoto") instance=ExtResource("1_3oco5")]
 MonsterEnum = 1
@@ -104,7 +119,659 @@ polygon = PackedVector2Array(844, 623, 920, 670, 1040, 684, 1132, 667, 1186, 626
 [node name="DrawValidityMatrix" parent="." index="13"]
 layer_0/tile_data = PackedInt32Array(6160558, 1, 65536, 6160557, 1, 65536, 6160556, 1, 65536, 6160555, 1, 65536, 6160554, 1, 65536, 6160553, 1, 65536, 6160552, 1, 65536, 6160551, 1, 65536, 6160550, 1, 65536, 6160549, 1, 65536, 6160548, 1, 65536, 6160547, 1, 65536, 6160546, 1, 65536, 6095014, 1, 65536, 6095015, 1, 65536, 6095016, 1, 65536, 6095017, 1, 65536, 6226089, 1, 65536, 6226088, 1, 65536, 6226087, 1, 65536, 6291622, 1, 65536, 6291623, 1, 65536, 6226090, 1, 65536, 6226091, 1, 65536, 6226092, 1, 65536, 6291626, 1, 65536, 6291625, 1, 65536, 6226093, 1, 65536, 6226094, 1, 65536, 6291628, 1, 65536, 6291627, 1, 65536, 6291624, 1, 65536, 6226086, 1, 65536, 6226085, 1, 65536, 6226084, 1, 65536, 6226083, 1, 65536, 6160545, 1, 65536, 6160544, 1, 65536, 6029478, 1, 65536, 6095013, 1, 65536, 6095012, 1, 65536, 6095011, 1, 65536, 6029474, 1, 65536, 6029473, 1, 65536, 6029472, 1, 65536, 6029471, 1, 65536, 6029480, 1, 65536, 6029479, 1, 65536, 5963941, 1, 65536, 5963940, 1, 65536, 5963939, 1, 65536, 6029477, 1, 65536, 6029476, 1, 65536, 6029475, 1, 65536, 6029470, 1, 65536, 5963933, 1, 65536, 5963932, 1, 65536, 5963934, 1, 65536, 5963935, 1, 65536, 5963936, 1, 65536, 5963937, 1, 65536, 5963938, 1, 65536, 6029469, 1, 65536, 6029468, 1, 65536, 6095007, 1, 65536, 6095006, 1, 65536, 6095005, 1, 65536, 6095004, 1, 65536, 6095003, 1, 65536, 6095002, 1, 65536, 6095001, 1, 65536, 6095008, 1, 65536, 6029466, 1, 65536, 6029465, 1, 65536, 6029464, 1, 65536, 6029463, 1, 65536, 6029467, 1, 65536, 6095009, 1, 65536, 6095010, 1, 65536, 6226082, 1, 65536, 6226081, 1, 65536, 6226080, 1, 65536, 6226079, 1, 65536, 6226078, 1, 65536, 6226077, 1, 65536, 6226076, 1, 65536, 6226075, 1, 65536, 6160539, 1, 65536, 6160538, 1, 65536, 6160537, 1, 65536, 6160536, 1, 65536, 6160535, 1, 65536, 6160534, 1, 65536, 6160533, 1, 65536, 6160540, 1, 65536, 6160541, 1, 65536, 6160542, 1, 65536, 6160543, 1, 65536, 6095000, 1, 65536, 6094999, 1, 65536, 6094998, 1, 65536, 6094997, 1, 65536, 6094996, 1, 65536, 6029462, 1, 65536, 6029461, 1, 65536, 5963927, 1, 65536, 5963926, 1, 65536, 5963925, 1, 65536, 5963924, 1, 65536, 5963928, 1, 65536, 5963929, 1, 65536, 5963930, 1, 65536, 5963931, 1, 65536, 6029460, 1, 65536, 6160532, 1, 65536, 6160531, 1, 65536, 6160530, 1, 65536, 6160529, 1, 65536, 6226068, 1, 65536, 6291603, 1, 65536, 6226067, 1, 65536, 6094995, 1, 65536, 6291604, 1, 65536, 6357140, 1, 65536, 6422676, 1, 65536, 6488212, 1, 65536, 6553747, 1, 65536, 6553746, 1, 65536, 6488210, 1, 65536, 6422674, 1, 65536, 6357138, 1, 65536, 6291602, 1, 65536, 6553745, 1, 65536, 6619281, 1, 65536, 6553744, 1, 65536, 6488208, 1, 65536, 6422672, 1, 65536, 6357136, 1, 65536, 6291600, 1, 65536, 6226064, 1, 65536, 6357137, 1, 65536, 6422673, 1, 65536, 6488209, 1, 65536, 6226065, 1, 65536, 6291601, 1, 65536, 6488211, 1, 65536, 6619283, 1, 65536, 6226066, 1, 65536, 6422675, 1, 65536, 6357139, 1, 65536, 6684819, 1, 65536, 6553748, 1, 65536, 6619285, 1, 65536, 6684822, 1, 65536, 6750359, 1, 65536, 6815896, 1, 65536, 6815897, 1, 65536, 6881434, 1, 65536, 6881433, 1, 65536, 6750360, 1, 65536, 6684823, 1, 65536, 6619286, 1, 65536, 6553749, 1, 65536, 6619287, 1, 65536, 6684824, 1, 65536, 6684825, 1, 65536, 6750362, 1, 65536, 6750363, 1, 65536, 6815899, 1, 65536, 6815898, 1, 65536, 6750361, 1, 65536, 6684821, 1, 65536, 6684820, 1, 65536, 6619282, 1, 65536, 6619280, 1, 65536, 6619279, 1, 65536, 6750358, 1, 65536, 6815895, 1, 65536, 6750357, 1, 65536, 6815900, 1, 65536, 6815901, 1, 65536, 6815902, 1, 65536, 6815903, 1, 65536, 6815904, 1, 65536, 6815905, 1, 65536, 6815906, 1, 65536, 6815907, 1, 65536, 6815908, 1, 65536, 6750364, 1, 65536, 6750365, 1, 65536, 6750366, 1, 65536, 6750367, 1, 65536, 6750368, 1, 65536, 6750369, 1, 65536, 6750370, 1, 65536, 6750371, 1, 65536, 6815909, 1, 65536, 6815910, 1, 65536, 6815911, 1, 65536, 6815912, 1, 65536, 6881446, 1, 65536, 6881447, 1, 65536, 6881445, 1, 65536, 6881444, 1, 65536, 6946979, 1, 65536, 6946978, 1, 65536, 6946977, 1, 65536, 6946976, 1, 65536, 6946975, 1, 65536, 6946974, 1, 65536, 6881441, 1, 65536, 6881442, 1, 65536, 6881443, 1, 65536, 6946984, 1, 65536, 6946985, 1, 65536, 6946983, 1, 65536, 6946982, 1, 65536, 6946981, 1, 65536, 6946980, 1, 65536, 6881440, 1, 65536, 6881439, 1, 65536, 6881438, 1, 65536, 6881437, 1, 65536, 6815913, 1, 65536, 6815914, 1, 65536, 6815915, 1, 65536, 6815916, 1, 65536, 6815917, 1, 65536, 6815918, 1, 65536, 6750375, 1, 65536, 6750376, 1, 65536, 6750377, 1, 65536, 6750378, 1, 65536, 6750379, 1, 65536, 6750380, 1, 65536, 6750381, 1, 65536, 6750382, 1, 65536, 6881451, 1, 65536, 6881450, 1, 65536, 6881452, 1, 65536, 6881453, 1, 65536, 6881454, 1, 65536, 6881455, 1, 65536, 6881456, 1, 65536, 6881457, 1, 65536, 6881458, 1, 65536, 6881459, 1, 65536, 6881460, 1, 65536, 6881449, 1, 65536, 6815920, 1, 65536, 6815921, 1, 65536, 6815922, 1, 65536, 6815923, 1, 65536, 6815924, 1, 65536, 6750388, 1, 65536, 6750389, 1, 65536, 6684853, 1, 65536, 6684854, 1, 65536, 6619319, 1, 65536, 6619320, 1, 65536, 6684855, 1, 65536, 6750386, 1, 65536, 6750387, 1, 65536, 6750390, 1, 65536, 6750391, 1, 65536, 6684856, 1, 65536, 6684857, 1, 65536, 6684858, 1, 65536, 6684859, 1, 65536, 6684860, 1, 65536, 6684861, 1, 65536, 6750395, 1, 65536, 6750394, 1, 65536, 6750393, 1, 65536, 6815928, 1, 65536, 6815927, 1, 65536, 6815926, 1, 65536, 6815925, 1, 65536, 6881463, 1, 65536, 6881464, 1, 65536, 6815929, 1, 65536, 6815930, 1, 65536, 6815931, 1, 65536, 6815932, 1, 65536, 6750397, 1, 65536, 6750398, 1, 65536, 6684863, 1, 65536, 6619328, 1, 65536, 6553792, 1, 65536, 6553791, 1, 65536, 6553790, 1, 65536, 6553789, 1, 65536, 6553788, 1, 65536, 6553787, 1, 65536, 6488250, 1, 65536, 6422714, 1, 65536, 6357178, 1, 65536, 6291643, 1, 65536, 6226108, 1, 65536, 6160572, 1, 65536, 6291642, 1, 65536, 6291641, 1, 65536, 6291640, 1, 65536, 6226103, 1, 65536, 6160568, 1, 65536, 6095032, 1, 65536, 6095033, 1, 65536, 6095031, 1, 65536, 6160566, 1, 65536, 6160565, 1, 65536, 6160564, 1, 65536, 6160563, 1, 65536, 6160567, 1, 65536, 6160569, 1, 65536, 6160562, 1, 65536, 6160561, 1, 65536, 6160560, 1, 65536, 6160559, 1, 65536, 6226102, 1, 65536, 6226101, 1, 65536, 6226100, 1, 65536, 6226099, 1, 65536, 6226098, 1, 65536, 6226097, 1, 65536, 6226096, 1, 65536, 6226095, 1, 65536, 6160570, 1, 65536, 6226105, 1, 65536, 6226106, 1, 65536, 6226107, 1, 65536, 6291639, 1, 65536, 6291638, 1, 65536, 6291637, 1, 65536, 6291636, 1, 65536, 6291635, 1, 65536, 6291634, 1, 65536, 6291633, 1, 65536, 6291632, 1, 65536, 6291631, 1, 65536, 6095028, 1, 65536, 6095027, 1, 65536, 6095026, 1, 65536, 6095025, 1, 65536, 6095024, 1, 65536, 6095023, 1, 65536, 6095022, 1, 65536, 6095021, 1, 65536, 6095020, 1, 65536, 6095019, 1, 65536, 6095018, 1, 65536, 6029484, 1, 65536, 6029485, 1, 65536, 6029486, 1, 65536, 6029487, 1, 65536, 6029488, 1, 65536, 6029489, 1, 65536, 5963954, 1, 65536, 5963955, 1, 65536, 5963956, 1, 65536, 5963957, 1, 65536, 5963953, 1, 65536, 5963952, 1, 65536, 5963951, 1, 65536, 5963950, 1, 65536, 5963949, 1, 65536, 5963948, 1, 65536, 5963947, 1, 65536, 6029493, 1, 65536, 6029494, 1, 65536, 6029495, 1, 65536, 6029496, 1, 65536, 6029497, 1, 65536, 6095030, 1, 65536, 6095029, 1, 65536, 6095034, 1, 65536, 6095035, 1, 65536, 6095036, 1, 65536, 6291644, 1, 65536, 6357181, 1, 65536, 6422717, 1, 65536, 6422716, 1, 65536, 6422715, 1, 65536, 6422713, 1, 65536, 6357176, 1, 65536, 6357179, 1, 65536, 6357180, 1, 65536, 6488253, 1, 65536, 6488252, 1, 65536, 6422718, 1, 65536, 6488255, 1, 65536, 6619327, 1, 65536, 6488254, 1, 65536, 6226109, 1, 65536, 6226110, 1, 65536, 6291647, 1, 65536, 6357183, 1, 65536, 6357184, 1, 65536, 6422720, 1, 65536, 6488256, 1, 65536, 6619326, 1, 65536, 6684862, 1, 65536, 6750396, 1, 65536, 6881462, 1, 65536, 6881461, 1, 65536, 6946996, 1, 65536, 6750392, 1, 65536, 6815919, 1, 65536, 6750383, 1, 65536, 6750384, 1, 65536, 6750385, 1, 65536, 6881448, 1, 65536, 6881436, 1, 65536, 6881435, 1, 65536, 6881432, 1, 65536, 6946973, 1, 65536, 6946972, 1, 65536, 6750372, 1, 65536, 6750373, 1, 65536, 6750374, 1, 65536, 6881431, 1, 65536, 6881430, 1, 65536, 6881429, 1, 65536, 6815894, 1, 65536, 6815893, 1, 65536, 6750356, 1, 65536, 6750355, 1, 65536, 6750354, 1, 65536, 6750353, 1, 65536, 6750352, 1, 65536, 6750351, 1, 65536, 6684814, 1, 65536, 6684813, 1, 65536, 6619277, 1, 65536, 6553741, 1, 65536, 6488205, 1, 65536, 6422668, 1, 65536, 6357132, 1, 65536, 6291596, 1, 65536, 6226060, 1, 65536, 6160524, 1, 65536, 6094988, 1, 65536, 6094989, 1, 65536, 6029454, 1, 65536, 6029455, 1, 65536, 6029456, 1, 65536, 6029457, 1, 65536, 6029458, 1, 65536, 6029459, 1, 65536, 6422671, 1, 65536, 6422670, 1, 65536, 6488206, 1, 65536, 6357134, 1, 65536, 6291598, 1, 65536, 6226062, 1, 65536, 6160526, 1, 65536, 6094991, 1, 65536, 6160527, 1, 65536, 6488207, 1, 65536, 6357133, 1, 65536, 6291597, 1, 65536, 6226061, 1, 65536, 6094990, 1, 65536, 6094992, 1, 65536, 6094993, 1, 65536, 6357135, 1, 65536, 6291599, 1, 65536, 6226063, 1, 65536, 6422669, 1, 65536, 6357131, 1, 65536, 6291595, 1, 65536, 6160525, 1, 65536, 6160528, 1, 65536, 5963922, 1, 65536, 5963923, 1, 65536, 6094994, 1, 65536, 6029481, 1, 65536, 6029482, 1, 65536, 6029483, 1, 65536, 5963958, 1, 65536, 5963959, 1, 65536, 6029490, 1, 65536, 6029491, 1, 65536, 6029492, 1, 65536)
 
-[node name="Flies" type="Node2D" parent="." index="14"]
+[node name="Accessories" type="Node2D" parent="." index="14"]
+
+[node name="Patch" parent="Accessories" index="0" instance=ExtResource("10_w5j40")]
+position = Vector2(1502, 286)
+
+[node name="Sprite2D" parent="Accessories/Patch" index="0"]
+texture = ExtResource("11_ar328")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch25" parent="Accessories" index="1" instance=ExtResource("10_w5j40")]
+position = Vector2(1500, 436)
+
+[node name="Sprite2D" parent="Accessories/Patch25" index="0"]
+texture = ExtResource("11_ar328")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch25" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch21" parent="Accessories" index="2" instance=ExtResource("10_w5j40")]
+position = Vector2(1494, 379)
+
+[node name="Sprite2D" parent="Accessories/Patch21" index="0"]
+texture = ExtResource("11_ar328")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch21" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch2" parent="Accessories" index="3" instance=ExtResource("10_w5j40")]
+position = Vector2(1574, 314)
+
+[node name="Sprite2D" parent="Accessories/Patch2" index="0"]
+texture = ExtResource("12_1i8am")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch2" index="1"]
+polygon = PackedVector2Array(-8, 100, -39, 67, -56, 41, -67, -1, -65, -75, -28, -114, 24, -119, 70, -23, 42, 61, 12, 113)
+
+[node name="Patch22" parent="Accessories" index="4" instance=ExtResource("10_w5j40")]
+position = Vector2(1571, 404)
+
+[node name="Sprite2D" parent="Accessories/Patch22" index="0"]
+texture = ExtResource("12_1i8am")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch22" index="1"]
+polygon = PackedVector2Array(-8, 100, -39, 67, -56, 41, -67, -1, -65, -75, -28, -114, 24, -119, 70, -23, 42, 61, 12, 113)
+
+[node name="Patch3" parent="Accessories" index="5" instance=ExtResource("10_w5j40")]
+position = Vector2(1686, 299)
+
+[node name="Sprite2D" parent="Accessories/Patch3" index="0"]
+texture = ExtResource("13_q1opc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch3" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch23" parent="Accessories" index="6" instance=ExtResource("10_w5j40")]
+position = Vector2(1685, 351)
+
+[node name="Sprite2D" parent="Accessories/Patch23" index="0"]
+texture = ExtResource("13_q1opc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch23" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch24" parent="Accessories" index="7" instance=ExtResource("10_w5j40")]
+position = Vector2(1682, 424)
+
+[node name="Sprite2D" parent="Accessories/Patch24" index="0"]
+texture = ExtResource("13_q1opc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch24" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch4" parent="Accessories" index="8" instance=ExtResource("10_w5j40")]
+position = Vector2(1692, 462)
+
+[node name="Sprite2D" parent="Accessories/Patch4" index="0"]
+texture = ExtResource("14_4102u")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch4" index="1"]
+polygon = PackedVector2Array(90, 7, 26, 25, -28, 52, -76, 27, -96, -45, -80, -52, -57, -30, -39, -7, -4, -20, 40, -34, 64, -22)
+
+[node name="Patch20" parent="Accessories" index="9" instance=ExtResource("10_w5j40")]
+position = Vector2(1689, 536)
+
+[node name="Sprite2D" parent="Accessories/Patch20" index="0"]
+texture = ExtResource("14_4102u")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch20" index="1"]
+polygon = PackedVector2Array(90, 7, 26, 25, -28, 52, -76, 27, -96, -45, -80, -52, -57, -30, -39, -7, -4, -20, 40, -34, 64, -22)
+
+[node name="Patch5" parent="Accessories" index="10" instance=ExtResource("10_w5j40")]
+position = Vector2(1511, 489)
+
+[node name="Sprite2D" parent="Accessories/Patch5" index="0"]
+texture = ExtResource("14_4102u")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch5" index="1"]
+polygon = PackedVector2Array(99, -42, 87, 10, 42, 47, 20, 50, -3, 39, -36, 12, -96, 8, -86, -8, -64, -25, -44, -32, -22, -33, -4, -20, 37, -7, 62, -14, 69, -30, 59, -34, 82, -55)
+
+[node name="Patch19" parent="Accessories" index="11" instance=ExtResource("10_w5j40")]
+position = Vector2(1502, 551)
+
+[node name="Sprite2D" parent="Accessories/Patch19" index="0"]
+texture = ExtResource("14_4102u")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch19" index="1"]
+polygon = PackedVector2Array(99, -42, 87, 10, 42, 47, 20, 50, -3, 39, -36, 12, -96, 8, -86, -8, -64, -25, -44, -32, -22, -33, -4, -20, 37, -7, 62, -14, 69, -30, 59, -34, 82, -55)
+
+[node name="Patch6" parent="Accessories" index="12" instance=ExtResource("10_w5j40")]
+position = Vector2(1541, 668)
+
+[node name="Sprite2D" parent="Accessories/Patch6" index="0"]
+texture = ExtResource("15_qg84e")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch6" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 54, 28, 25, 28, -5, 20, -60, 14, -161, 37, -124, 9, -172, -1, -193, -29, -149, -16, -146, -35, -62, -15, -19, -29, 23, -31, 43, -30, 81, -25, 121, -38, 164, -25, 181, 9)
+
+[node name="Patch18" parent="Accessories" index="13" instance=ExtResource("10_w5j40")]
+position = Vector2(1529, 615)
+
+[node name="Sprite2D" parent="Accessories/Patch18" index="0"]
+texture = ExtResource("15_qg84e")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch18" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 54, 28, 25, 28, -5, 20, -60, 14, -161, 37, -124, 9, -172, -1, -193, -29, -149, -16, -146, -35, -62, -15, -19, -29, 23, -31, 43, -30, 81, -25, 121, -38, 164, -25, 181, 9)
+
+[node name="Patch7" parent="Accessories" index="14" instance=ExtResource("10_w5j40")]
+position = Vector2(1588, 753)
+
+[node name="Sprite2D" parent="Accessories/Patch7" index="0"]
+texture = ExtResource("15_qg84e")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch7" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 67, 7, 25, 28, -8, 29, -55, 30, -105, 37, -161, 37, -182, 3, -166, -28, -113, -40, -56, -30, -19, -29, 23, -31, 41, -25, 63, -14, 141, -35, 195, -25, 167, -1, 123, 10)
+
+[node name="Patch17" parent="Accessories" index="15" instance=ExtResource("10_w5j40")]
+position = Vector2(1598, 720)
+
+[node name="Sprite2D" parent="Accessories/Patch17" index="0"]
+texture = ExtResource("15_qg84e")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch17" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 67, 7, 25, 28, -8, 29, -55, 30, -105, 37, -161, 37, -182, 3, -166, -28, -113, -40, -56, -30, -19, -29, 23, -31, 41, -25, 63, -14, 141, -35, 195, -25, 167, -1, 123, 10)
+
+[node name="Patch8" parent="Accessories" index="16" instance=ExtResource("10_w5j40")]
+position = Vector2(1457, 840)
+
+[node name="Sprite2D" parent="Accessories/Patch8" index="0"]
+texture = ExtResource("16_caso2")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch8" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch11" parent="Accessories" index="17" instance=ExtResource("10_w5j40")]
+position = Vector2(1576, 837)
+
+[node name="Sprite2D" parent="Accessories/Patch11" index="0"]
+texture = ExtResource("16_caso2")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch11" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch12" parent="Accessories" index="18" instance=ExtResource("10_w5j40")]
+position = Vector2(1612, 835)
+
+[node name="Sprite2D" parent="Accessories/Patch12" index="0"]
+texture = ExtResource("16_caso2")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch12" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch9" parent="Accessories" index="19" instance=ExtResource("10_w5j40")]
+position = Vector2(1494, 841)
+
+[node name="Sprite2D" parent="Accessories/Patch9" index="0"]
+texture = ExtResource("17_dr0c1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch9" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch10" parent="Accessories" index="20" instance=ExtResource("10_w5j40")]
+position = Vector2(1537, 842)
+
+[node name="Sprite2D" parent="Accessories/Patch10" index="0"]
+texture = ExtResource("17_dr0c1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch10" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch13" parent="Accessories" index="21" instance=ExtResource("10_w5j40")]
+position = Vector2(1461, 883)
+
+[node name="Sprite2D" parent="Accessories/Patch13" index="0"]
+texture = ExtResource("18_v3rh0")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch13" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 32, -11, 30, 17)
+
+[node name="Patch14" parent="Accessories" index="22" instance=ExtResource("10_w5j40")]
+position = Vector2(1545, 883)
+
+[node name="Sprite2D" parent="Accessories/Patch14" index="0"]
+texture = ExtResource("18_v3rh0")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch14" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 32, -11, 30, 17)
+
+[node name="Patch15" parent="Accessories" index="23" instance=ExtResource("10_w5j40")]
+position = Vector2(1620, 885)
+
+[node name="Sprite2D" parent="Accessories/Patch15" index="0"]
+texture = ExtResource("18_v3rh0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch15" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch16" parent="Accessories" index="24" instance=ExtResource("10_w5j40")]
+position = Vector2(1688, 889)
+
+[node name="Sprite2D" parent="Accessories/Patch16" index="0"]
+texture = ExtResource("18_v3rh0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch16" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch29" parent="Accessories" index="25" instance=ExtResource("10_w5j40")]
+position = Vector2(1502, 931)
+
+[node name="Sprite2D" parent="Accessories/Patch29" index="0"]
+texture = ExtResource("18_v3rh0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch29" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch30" parent="Accessories" index="26" instance=ExtResource("10_w5j40")]
+position = Vector2(1627, 939)
+
+[node name="Sprite2D" parent="Accessories/Patch30" index="0"]
+texture = ExtResource("18_v3rh0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch30" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch26" parent="Accessories" index="27" instance=ExtResource("10_w5j40")]
+position = Vector2(445, 228)
+
+[node name="Sprite2D" parent="Accessories/Patch26" index="0"]
+texture = ExtResource("9_eiydd")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch26" index="1"]
+polygon = PackedVector2Array(-203, -103, -148, -74, -80, -43, 13, -8, 46, -33, 97, -48, 126, -45, 177, -21, 186, 3, 204, 2, 204, 19, 188, 24, 183, 50, 166, 86, 153, 102, 114, 101, 73, 87, 39, 63, 16, 35, 7, 8, -86, -23, -154, -48, -207, -78)
+
+[node name="Patch27" parent="Accessories" index="28" instance=ExtResource("10_w5j40")]
+position = Vector2(307, 240)
+
+[node name="Sprite2D" parent="Accessories/Patch27" index="0"]
+texture = ExtResource("9_eiydd")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch27" index="1"]
+polygon = PackedVector2Array(-188, 4, -181, -21, -144, -42, -80, -43, 1, -14, 46, -33, 97, -48, 205, -98, 207, -79, 118, -36, 7, 8, -23, 63, -83, 90, -153, 106, -190, 37, -208, 20, -205, 3)
+
+[node name="Patch28" parent="Accessories" index="29" instance=ExtResource("10_w5j40")]
+position = Vector2(260, 425)
+
+[node name="Sprite2D" parent="Accessories/Patch28" index="0"]
+texture = ExtResource("19_gmtge")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch28" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch31" parent="Accessories" index="30" instance=ExtResource("10_w5j40")]
+position = Vector2(372, 420)
+
+[node name="Sprite2D" parent="Accessories/Patch31" index="0"]
+texture = ExtResource("19_gmtge")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch31" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch32" parent="Accessories" index="31" instance=ExtResource("10_w5j40")]
+position = Vector2(451, 417)
+
+[node name="Sprite2D" parent="Accessories/Patch32" index="0"]
+texture = ExtResource("19_gmtge")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch32" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch33" parent="Accessories" index="32" instance=ExtResource("10_w5j40")]
+position = Vector2(249, 487)
+
+[node name="Sprite2D" parent="Accessories/Patch33" index="0"]
+texture = ExtResource("19_gmtge")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch33" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch34" parent="Accessories" index="33" instance=ExtResource("10_w5j40")]
+position = Vector2(364, 480)
+
+[node name="Sprite2D" parent="Accessories/Patch34" index="0"]
+texture = ExtResource("19_gmtge")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch34" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch35" parent="Accessories" index="34" instance=ExtResource("10_w5j40")]
+position = Vector2(470, 480)
+
+[node name="Sprite2D" parent="Accessories/Patch35" index="0"]
+texture = ExtResource("19_gmtge")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch35" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch36" parent="Accessories" index="35" instance=ExtResource("10_w5j40")]
+position = Vector2(239, 564)
+
+[node name="Sprite2D" parent="Accessories/Patch36" index="0"]
+texture = ExtResource("20_qcfoc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch36" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch37" parent="Accessories" index="36" instance=ExtResource("10_w5j40")]
+position = Vector2(345, 571)
+
+[node name="Sprite2D" parent="Accessories/Patch37" index="0"]
+texture = ExtResource("20_qcfoc")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch37" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch38" parent="Accessories" index="37" instance=ExtResource("10_w5j40")]
+position = Vector2(457, 565)
+
+[node name="Sprite2D" parent="Accessories/Patch38" index="0"]
+texture = ExtResource("20_qcfoc")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch38" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch39" parent="Accessories" index="38" instance=ExtResource("10_w5j40")]
+position = Vector2(238, 680)
+
+[node name="Sprite2D" parent="Accessories/Patch39" index="0"]
+texture = ExtResource("21_pbbmj")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch39" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch40" parent="Accessories" index="39" instance=ExtResource("10_w5j40")]
+position = Vector2(304, 681)
+
+[node name="Sprite2D" parent="Accessories/Patch40" index="0"]
+texture = ExtResource("21_pbbmj")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch40" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch41" parent="Accessories" index="40" instance=ExtResource("10_w5j40")]
+position = Vector2(455, 682)
+
+[node name="Sprite2D" parent="Accessories/Patch41" index="0"]
+texture = ExtResource("21_pbbmj")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch41" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch42" parent="Accessories" index="41" instance=ExtResource("10_w5j40")]
+position = Vector2(373, 682)
+
+[node name="Sprite2D" parent="Accessories/Patch42" index="0"]
+texture = ExtResource("21_pbbmj")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch42" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch43" parent="Accessories" index="42" instance=ExtResource("10_w5j40")]
+position = Vector2(239, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch43" index="0"]
+texture = ExtResource("22_kw3xc")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch43" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch44" parent="Accessories" index="43" instance=ExtResource("10_w5j40")]
+position = Vector2(288, 735)
+
+[node name="Sprite2D" parent="Accessories/Patch44" index="0"]
+texture = ExtResource("22_kw3xc")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch44" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch45" parent="Accessories" index="44" instance=ExtResource("10_w5j40")]
+position = Vector2(330, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch45" index="0"]
+texture = ExtResource("22_kw3xc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch45" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch46" parent="Accessories" index="45" instance=ExtResource("10_w5j40")]
+position = Vector2(376, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch46" index="0"]
+texture = ExtResource("22_kw3xc")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch46" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch47" parent="Accessories" index="46" instance=ExtResource("10_w5j40")]
+position = Vector2(435, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch47" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch47" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch48" parent="Accessories" index="47" instance=ExtResource("10_w5j40")]
+position = Vector2(485, 779)
+
+[node name="Sprite2D" parent="Accessories/Patch48" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch48" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch49" parent="Accessories" index="48" instance=ExtResource("10_w5j40")]
+position = Vector2(426, 780)
+
+[node name="Sprite2D" parent="Accessories/Patch49" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch49" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch50" parent="Accessories" index="49" instance=ExtResource("10_w5j40")]
+position = Vector2(487, 723)
+
+[node name="Sprite2D" parent="Accessories/Patch50" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch50" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch51" parent="Accessories" index="50" instance=ExtResource("10_w5j40")]
+position = Vector2(458, 765)
+
+[node name="Sprite2D" parent="Accessories/Patch51" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch51" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch52" parent="Accessories" index="51" instance=ExtResource("10_w5j40")]
+position = Vector2(459, 800)
+
+[node name="Sprite2D" parent="Accessories/Patch52" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch52" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch53" parent="Accessories" index="52" instance=ExtResource("10_w5j40")]
+position = Vector2(437, 742)
+
+[node name="Sprite2D" parent="Accessories/Patch53" index="0"]
+texture = ExtResource("23_8pl8l")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch53" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch54" parent="Accessories" index="53" instance=ExtResource("10_w5j40")]
+position = Vector2(260, 849)
+
+[node name="Sprite2D" parent="Accessories/Patch54" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch54" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch55" parent="Accessories" index="54" instance=ExtResource("10_w5j40")]
+position = Vector2(309, 836)
+
+[node name="Sprite2D" parent="Accessories/Patch55" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch55" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch56" parent="Accessories" index="55" instance=ExtResource("10_w5j40")]
+position = Vector2(286, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch56" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch56" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch57" parent="Accessories" index="56" instance=ExtResource("10_w5j40")]
+position = Vector2(265, 831)
+
+[node name="Sprite2D" parent="Accessories/Patch57" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch57" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch58" parent="Accessories" index="57" instance=ExtResource("10_w5j40")]
+position = Vector2(244, 888)
+
+[node name="Sprite2D" parent="Accessories/Patch58" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch58" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch59" parent="Accessories" index="58" instance=ExtResource("10_w5j40")]
+position = Vector2(244, 888)
+
+[node name="Sprite2D" parent="Accessories/Patch59" index="0"]
+texture = ExtResource("24_cgbvv")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch59" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch60" parent="Accessories" index="59" instance=ExtResource("10_w5j40")]
+position = Vector2(244, 899)
+
+[node name="Sprite2D" parent="Accessories/Patch60" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch60" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch61" parent="Accessories" index="60" instance=ExtResource("10_w5j40")]
+position = Vector2(287, 899)
+
+[node name="Sprite2D" parent="Accessories/Patch61" index="0"]
+texture = ExtResource("24_cgbvv")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch61" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch62" parent="Accessories" index="61" instance=ExtResource("10_w5j40")]
+position = Vector2(316, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch62" index="0"]
+texture = ExtResource("24_cgbvv")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch62" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch63" parent="Accessories" index="62" instance=ExtResource("10_w5j40")]
+position = Vector2(316, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch63" index="0"]
+texture = ExtResource("24_cgbvv")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch63" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch64" parent="Accessories" index="63" instance=ExtResource("10_w5j40")]
+position = Vector2(414, 834)
+
+[node name="Sprite2D" parent="Accessories/Patch64" index="0"]
+texture = ExtResource("25_kkf3h")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch64" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch65" parent="Accessories" index="64" instance=ExtResource("10_w5j40")]
+position = Vector2(395, 881)
+
+[node name="Sprite2D" parent="Accessories/Patch65" index="0"]
+texture = ExtResource("25_kkf3h")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch65" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch66" parent="Accessories" index="65" instance=ExtResource("10_w5j40")]
+position = Vector2(436, 905)
+
+[node name="Sprite2D" parent="Accessories/Patch66" index="0"]
+texture = ExtResource("25_kkf3h")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch66" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch67" parent="Accessories" index="66" instance=ExtResource("10_w5j40")]
+position = Vector2(474, 844)
+
+[node name="Sprite2D" parent="Accessories/Patch67" index="0"]
+texture = ExtResource("25_kkf3h")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch67" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch68" parent="Accessories" index="67" instance=ExtResource("10_w5j40")]
+position = Vector2(481, 912)
+
+[node name="Sprite2D" parent="Accessories/Patch68" index="0"]
+texture = ExtResource("25_kkf3h")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch68" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Hat2" parent="Accessories" index="68" instance=ExtResource("10_w5j40")]
+position = Vector2(427, 335)
+
+[node name="CollisionPolygon2D" parent="Accessories/Hat2" index="1"]
+polygon = PackedVector2Array(-353, -14, -299, -13, -252, -11, -223, -21, -189, -52, -162, -92, -134, -125, -102, -154, -61, -169, -23, -169, -8, -162, -8, -129, 3, -128, 7, -160, 33, -169, 63, -167, 99, -153, 146, -112, 170, -74, 199, -38, 235, -14, 302, -18, 349, -17, 353, -12, 347, 16, 295, 81, 247, 121, 210, 129, 170, 129, 101, 144, 22, 166, -13, 166, -66, 152, -132, 138, -186, 130, -226, 129, -250, 121, -280, 93, -321, 51, -345, 14)
+
+[node name="Hat" parent="Accessories" index="69" instance=ExtResource("10_w5j40")]
+position = Vector2(245, 310)
+
+[node name="CollisionPolygon2D" parent="Accessories/Hat" index="1"]
+polygon = PackedVector2Array(-353, -14, -299, -13, -252, -11, -223, -21, -189, -52, -162, -92, -134, -125, -102, -154, -61, -169, -23, -169, -8, -162, -8, -129, 3, -128, 7, -160, 33, -169, 63, -167, 99, -153, 146, -112, 170, -74, 199, -38, 235, -14, 302, -18, 349, -17, 353, -12, 347, 16, 295, 81, 247, 121, 210, 129, 170, 129, 101, 144, 22, 166, -13, 166, -66, 152, -132, 138, -186, 130, -226, 129, -250, 121, -280, 93, -321, 51, -345, 14)
+
+[node name="Flies" type="Node2D" parent="." index="15"]
 script = ExtResource("12_m27wh")
 FlyScene = ExtResource("12_o8snn")
 SpawnPositions = Array[Vector2]([Vector2(754, 860), Vector2(1360, 234), Vector2(857, 456), Vector2(1360, 860)])
@@ -123,3 +790,73 @@ rotation = 0.811578
 
 [editable path="Patch"]
 [editable path="Hat"]
+[editable path="Accessories/Patch"]
+[editable path="Accessories/Patch25"]
+[editable path="Accessories/Patch21"]
+[editable path="Accessories/Patch2"]
+[editable path="Accessories/Patch22"]
+[editable path="Accessories/Patch3"]
+[editable path="Accessories/Patch23"]
+[editable path="Accessories/Patch24"]
+[editable path="Accessories/Patch4"]
+[editable path="Accessories/Patch20"]
+[editable path="Accessories/Patch5"]
+[editable path="Accessories/Patch19"]
+[editable path="Accessories/Patch6"]
+[editable path="Accessories/Patch18"]
+[editable path="Accessories/Patch7"]
+[editable path="Accessories/Patch17"]
+[editable path="Accessories/Patch8"]
+[editable path="Accessories/Patch11"]
+[editable path="Accessories/Patch12"]
+[editable path="Accessories/Patch9"]
+[editable path="Accessories/Patch10"]
+[editable path="Accessories/Patch13"]
+[editable path="Accessories/Patch14"]
+[editable path="Accessories/Patch15"]
+[editable path="Accessories/Patch16"]
+[editable path="Accessories/Patch29"]
+[editable path="Accessories/Patch30"]
+[editable path="Accessories/Patch26"]
+[editable path="Accessories/Patch27"]
+[editable path="Accessories/Patch28"]
+[editable path="Accessories/Patch31"]
+[editable path="Accessories/Patch32"]
+[editable path="Accessories/Patch33"]
+[editable path="Accessories/Patch34"]
+[editable path="Accessories/Patch35"]
+[editable path="Accessories/Patch36"]
+[editable path="Accessories/Patch37"]
+[editable path="Accessories/Patch38"]
+[editable path="Accessories/Patch39"]
+[editable path="Accessories/Patch40"]
+[editable path="Accessories/Patch41"]
+[editable path="Accessories/Patch42"]
+[editable path="Accessories/Patch43"]
+[editable path="Accessories/Patch44"]
+[editable path="Accessories/Patch45"]
+[editable path="Accessories/Patch46"]
+[editable path="Accessories/Patch47"]
+[editable path="Accessories/Patch48"]
+[editable path="Accessories/Patch49"]
+[editable path="Accessories/Patch50"]
+[editable path="Accessories/Patch51"]
+[editable path="Accessories/Patch52"]
+[editable path="Accessories/Patch53"]
+[editable path="Accessories/Patch54"]
+[editable path="Accessories/Patch55"]
+[editable path="Accessories/Patch56"]
+[editable path="Accessories/Patch57"]
+[editable path="Accessories/Patch58"]
+[editable path="Accessories/Patch59"]
+[editable path="Accessories/Patch60"]
+[editable path="Accessories/Patch61"]
+[editable path="Accessories/Patch62"]
+[editable path="Accessories/Patch63"]
+[editable path="Accessories/Patch64"]
+[editable path="Accessories/Patch65"]
+[editable path="Accessories/Patch66"]
+[editable path="Accessories/Patch67"]
+[editable path="Accessories/Patch68"]
+[editable path="Accessories/Hat2"]
+[editable path="Accessories/Hat"]
