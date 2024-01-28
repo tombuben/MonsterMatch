@@ -296,7 +296,7 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LightsOut"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="LightsOut"]
-energy = 0.98
+energy = 0.91
 blend_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

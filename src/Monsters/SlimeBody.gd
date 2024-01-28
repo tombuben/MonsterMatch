@@ -18,8 +18,8 @@ func _ready() -> void:
 	LeftIrisStartPos = LeftIris.position
 	RightIrisStartPos = RightIris.position
 	
-	await get_tree().create_timer(3.0).timeout
-	get_node("/root/Salon/LightsOut").turn_off_lights(true)
+	#await get_tree().create_timer(3.0).timeout
+	#get_node("/root/Salon/LightsOut").turn_off_lights(true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

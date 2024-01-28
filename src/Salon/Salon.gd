@@ -43,6 +43,8 @@ func _doState() -> void:
 			Dialogue.scale.y = 0.5
 			%CanvasLayer.add_child(Dialogue)
 		Globals.GameStateEnums.MAKEUP:
+			if (Globals.CurrentMonster == 0):
+				get_node("/root/Salon/LightsOut").turn_off_lights(true)
 			Cursor = CursorScene.instantiate()
 			Cursor.global_position = Vector2(600, 400)
 			add_child(Cursor)
@@ -53,6 +55,8 @@ func _doState() -> void:
 			GameTimer.trigger_gamestate_change.connect(_trigger_state_change)
 			add_child(GameTimer)
 		Globals.GameStateEnums.OUTRO:
+			if (Globals.CurrentMonster == 0):
+				get_node("/root/Salon/LightsOut").turn_off_lights(false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			remove_child(Cursor)
 			remove_child(GameTimer)
