@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=19 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="5_40msm"]
 [ext_resource type="Script" path="res://src/Salon/LightsOut.gd" id="5_vfuqq"]
 [ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
-[ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
 [ext_resource type="Script" path="res://src/Salon/AutoReference.gd" id="8_y1li6"]
+[ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
 
 [sub_resource type="Animation" id="Animation_iaupg"]
 resource_name = "LightsOut"
@@ -87,6 +87,21 @@ glow_levels/7 = 5.92
 glow_intensity = 2.34
 glow_hdr_threshold = 0.7
 
+[sub_resource type="Animation" id="Animation_l74du"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
 [sub_resource type="Animation" id="Animation_pgilc"]
 resource_name = "countdown"
 length = 3.0
@@ -127,21 +142,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"_trigger_state_change"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_l74du"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3pkgn"]
