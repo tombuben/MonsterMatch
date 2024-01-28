@@ -48,7 +48,7 @@ func _makeScreenshot():
 func _playIntermezzo():
 	#$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
 		$CanvasLayer/Curtain/Label2.text = monesterNames[Globals.CurrentMonster]
-		$CanvasLayer/Curtain/Label3.text = "The %s Date" % dateTexts[Globals.DateCounter-1]
+		$CanvasLayer/Curtain/Label3.text = "Day %s" % (date_count+1)
 		$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 
 func _doState() -> void:
