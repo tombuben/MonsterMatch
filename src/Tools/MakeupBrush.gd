@@ -73,8 +73,9 @@ func _process(_delta):
 					
 						last_point_pos = drawing_position
 						
-						brush_sfx.pitch_scale = randf_range(0.9, 1.15)
-						brush_sfx.play()
+						if brush_sfx != null:
+							brush_sfx.pitch_scale = randf_range(0.9, 1.15)
+							brush_sfx.play()
 				
 						brush_state = DRAWING
 		DRAWING:
@@ -95,7 +96,8 @@ func _process(_delta):
 				last_brush_stroke.add_point(drawing_position)
 				last_brush_stroke.add_point(drawing_position + Vector2.RIGHT)
 				
-				brush_sfx.stop()
+				if brush_sfx != null:
+					brush_sfx.stop()
 				
 				brush_state = IDLE
 		ERASING:

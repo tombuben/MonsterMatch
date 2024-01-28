@@ -20,7 +20,13 @@ var date_count = 0
 var dateTexts = [
 	"First",
 	"Second",
-	"Third"
+	"Third",
+	"Fourth",
+	"Fifth",
+	"Sixth",
+	"Seventh",
+	"Eighth",
+	"Ninth"
 ]
 
 func _doState() -> void:
