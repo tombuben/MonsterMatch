@@ -16,6 +16,8 @@ var Cursor
 var Dialogue
 var GameTimer
 
+var date_count = 0
+
 func _doState() -> void:
 	match(game_state):
 		INTRO:
@@ -27,6 +29,9 @@ func _doState() -> void:
 			var newMoster = CurrentScene.instantiate()
 			MonsterHolder.add_child(newMoster)
 			
+			if (date_count != 0 && date_count % 3 == 0):
+				Globals.DateCounter += 1
+				
 			Dialogue = DialogueScene.instantiate()
 			Dialogue.global_position = Vector2(1319,150)
 			Dialogue.scale.x = 0.5
@@ -47,10 +52,12 @@ func _doState() -> void:
 			remove_child(Cursor)
 			remove_child(GameTimer)
 			Cursor = null
+			date_count += 1
 			Dialogue._outro()
 		INTERMEZZO:
 			remove_child(Dialogue)
-			pass
+			remove_child(GameTimer)
+			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 		CREDITS:
 			pass
 	
@@ -83,6 +90,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
+		$CanvasLayer/CountDown/AnimationPlayer.play("RESET")
+		$CanvasLayer/Curtain/AnimationPlayer.play("RESET")
+		Dialogue._skip_dialogue()
 		_goToNextState()
 		_doState()
 		

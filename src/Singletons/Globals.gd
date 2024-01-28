@@ -17,3 +17,5 @@ var CurrentMonster: MonsterTypeEnum
 var CurrentGameState
 
 var quick_references = {}
+
+var DateCounter = 1

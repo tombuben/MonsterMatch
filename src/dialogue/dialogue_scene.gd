@@ -20,12 +20,14 @@ var dialogueMakeup = []
 var dialogueEnd = []
 
 var CurrentMonster
+var CurrentDateCount
 
 func _ready():
 	CurrentMonster = Globals.CurrentMonster
-	dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
-	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
-	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], 1])
+	CurrentDateCount = Globals.DateCounter
+	dialogueStart = load_dialogues(jsonPath + "%s_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
+	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
+	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
 	
 	for line in dialogueMakeup:
 		Globals.DialogueTimeStamps[int(line["time"])] = line["text"]
@@ -81,8 +83,7 @@ func _on_text_box_finished_displaying():
 		_next_line()	
 
 func _input(event):
-	var just_pressed = event.is_pressed() and not event.is_echo()
-	if Input.is_key_pressed(KEY_SHIFT) and just_pressed and Globals.CurrentGameState != 1 and text_box != null:
+	if Input.is_action_just_pressed("SkipDialogue") and Globals.CurrentGameState != 1 and text_box != null:
 		_next_line()
 
 func _next_line():
@@ -92,14 +93,21 @@ func _next_line():
 	current_line_index += 1		
 	if current_line_index >= dialog_lines.size():
 		is_dialog_active = false
-		current_line_index = 0
-		
+		current_line_index = 0	
+			
 		if (Globals.CurrentGameState == 0):
 			_start_countdown()
 		return
 	
 	_show_text_box()
-	
+
+func _skip_dialogue():
+	if (text_box != null):
+		text_box.queue_free()
+		
+	is_dialog_active = false
+	current_line_index = 0
+
 func _start_countdown():
 	parent_node._countdown()
 	
