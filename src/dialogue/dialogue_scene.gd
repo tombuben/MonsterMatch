@@ -74,13 +74,13 @@ func _show_text_box():
 	add_child(text_box)
 	
 	match Globals.CurrentGameState:
-		0:
+		Globals.GameStateEnums.INTRO:
 			text_box.display_text(dialog_lines[current_line_index]["text"])
 			if dialog_lines[current_line_index].has("sfx"):
 				monster_sfx_name = dialog_lines[current_line_index]["sfx"]
-		1:
+		Globals.GameStateEnums.MAKEUP:
 			text_box.display_text(dialog_lines[0])
-		2:
+		Globals.GameStateEnums.OUTRO:
 			text_box.display_text(dialog_lines[current_line_index]["text"])
 			if dialog_lines[current_line_index].has("sfx"):
 				monster_sfx_name = dialog_lines[current_line_index]["sfx"]

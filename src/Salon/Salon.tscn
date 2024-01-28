@@ -512,20 +512,18 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer/Curtain"]
 layout_mode = 0
-offset_left = 742.0
 offset_top = 293.0
-offset_right = 1138.0
+offset_right = 1920.0
 offset_bottom = 443.0
 theme_override_font_sizes/font_size = 91
-text = "Dawn of"
+text = "New Customer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/Curtain"]
 layout_mode = 0
-offset_left = 480.0
 offset_top = 387.0
-offset_right = 1425.0
+offset_right = 1920.0
 offset_bottom = 621.0
 theme_override_font_sizes/font_size = 141
 text = "The First Date"
@@ -534,9 +532,8 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer/Curtain"]
 layout_mode = 0
-offset_left = 304.0
 offset_top = 524.0
-offset_right = 1631.0
+offset_right = 1920.0
 offset_bottom = 758.0
 theme_override_font_sizes/font_size = 81
 text = "- 24 Hours Remain -"

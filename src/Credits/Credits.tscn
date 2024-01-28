@@ -124,7 +124,8 @@ offset_left = 1.30049
 offset_top = 423.074
 offset_right = 441.3
 offset_bottom = 500.074
-text = "Cressida Viper"
+text = "Barnabus Swellbelly
+"
 label_settings = SubResource("LabelSettings_mawsc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -149,8 +150,7 @@ offset_left = -0.529896
 offset_top = 422.838
 offset_right = 439.47
 offset_bottom = 499.838
-text = "Barnabus Swellbelly
-"
+text = "Mucos Glimmer"
 label_settings = SubResource("LabelSettings_mawsc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -175,7 +175,7 @@ offset_left = 1.30049
 offset_top = 423.074
 offset_right = 441.3
 offset_bottom = 500.074
-text = "Mucos Glimmer"
+text = "Barnabus Swellbelly"
 label_settings = SubResource("LabelSettings_mawsc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -200,12 +200,13 @@ offset_left = 1.30049
 offset_top = 423.074
 offset_right = 441.3
 offset_bottom = 500.074
-text = "Cressida Viper"
+text = "Mucos Glimmer"
 label_settings = SubResource("LabelSettings_mawsc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Photo7" type="ColorRect" parent="."]
+visible = false
 offset_left = 136.0
 offset_top = 2242.0
 offset_right = 576.0
@@ -232,6 +233,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Photo8" type="ColorRect" parent="."]
+visible = false
 offset_left = 1432.0
 offset_top = 2338.0
 offset_right = 1872.0
@@ -257,6 +259,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Photo9" type="ColorRect" parent="."]
+visible = false
 offset_left = 728.0
 offset_top = 2673.0
 offset_right = 1168.0

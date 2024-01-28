@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cn42h3g40ubd7"]
+
+[ext_resource type="FontFile" uid="uid://bdlo7hfp6sjgv" path="res://assets/BAHNSCHRIFT.TTF" id="1_nmovq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvb5t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqwus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijsn5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw3co"]
+bg_color = Color(0.2, 0.329412, 0.247059, 1)
+
+[resource]
+Button/colors/font_focus_color = Color(0.2, 0.329412, 0.247059, 1)
+Button/colors/font_hover_color = Color(0.2, 0.329412, 0.247059, 1)
+Button/colors/font_pressed_color = Color(0.313726, 0.141176, 0.184314, 1)
+Button/fonts/font = ExtResource("1_nmovq")
+Button/styles/focus = SubResource("StyleBoxEmpty_wvb5t")
+Button/styles/hover = SubResource("StyleBoxEmpty_dqwus")
+Button/styles/normal = SubResource("StyleBoxEmpty_ijsn5")
+Button/styles/pressed = SubResource("StyleBoxFlat_lw3co")
