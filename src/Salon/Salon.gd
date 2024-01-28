@@ -18,6 +18,12 @@ var GameTimer
 
 var date_count = 0
 
+var dateTexts = [
+	"First",
+	"Second",
+	"Third"
+]
+
 func _doState() -> void:
 	match(game_state):
 		INTRO:
@@ -73,6 +79,7 @@ func _doState() -> void:
 			Globals.screenshots.append(square)
 			square.resize(400,400)
 
+			$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
 			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 			pass
 		CREDITS:
