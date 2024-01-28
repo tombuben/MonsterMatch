@@ -317,7 +317,7 @@ texture = ExtResource("17_dr0c1")
 polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
 
 [node name="Patch13" parent="Accessories" index="21" instance=ExtResource("10_w5j40")]
-position = Vector2(1461, 883)
+position = Vector2(1677, 816)
 
 [node name="Sprite2D" parent="Accessories/Patch13" index="0"]
 texture = ExtResource("18_v3rh0")
@@ -326,7 +326,7 @@ texture = ExtResource("18_v3rh0")
 polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 32, -11, 30, 17)
 
 [node name="Patch14" parent="Accessories" index="22" instance=ExtResource("10_w5j40")]
-position = Vector2(1545, 883)
+position = Vector2(1627, 798)
 
 [node name="Sprite2D" parent="Accessories/Patch14" index="0"]
 texture = ExtResource("18_v3rh0")
@@ -355,7 +355,7 @@ flip_h = true
 polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
 
 [node name="Patch29" parent="Accessories" index="25" instance=ExtResource("10_w5j40")]
-position = Vector2(1502, 931)
+position = Vector2(1735, 821)
 
 [node name="Sprite2D" parent="Accessories/Patch29" index="0"]
 texture = ExtResource("18_v3rh0")
@@ -752,7 +752,7 @@ flip_h = true
 polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
 
 [node name="Patch68" parent="Accessories" index="67" instance=ExtResource("10_w5j40")]
-position = Vector2(481, 912)
+position = Vector2(377, 911)
 
 [node name="Sprite2D" parent="Accessories/Patch68" index="0"]
 texture = ExtResource("25_kkf3h")
