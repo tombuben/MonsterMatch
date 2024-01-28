@@ -1,7 +1,7 @@
 extends Node
 
 enum MonsterTypeEnum { SLIME, PIRATE, MEDUSA }
-enum GameStateEnums { INTRO, MAKEUP, OUTRO, INTERMEZZO, CREDITS }
+enum GameStateEnums { INTRO, MAKEUP, OUTRO, INTERMEZZO, EPILOG, CREDITS }
 
 var ShakyHands: bool = true
 var InvertedControls: bool = false

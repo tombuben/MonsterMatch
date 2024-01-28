@@ -40,7 +40,7 @@ func _doState() -> void:
 			var newMoster = CurrentScene.instantiate()
 			MonsterHolder.add_child(newMoster)
 			
-			if (date_count != 0 && date_count % 3 == 0):
+			if (date_count != 0 && date_count % 2 == 0):
 				Globals.DateCounter += 1
 				
 			Dialogue = DialogueScene.instantiate()
@@ -90,6 +90,9 @@ func _doState() -> void:
 			$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
 			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 			pass
+		Globals.GameStateEnums.EPILOG:
+			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
+			pass
 		Globals.GameStateEnums.CREDITS:
 			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
 			pass
@@ -112,8 +115,8 @@ func _goToNextState() -> void:
 				game_state = Globals.GameStateEnums.INTRO
 				Globals.CurrentGameState = game_state
 			else:
-				game_state = Globals.GameStateEnums.CREDITS
-				Globals.CurrentGameState = game_state 
+				game_state = Globals.GameStateEnums.EPILOG
+				Globals.CurrentGameState = game_state
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
