@@ -1,23 +1,149 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6ha6qqu8arar"]
+[gd_scene load_steps=14 format=3 uid="uid://b6ha6qqu8arar"]
 
-[ext_resource type="Script" path="res://src/TitleScreen/title_screen.gd" id="1_njw75"]
+[ext_resource type="Script" path="res://src/TitleScreen/TitleScreen.gd" id="1_my4xg"]
+[ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="1_wvad5"]
+[ext_resource type="Texture2D" uid="uid://dj7qtrujt6j7r" path="res://assets/Salon/monster_UI_suplik_right_open.png" id="2_cf824"]
+[ext_resource type="PackedScene" uid="uid://cri726vtnvk0q" path="res://src/Salon/Salon.tscn" id="2_lv6i1"]
+[ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="3_dc7dn"]
+[ext_resource type="FontFile" uid="uid://bdlo7hfp6sjgv" path="res://assets/BAHNSCHRIFT.TTF" id="3_e7w3o"]
+[ext_resource type="Theme" uid="uid://cn42h3g40ubd7" path="res://assets/menu_theme.tres" id="6_78p4b"]
 
-[node name="TitleScreen" type="Node2D"]
-script = ExtResource("1_njw75")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6kgre"]
 
-[node name="PlayButton" type="Button" parent="."]
-offset_left = 578.0
-offset_top = 776.0
-offset_right = 889.0
-offset_bottom = 862.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fuiw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iweac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3smq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_im1yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ibv2"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_78p4b")
+script = ExtResource("1_my4xg")
+next_level = ExtResource("2_lv6i1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgourndTemp" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.141176, 0.184314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 130
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 130
+theme_override_constants/margin_bottom = 130
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+material = SubResource("ShaderMaterial_6kgre")
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("1_wvad5")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_cf824")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_e7w3o")
+theme_override_font_sizes/font_size = 127
+text = "Monster Match"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Buttons" type="MarginContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 31
+
+[node name="Play" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/Buttons/VBoxContainer" node_paths=PackedStringArray("shortcut_context")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+shortcut_context = NodePath("..")
+theme_override_font_sizes/font_size = 100
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 1061.0
-offset_top = 777.0
-offset_right = 1372.0
-offset_bottom = 863.0
+[node name="Quit" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/Buttons/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_next = NodePath("../Play")
+focus_previous = NodePath(".")
+theme_override_fonts/font = ExtResource("3_e7w3o")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fuiw0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iweac")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m3smq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_im1yy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ibv2")
 text = "Quit"
 
-[connection signal="button_up" from="PlayButton" to="." method="_on_play_button_button_up"]
-[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
+[node name="Table" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -174.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_dc7dn")
+expand_mode = 2
+stretch_mode = 6
+
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
