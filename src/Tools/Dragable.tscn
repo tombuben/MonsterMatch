@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg0vsldhw10a6"]
+[gd_scene load_steps=4 format=3 uid="uid://dg0vsldhw10a6"]
 
 [ext_resource type="Script" path="res://src/Tools/Dragable.gd" id="1_dyiva"]
+[ext_resource type="Texture2D" uid="uid://dxlt5nsqgl5fq" path="res://assets/Barnabus/Barnabus_hat.png" id="2_57adw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ymg58"]
 radius = 18.9737
@@ -9,18 +10,21 @@ radius = 18.9737
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_dyiva")
+state = 0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_57adw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
-[node name="FallCheck" type="Area2D" parent="."]
+[node name="PlaceCheck" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallCheck"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceCheck"]
 shape = SubResource("CircleShape2D_ymg58")
 
-[connection signal="area_entered" from="FallCheck" to="." method="_on_fall_check_area_entered"]
+[connection signal="area_entered" from="PlaceCheck" to="." method="_on_place_check_area_entered"]
+[connection signal="area_exited" from="PlaceCheck" to="." method="_on_place_check_area_exited"]

@@ -1,20 +1,19 @@
 extends Area2D
 
-enum DragableStates {IDLE, FALLING}
+enum DragableStates {FREE, PLACED}
 
-var state : DragableStates = DragableStates.IDLE
-var grav_accel : float = 30
+@export var state : DragableStates = DragableStates.PLACED
 
 func _physics_process(delta):
 	match state:
-		DragableStates.IDLE:
-			pass
-		DragableStates.FALLING:
-			
-			position += Vector2.DOWN * grav_accel * delta
-			
-			grav_accel += 2 * grav_accel * delta
+		DragableStates.FREE:
+			scale = Vector2(1, 1)
+		DragableStates.PLACED:
+			scale = Vector2(0.5, 0.5)
+
+func _on_place_check_area_entered(area):
+	state = DragableStates.PLACED
 
 
-func _on_fall_check_area_entered(area):
-	state = DragableStates.FALLING
+func _on_place_check_area_exited(area):
+	state = DragableStates.FREE

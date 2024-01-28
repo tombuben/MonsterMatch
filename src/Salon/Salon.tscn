@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=26 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="9_hfpap"]
 [ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="9_itt2x"]
 [ext_resource type="Texture2D" uid="uid://dj7qtrujt6j7r" path="res://assets/Salon/monster_UI_suplik_right_open.png" id="10_e1134"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2hby"]
+size = Vector2(300, 812)
 
 [sub_resource type="Animation" id="Animation_iaupg"]
 resource_name = "LightsOut"
@@ -234,10 +237,26 @@ position = Vector2(360, 524)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_itt2x")
 
+[node name="PlaceableAreaLeft" type="Area2D" parent="BackgroundColor"]
+position = Vector2(353, 574)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundColor/PlaceableAreaLeft"]
+shape = SubResource("RectangleShape2D_m2hby")
+
 [node name="MonsterUiSuplikRightOpen" type="Sprite2D" parent="BackgroundColor"]
 position = Vector2(1589, 524)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_e1134")
+
+[node name="PlaceableAreaRight" type="Area2D" parent="BackgroundColor"]
+position = Vector2(1598, 571)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundColor/PlaceableAreaRight"]
+shape = SubResource("RectangleShape2D_m2hby")
 
 [node name="MonsterHolder" type="Node2D" parent="."]
 
