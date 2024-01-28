@@ -5,6 +5,9 @@
 
 [node name="Fly" type="Sprite2D"]
 position = Vector2(332.155, 458)
-scale = Vector2(0.77, 0.77)
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_bgorr")
 script = ExtResource("2_q35yt")
+Speed = 6.0
+TowardsMouseSpeed = 10.0
+DirectionChangeRange = Vector2(-6, 6)

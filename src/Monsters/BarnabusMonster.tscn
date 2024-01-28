@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh4yv6ik2l2xy"]
+[gd_scene load_steps=14 format=3 uid="uid://bh4yv6ik2l2xy"]
 
 [ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="1_3oco5"]
 [ext_resource type="Texture2D" uid="uid://bqge7ew6yuhpn" path="res://assets/Barnabus/Barnabus_base_new.png" id="2_15hjn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxlt5nsqgl5fq" path="res://assets/Barnabus/Barnabus_hat.png" id="8_2oix0"]
 [ext_resource type="Texture2D" uid="uid://byhy1uyty118q" path="res://assets/Barnabus/Barnabus_patch.png" id="9_eiydd"]
 [ext_resource type="PackedScene" uid="uid://dg0vsldhw10a6" path="res://src/Tools/Dragable.tscn" id="10_w5j40"]
+[ext_resource type="Script" path="res://src/Monsters/Obstacles/Flies.gd" id="12_m27wh"]
 [ext_resource type="PackedScene" uid="uid://bqbvu7hpr7ld7" path="res://src/Monsters/Obstacles/fly.tscn" id="12_o8snn"]
 
 [node name="Monster" node_paths=PackedStringArray("RemoveForPhoto") instance=ExtResource("1_3oco5")]
@@ -158,6 +159,9 @@ collision_mask = 0
 polygon = PackedVector2Array(313, 1073, 334, 916, 447, 817, 572, 729, 631, 652, 617, 537, 601, 374, 596, 235, 628, 78, 740, -18, 743, -187, -157, -203, -138, 1095)
 
 [node name="Flies" type="Node2D" parent="." index="19"]
+script = ExtResource("12_m27wh")
+FlyScene = ExtResource("12_o8snn")
+SpawnPositions = Array[Vector2]([Vector2(754, 860), Vector2(1360, 234), Vector2(857, 456), Vector2(1360, 860)])
 
 [node name="Fly" parent="Flies" index="0" instance=ExtResource("12_o8snn")]
 position = Vector2(754, 860)
