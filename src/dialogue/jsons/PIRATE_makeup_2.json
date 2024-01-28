@@ -1,18 +1,22 @@
 [
 	{
+		"time": 45,
+	  "text": "Do you have any advice for the date? I’d really like to be perfect this time.",
+	  "sfx": ""
+	},
+	{
+		"time": 40,
+	  "text": "What do you mean just be myself? Surely not, It’s all about the other person, isn’t it, being perfect for them.",
+	  "sfx": "pirate_huh"
+	},
+	{
+		"time": 30,
+	  "text": "I really hope the date goes well this time. I am determined to make it work. whatever this guy wants, I’m ready!",
+	  "sfx": ""
+	},
+	{
 		"time": 15,
-	  "text": "Do you have any advice for the date? I’d really like to nail it this time."
-	},
-	{
-		"time": 13,
-	  "text": "What do you mean just be myself? Surely not, It’s all about the other person, isn’t it, accommodating their needs."
-	},
-	{
-		"time": 10,
-	  "text": "I really hope the date goes well this time. I am determined to make it work. whatever this guy wants, I’m ready!"
-	},
-	{
-		"time": 5,
-	  "text": "Come to think of it, this guy mentioned he likes really hairy guys. Is there anything you could add to make me even more hairy?"
+	  "text": "Come to think of it, this guy mentioned he likes really clean-shaven dudes. Make sure you get all of my hair.",
+	  "sfx": "pirate_laugh"
 	}
 ]

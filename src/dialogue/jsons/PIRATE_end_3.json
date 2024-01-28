@@ -1,14 +1,17 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "This looks interesting! Not exactly what I had in mind, but I can see what I’d like differently and that’s saying something, isn’t it?"
+	  "text": "This looks interesting! Not exactly what I had in mind, but I can see what I’d like differently and that’s saying something, isn’t it?",
+	  "sfx": "pirate_huh2"
 	},
 	{
 	  "speaker": "char",
-	  "text": " Like the last two times, I was completely happy with what you did, because I trusted you to know best. This time I have opinions!"
+	  "text": " Like the last two times, I was completely happy with what you did, because I trusted you to know best. This time I have opinions!",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "I’m going to try your advice and be a little bit more myself. Just see how it goes."
+	  "text": "I’m going to try your advice and be a little bit more myself. Just see how it goes.",
+	  "sfx": "pirate_hm1"
 	}
   ]

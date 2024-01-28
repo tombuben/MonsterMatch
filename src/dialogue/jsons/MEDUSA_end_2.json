@@ -1,14 +1,17 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Darling, I’m so happy with this. I don’t know what I want more, for my date to admire me and inevitably turn into stone or for them to resist."
+	  "text": "Darling, I’m so happy with this. I don’t know what I want more, for my date to admire me and inevitably turn into stone or for them to resist.",
+	  "sfx": "medusa_excite"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Because if they don’t look, does it mean they don’t like me? I don’t know if I could live with such a thought."
+	  "text": "Because if they don’t look, does it mean they don’t like me? I don’t know if I could live with such a thought.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "We'll see how it goes."
+	  "text": "We'll see how it goes.",
+	  "sfx": "medusa_hm"
 	}
   ]

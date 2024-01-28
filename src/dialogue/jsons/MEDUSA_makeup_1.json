@@ -1,14 +1,17 @@
 [
 	{
+		"time": 45,
+	  "text": "No, I don’t feel that bad about my dates. It’s not my fault if they simply must look at me, is it?,
+	  "sfx": ""
+	},
+	{
+		"time": 30,
+	  "text": "Maybe I should ask you to make me look bad, maybe then my dates wouldn’t feel the need to look at me. But I don’t think even you could manage something like that.",
+	  "sfx": "medusa_hm"
+	},
+	{
 		"time": 15,
-	  "text": "No, I don’t feel that bad about my dates. I can’t help it if they simply must look at me, right?"
-	},
-	{
-		"time": 10,
-	  "text": "Maybe I should ask you to make me look bad, maybe then my dates wouldn’t look at me. But I don’t think even you could manage something like that."
-	},
-	{
-		"time": 5,
-	  "text": "Hm, this lipstick color isn’t really working for me. Could you switch it?"
+	  "text": "This lipstick color isn’t really working for me. Could you switch it?",
+	  "sfx": ""
 	}
 ]

@@ -1,18 +1,22 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Hello, friend! I’m here again, for another round of makeup. My date last time really liked my look but unfortunately that’s all she liked."
+	  "text": "Hello, friend! I’m here again, for another round of makeup. My date last time really liked my look but unfortunately that’s all she liked.",
+	  "sfx": "pirate_hm2"
 	},
 	{
 	  "speaker": "char",
-	  "text": "I don’t really understand it, I tried really hard to do what I thought she wanted."
+	  "text": "I don’t really understand it, I tried really hard to do what I thought she wanted.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "But tonight I have another date with this cool looking guy. You should also make me look really cool."
+	  "text": "But tonight I have another date with this cool looking guy. You should also make me look really cool.",
+	  "sfx": "pirate_huh2"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Really different from what I look like, basically. This time, I’m gonna nail what he wants!"
+	  "text": "Really different from what I look like, for sure. This time, I’m gonna nail what he wants!",
+	  "sfx": "pirate_hm1"
 	}
   ]

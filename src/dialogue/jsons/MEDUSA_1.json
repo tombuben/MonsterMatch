@@ -1,22 +1,32 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Hello darling, what a lovely place you have here."
+	  "text": "Hello darling, what a lovely place you have here.",
+	  "sfx": "medusa_hm"
 	},
 	{
 	  "speaker": "char",
-	  "text": "I’ve heard such good things, hopefully you’ll live up to your name."
+	  "text": "I’ve heard such good things. Let’s see if you live up to your name.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "What do I need? To look beautiful, of course. Well, even more beautiful than now."
+	  "text": "What do I need? To look beautiful, of course. Well, even more beautiful than now.",
+	  "sfx": "medusa_laugh"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Just keep your eyes on the mirror dear, be really careful about that. I don’t want you to end up like all of my last dates."
+	  "text": "Just keep looking at me through a mirror, be really careful about that. I don’t want you to end up like all of my last dates. They can never resist looking at me and turning to stone.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "They never can resist looking at me and turning to stone. What can you do."
+	  "text": "What can you do.",
+	  "sfx": "medusa_laugh"
+	},
+	{
+	  "speaker": "char",
+	  "text": "Please make sure you apply makeup to all my faces. Yes, the snakes too of course!",
+	  "sfx": ""
 	}
   ]

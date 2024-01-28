@@ -1,14 +1,17 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Sweetie, I wasn’t really serious when I said you should make me look bad."
+	  "text": "Sweetie, I wasn’t really serious when I said you should make me look bad.",
+	  "sfx": "medusa_laugh"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Luckily for you, these faces look elegant even despite your attempts."
+	  "text": "Luckily for you, these faces look elegant even despite your attempts.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "Wish me luck on my date then!"
+	  "text": "Wish me luck on my date then!",
+	  "sfx": "medusa_excite"
 	}
   ]

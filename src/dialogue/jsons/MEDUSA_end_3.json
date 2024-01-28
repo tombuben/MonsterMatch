@@ -1,10 +1,17 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Darling, you outdid yourself. If she can resist looking at me with this wonderful makeup, she can resist anything!"
+	  "text": "Darling, you outdid yourself. If she can resist looking at me with this wonderful makeup, she can resist anything!",
+	  "sfx": "medusa_excite"
 	},
 	{
 	  "speaker": "char",
-	  "text": "But I think this one might care about my personality more than about my looks. What a novel idea, I can’t quite believe it myself!"
+	  "text": "Hopefully not my charms though.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "But I think this one might care about my personality more than about my looks. What a novel idea, I can’t quite believe it myself!",
+	  "sfx": "medusa_hm"
 	}
   ]

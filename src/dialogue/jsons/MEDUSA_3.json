@@ -1,22 +1,27 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Darling, do you need a stone statue for your saloon? I’m afraid I turned another suitor into one."
+	  "text": "Darling, do you need a stone statue for your saloon? I’m afraid I turned another suitor into one.",
+	  "sfx": "medusa_excite"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Or rather he turned himself into a statue, it was all his fault, wasn’t it. All he had to do was focus on talking to me rather than on my impeccable makeup."
+	  "text": " Or rather he turned himself into a statue, it was all his fault, wasn’t it. All he had to do was focus on talking to me rather than on my impeccable makeup.",
+	  "sfx": "medusa_laugh"
 	},
 	{
 	  "speaker": "char",
-	  "text": "I’m really excited about this next one though. She seems like she’s really interested in me as a person."
+	  "text": "I’m really excited about this next one though. She seems like she’s really interested in me as a person.",
+	  "sfx": "medusa_excite"
 	},
 	{
 	  "speaker": "char",
-	  "text": "She was even asking me questions about myself, can you believe it?"
+	  "text": "She was even asking me questions about myself, can you believe it?",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "I want to look really pretty for this one. Just something subtle, no outlandish features, if you wouldn’t mind."
+	  "text": "I want to look really pretty for this one. Just something subtle, no outlandish features, if you wouldn’t mind.",
+	  "sfx": "medusa_hm"
 	}
   ]

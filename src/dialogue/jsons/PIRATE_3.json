@@ -1,18 +1,22 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Greetings, good soul! The date didn’t go well again, I’m afraid. I looked the part but I must admit, my heart really wasn’t in the rest of it."
+	  "text": "Greetings, good soul! The date didn’t go well again, I’m afraid. I looked the part but I must admit, my heart really wasn’t in the rest of it.",
+	  "sfx": "pirate_hm2"
 	},
 	{
 	  "speaker": "char",
-	  "text": "We didn’t have any chance to talk and I lost all the races no matter how hard I tried to keep up."
+	  "text": "We didn’t have any chance to talk and I lost all the races no matter how hard I tried to keep up. Everyone kept making fun of me.",
+	  "sfx": "pirate_huh2"
 	},
 	{
 	  "speaker": "char",
-	  "text": "I’m beginning to think I’m doing something wrong. It surely must be me. Maybe I’m just not trying hard enough."
+	  "text": "I’m beginning to think I’m doing something wrong. It definitely must be me. Maybe I’m just not trying hard enough.",
+	  "sfx": ""
 	},
 	{
 	  "speaker": "char",
-	  "text": "This next person didn’t really show any preferences for my look so I was thinking. I really liked the colors of the first look and the piercings from the second one, could you somehow combine them together?"
+	  "text": "This next person didn’t really show any preferences for my look so I was thinking. I really liked the colors of the first look. Could you do something similar?",
+	  "sfx": "pirate_laugh"
 	}
   ]

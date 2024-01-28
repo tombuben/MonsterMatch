@@ -1,10 +1,17 @@
 [
 	{
 	  "speaker": "char",
-	  "text": "Har har! I hope this beautiful girl likes this look. It really is something, I think she’s going to be impressed!"
+	  "text": "I look so cool! This must be it, exactly what the guy wants. I just need to think about acting cool, so he’s impressed.",
+	  "sfx": "pirate_hm1"
 	},
 	{
 	  "speaker": "char",
-	  "text": "If I like this? Why should that matter?"
+	  "text": "We’re going go-kart racing. I hope I can keep up. I would normally maybe choose something just a bit low key, where I can really talk to the person.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "But he wants excitement so that’s what I have to do!",
+	  "sfx": "pirate_laugh"
 	}
   ]

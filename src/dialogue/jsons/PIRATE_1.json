@@ -2,17 +2,17 @@
 	{
 	  "speaker": "char",
 	  "text": "Ahoy, matey! Sorry about the flies, they seem to follow me everywhere.",
-	  "sfx": "pirate_huh"
+          "sfx": "pirate_hm1"
 	},
 	{
 	  "speaker": "char",
-	  "text": "Just smack them dead, serves them right. Hopefully not on my face though!",
-	  "sfx": "pirate_laugh"
+	  "text": "Just don’t mind them, I’m sure they won’t be too much of a bother.",
+          "sfx": ""
 	},
 	{
 	  "speaker": "char",
 	  "text": "What am I here for? I have a date, I can’t believe it. You have to make me as different as you can.",
-	  "sfx": "pirate_hm1"
+	  "sfx": "pirate_huh"
 	},
 	{
 	  "speaker": "char",
@@ -22,6 +22,6 @@
 	{
 	  "speaker": "char",
 	  "text": "Go all out, I really want to impress this gal. I have no experience with makeup so I completely trust you!",
-	  "sfx": "pirate_huh2"
+	  "sfx": "pirate_laugh"
 	}
   ]
