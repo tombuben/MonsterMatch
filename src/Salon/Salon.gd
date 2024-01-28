@@ -50,11 +50,17 @@ func _playIntermezzo():
 		$CanvasLayer/Curtain/Label2.text = monesterNames[Globals.CurrentMonster]
 		$CanvasLayer/Curtain/Label3.text = "Day %s" % (date_count+1)
 		$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
+		
+func _playIntermezzo_on_start():
+	#$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
+		$CanvasLayer/Curtain/Label2.text = monesterNames[Globals.CurrentMonster]
+		$CanvasLayer/Curtain/Label3.text = "Day %s" % (date_count+1)
+		$CanvasLayer/Curtain/AnimationPlayer.play("curtain-start")
 
 func _doState() -> void:
 	match(game_state):
 		Globals.GameStateEnums.FIRST_INTERMEZZO:
-			_playIntermezzo()
+			_playIntermezzo_on_start()
 		Globals.GameStateEnums.INTRO:
 			if MonsterHolder.get_child_count() > 0:
 				var oldMonster = MonsterHolder.get_child(0)

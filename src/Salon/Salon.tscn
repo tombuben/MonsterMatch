@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=44 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -229,10 +229,41 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_5cbwe"]
+resource_name = "curtain-start"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%CanvasLayer/..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_trigger_state_change"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bg65y"]
 _data = {
 "RESET": SubResource("Animation_4qrm4"),
-"curtain": SubResource("Animation_dvbe1")
+"curtain": SubResource("Animation_dvbe1"),
+"curtain-start": SubResource("Animation_5cbwe")
 }
 
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
