@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://4rtl7tc1ju5d" path="res://assets/Items/star.png" id="24_cgbvv"]
 [ext_resource type="Texture2D" uid="uid://c0xo0jsyvldni" path="res://assets/Items/tear.png" id="25_kkf3h"]
 
-[node name="Monster" node_paths=PackedStringArray("RemoveForPhoto") instance=ExtResource("1_3oco5")]
+[node name="Monster2" node_paths=PackedStringArray("RemoveForPhoto") instance=ExtResource("1_3oco5")]
 MonsterEnum = 1
 RemoveForPhoto = [NodePath("Flies")]
 
@@ -98,6 +98,7 @@ beardRoots = NodePath("../BeardRoots/CollisionPolygon2D")
 
 [node name="Patch" parent="." index="10" instance=ExtResource("10_w5j40")]
 position = Vector2(1013, 386)
+state = 0
 
 [node name="Sprite2D" parent="Patch" index="0"]
 texture = ExtResource("9_eiydd")
@@ -107,6 +108,7 @@ polygon = PackedVector2Array(-203, -103, -148, -74, -80, -43, 13, -8, 46, -33, 9
 
 [node name="Hat" parent="." index="11" instance=ExtResource("10_w5j40")]
 position = Vector2(1020, 139)
+state = 0
 
 [node name="CollisionPolygon2D" parent="Hat" index="1"]
 polygon = PackedVector2Array(-353, -14, -299, -13, -252, -11, -223, -21, -189, -52, -162, -92, -134, -125, -102, -154, -61, -169, -23, -169, -8, -162, -8, -129, 3, -128, 7, -160, 33, -169, 63, -167, 99, -153, 146, -112, 170, -74, 199, -38, 235, -14, 302, -18, 349, -17, 353, -12, 347, 16, 295, 81, 247, 121, 210, 129, 170, 129, 101, 144, 22, 166, -13, 166, -66, 152, -132, 138, -186, 130, -226, 129, -250, 121, -280, 93, -321, 51, -345, 14)
