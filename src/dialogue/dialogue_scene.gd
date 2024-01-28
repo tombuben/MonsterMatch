@@ -33,7 +33,10 @@ func _ready():
 	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
 	
 	for line in dialogueMakeup:
-		Globals.DialogueTimeStamps[int(line["time"])] = line["text"]
+		if line.has("sfx"):
+			Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],line["sfx"]]
+		else:
+			Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],""]
 	
 	if is_dialog_active == false:
 		start_dialog(global_position, dialogueStart)
@@ -49,7 +52,8 @@ func load_dialogues(json_file_path):
 	return finish
 
 func _on_timer_scene_trigger_dialogue(timeStamp: int):
-	var lines = [Globals.DialogueTimeStamps[timeStamp]]
+	var lines = [Globals.DialogueTimeStamps[timeStamp][0]]
+	monster_sfx_name = Globals.DialogueTimeStamps[timeStamp][1]
 	start_dialog(global_position, lines)
 
 func start_dialog(position: Vector2, lines: Array):

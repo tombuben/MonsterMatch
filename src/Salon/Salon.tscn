@@ -82,12 +82,11 @@ _data = {
 [sub_resource type="Environment" id="Environment_6lltp"]
 background_mode = 3
 glow_enabled = true
-glow_levels/3 = 3.95
-glow_levels/4 = 6.89
-glow_levels/5 = 10.5
-glow_levels/6 = 3.68
-glow_levels/7 = 5.92
+glow_levels/3 = 3.11
+glow_levels/4 = 1.84
+glow_levels/5 = 1.45
 glow_intensity = 2.34
+glow_strength = 0.8
 glow_hdr_threshold = 0.7
 
 [sub_resource type="Animation" id="Animation_l74du"]
