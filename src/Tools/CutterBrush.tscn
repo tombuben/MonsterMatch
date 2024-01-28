@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://si8jmklvdabq"]
+[gd_scene load_steps=4 format=3 uid="uid://si8jmklvdabq"]
 
 [ext_resource type="Script" path="res://src/Tools/CutterBrush.gd" id="1_etect"]
-[ext_resource type="PackedScene" path="res://src/Tools/CutterParticles.tscn" id="2_6m86y"]
+[ext_resource type="PackedScene" uid="uid://dfs5h3so0sef7" path="res://src/Tools/CutterParticles.tscn" id="2_6m86y"]
 [ext_resource type="AudioStream" uid="uid://bniydpiwcxscd" path="res://assets/Audio/SFX/razor_loop.wav" id="3_yei2a"]
-[ext_resource type="Texture2D" uid="uid://dxqg81k70e7qy" path="res://assets/Tools/Tools_trimmer.png" id="4_hg37k"]
 
 [node name="CutterBrush" type="Node2D"]
 script = ExtResource("1_etect")
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("2_6m86y")]
 unique_name_in_owner = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 1, 9, 33, 18, 25, 40, 48, 48, 44)
 
 [node name="RazorSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

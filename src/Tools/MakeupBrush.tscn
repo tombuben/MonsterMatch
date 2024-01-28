@@ -1,29 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbws6bxbm434o"]
 
 [ext_resource type="Script" path="res://src/Tools/MakeupBrush.gd" id="1_w0qod"]
+[ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="2_55qay"]
 [ext_resource type="PackedScene" uid="uid://cirp6h7oof6ov" path="res://src/Tools/BrushStroke.tscn" id="2_ixvrj"]
-[ext_resource type="Texture2D" uid="uid://lekod4mh6vy0" path="res://assets/Tools/Tools_lipstick.png" id="3_qcfrw"]
 [ext_resource type="AudioStream" uid="uid://ddg0t0fw4gyx2" path="res://assets/Audio/SFX/lipstick_loop.wav" id="4_ysb66"]
 
-[node name="MakeupBrush" type="Node2D" node_paths=PackedStringArray("modulateColor")]
+[node name="MakeupBrush" type="Node2D"]
 script = ExtResource("1_w0qod")
 point_distance_diff = 5.0
 BRUSH_STROKE = ExtResource("2_ixvrj")
-colors = Array[Color]([Color(0.776471, 0.266667, 0.560784, 1), Color(0.580392, 0.321569, 0.231373, 1), Color(0.27451, 0.435294, 0.588235, 1), Color(0.329412, 0.427451, 0.278431, 1), Color(0.407843, 0.235294, 0.721569, 1)])
-modulateColor = NodePath("Color")
-toolBoxObject = "Lipstick"
 
-[node name="Color" type="Polygon2D" parent="."]
-position = Vector2(50, 77)
-rotation = -0.701622
-scale = Vector2(0.2, 0.2)
-polygon = PackedVector2Array(80.4661, -436.062, 35.5529, -421.647, -8.17695, -393.139, -44.2688, -358.176, -75.3583, -305.894, -80.8983, -245.113, -75.2502, -135.6, -60.7808, -5.54001, -175.78, 146.036, -168.625, 315.738, 11.4042, 389.32, 178.417, 307.884, 176.534, 116.451, 94.8288, -11.511, 83.5866, -145.39)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(50, 77)
-rotation = -0.701622
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_qcfrw")
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_55qay")
+expand_mode = 1
 
 [node name="BrushSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
