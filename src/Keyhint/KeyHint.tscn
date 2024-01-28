@@ -1,16 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://crf8tp0mvb1h3"]
+[gd_scene load_steps=2 format=3 uid="uid://dvd6nao600317"]
 
 [ext_resource type="Script" path="res://src/Keyhint/KeyHint.gd" id="1_ulqbp"]
 
-[node name="KeyHint" type="Node2D" node_paths=PackedStringArray("gamepadHint", "keyboardHint")]
+[node name="KeyHint" type="Node2D"]
 script = ExtResource("1_ulqbp")
-gamepadHint = NodePath("Gamepad")
-keyboardHint = NodePath("Keyboard")
-
-[node name="Gamepad" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Keyboard" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0

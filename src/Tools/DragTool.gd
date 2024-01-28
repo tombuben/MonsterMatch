@@ -56,3 +56,8 @@ func _on_area_2d_area_entered(area):
 func _on_area_2d_area_exited(area):
 	if area == highlighted_item:
 		highlighted_item = null
+
+
+func handle_visibility_change(value : bool):
+	if Globals.quick_references.has("EmptyKeyHint"):
+		Globals.quick_references["EmptyKeyHint"].visible = !value
