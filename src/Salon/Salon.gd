@@ -9,8 +9,7 @@ extends Node2D
 var CurrentSceneIndex : int = 0
 @onready var CurrentScene : PackedScene = Scenes[CurrentSceneIndex]
 
-enum { INTRO, MAKEUP, OUTRO, INTERMEZZO, CREDITS }
-var game_state = INTRO
+var game_state = Globals.GameStateEnums.INTRO
 
 var Cursor
 var Dialogue
@@ -26,7 +25,7 @@ var dateTexts = [
 
 func _doState() -> void:
 	match(game_state):
-		INTRO:
+		Globals.GameStateEnums.INTRO:
 			if MonsterHolder.get_child_count() > 0:
 				var oldMonster = MonsterHolder.get_child(0)
 				if oldMonster != null:
@@ -43,7 +42,7 @@ func _doState() -> void:
 			Dialogue.scale.x = 0.5
 			Dialogue.scale.y = 0.5
 			%CanvasLayer.add_child(Dialogue)
-		MAKEUP:
+		Globals.GameStateEnums.MAKEUP:
 			Cursor = CursorScene.instantiate()
 			Cursor.global_position = Vector2(600, 400)
 			add_child(Cursor)
@@ -53,14 +52,14 @@ func _doState() -> void:
 			GameTimer.trigger_dialogue.connect(Dialogue._on_timer_scene_trigger_dialogue)
 			GameTimer.trigger_gamestate_change.connect(_trigger_state_change)
 			add_child(GameTimer)
-		OUTRO:
+		Globals.GameStateEnums.OUTRO:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			remove_child(Cursor)
 			remove_child(GameTimer)
 			Cursor = null
 			date_count += 1
 			Dialogue._outro()
-		INTERMEZZO:
+		Globals.GameStateEnums.INTERMEZZO:
 			remove_child(Dialogue)
 			remove_child(GameTimer)
 			
@@ -82,29 +81,29 @@ func _doState() -> void:
 			$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
 			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
 			pass
-		CREDITS:
+		Globals.GameStateEnums.CREDITS:
 			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
 			pass
 	
 func _goToNextState() -> void:
 	match(game_state):
-		INTRO:
-			game_state = MAKEUP
+		Globals.GameStateEnums.INTRO:
+			game_state = Globals.GameStateEnums.MAKEUP
 			Globals.CurrentGameState = game_state
-		MAKEUP:
-			game_state = OUTRO
+		Globals.GameStateEnums.MAKEUP:
+			game_state = Globals.GameStateEnums.OUTRO
 			Globals.CurrentGameState = game_state
-		OUTRO:
-			game_state = INTERMEZZO
+		Globals.GameStateEnums.OUTRO:
+			game_state = Globals.GameStateEnums.INTERMEZZO
 			Globals.CurrentGameState = game_state
-		INTERMEZZO:
+		Globals.GameStateEnums.INTERMEZZO:
 			if CurrentSceneIndex < len(Scenes) - 1:
 				CurrentSceneIndex += 1
 				CurrentScene = Scenes[CurrentSceneIndex]
-				game_state = INTRO
+				game_state = Globals.GameStateEnums.INTRO
 				Globals.CurrentGameState = game_state
 			else:
-				game_state = CREDITS
+				game_state = Globals.GameStateEnums.CREDITS
 				Globals.CurrentGameState = game_state 
 
 # Called when the node enters the scene tree for the first time.
