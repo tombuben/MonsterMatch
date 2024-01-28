@@ -6,8 +6,9 @@ var draw_area : Polygon2D
 var validity_matrix : ValidityMatrix
 
 @export var is_erase_brush : bool
-
 @export var BRUSH_STROKE : PackedScene
+
+@onready var brush_sfx : = %BrushSFX
 
 var last_brush_stroke : Line2D
 
@@ -47,6 +48,8 @@ func _process(_delta):
 						validity_matrix.add_cell(global_position)
 					
 						last_point_pos = drawing_position
+						
+						brush_sfx.play()
 				
 						brush_state = DRAWING
 		DRAWING:
@@ -67,7 +70,9 @@ func _process(_delta):
 			if Input.is_action_just_released("UseToolRight"):
 				last_brush_stroke.add_point(drawing_position)
 				last_brush_stroke.add_point(drawing_position + Vector2.RIGHT)
-
+				
+				brush_sfx.stop()
+				
 				brush_state = IDLE
 		ERASING:
 			var local_position = draw_area.get_global_transform().affine_inverse() * global_position

@@ -1,18 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbws6bxbm434o"]
+[gd_scene load_steps=5 format=3 uid="uid://cbws6bxbm434o"]
 
 [ext_resource type="Script" path="res://src/Tools/MakeupBrush.gd" id="1_w0qod"]
 [ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="2_55qay"]
-[ext_resource type="PackedScene" uid="uid://cirp6h7oof6ov" path="res://src/Tools/BrushStroke.tscn" id="2_ixvrj"]
+[ext_resource type="PackedScene" uid="uid://cirp6h7oof6ov" path="res://src/Tools/BrushStroke.tscn" id="2_onuwn"]
+[ext_resource type="AudioStream" uid="uid://ddg0t0fw4gyx2" path="res://assets/Audio/SFX/lipstick_loop.wav" id="4_ysb66"]
 
 [node name="MakeupBrush" type="Node2D"]
 script = ExtResource("1_w0qod")
 point_distance_diff = 5.0
-BRUSH_STROKE = ExtResource("2_ixvrj")
+BRUSH_STROKE = ExtResource("2_onuwn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -7.0
-offset_top = -3.0
-offset_right = 121.0
-offset_bottom = 125.0
+offset_right = 128.0
+offset_bottom = 128.0
 texture = ExtResource("2_55qay")
 expand_mode = 1
+
+[node name="BrushSFX" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ysb66")
+bus = &"SoundEffects"

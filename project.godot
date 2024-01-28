@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://src/Singletons/Globals.gd"
 ValidationServer="*res://src/Singletons/ValidationServer.gd"
+BackgroundMusicHandler="*res://src/Audio/BackgroundMusicHandler.tscn"
 
 [display]
 

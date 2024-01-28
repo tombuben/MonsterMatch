@@ -8,6 +8,7 @@ var brush_state = IDLE
 
 @onready var last_position : Vector2 = global_position
 @onready var particles : GPUParticles2D = %GPUParticles2D
+@onready var razor_sfx : AudioStreamPlayer2D = %RazorSFX
 
 @onready var beard_particle_texture := preload("res://assets/Barnabus/beard_particle.png")
 @onready var godot_particle_texture := preload("res://icon.svg")
@@ -40,12 +41,14 @@ func world_cut():
 		if parent.has_method("cut"):
 			parent.cut(last_position, global_position, cut_size)
 			particles.emitting = true
+			
 
 func _process(_delta):
 	match brush_state:
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
 				brush_state = CUTTING
+				razor_sfx.play()
 		CUTTING:
 			particles.emitting = false
 			world_cut()
@@ -54,6 +57,7 @@ func _process(_delta):
 	if Input.is_action_just_released("UseToolRight"):
 		brush_state = IDLE
 		particles.emitting = false
+		razor_sfx.stop()
 		
 	last_position = global_position
 
