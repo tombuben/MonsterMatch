@@ -48,6 +48,7 @@ func _process(_delta):
 		IDLE:
 			if Input.is_action_just_pressed("UseToolRight"):
 				brush_state = CUTTING
+				razor_sfx.pitch_scale = randf_range(0.9, 1.15)
 				razor_sfx.play()
 		CUTTING:
 			particles.emitting = false

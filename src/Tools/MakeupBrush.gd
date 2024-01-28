@@ -25,6 +25,7 @@ var last_point_pos : Vector2
 const tolerance : float = 10
 
 func _ready() -> void:
+	randomize()
 	brush_stroke_container = Globals.BrushContainer
 	draw_area = Globals.DrawArea
 	validity_matrix = Globals.DrawValidityMatrix
@@ -72,6 +73,7 @@ func _process(_delta):
 					
 						last_point_pos = drawing_position
 						
+						brush_sfx.pitch_scale = randf_range(0.9, 1.15)
 						brush_sfx.play()
 				
 						brush_state = DRAWING
