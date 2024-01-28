@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2jica8njwnl1"]
+[gd_scene load_steps=9 format=3 uid="uid://2jica8njwnl1"]
 
 [ext_resource type="Script" path="res://src/Cursor/Cursor.gd" id="1_s765b"]
 [ext_resource type="Script" path="res://src/Tools/ToolHolder.gd" id="2_15k58"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bmtlmmmgvi1u7" path="res://src/Tools/MakeupLineBrush.tscn" id="5_2jram"]
 [ext_resource type="PackedScene" uid="uid://cbws6bxbm434o" path="res://src/Tools/MakeupBrush.tscn" id="5_nd7ao"]
 [ext_resource type="PackedScene" uid="uid://bcl1t3per6w27" path="res://src/Tools/MakeupShadowsBrush.tscn" id="7_46361"]
+[ext_resource type="PackedScene" uid="uid://s4o1luknp1o5" path="res://src/Tools/EraserBrush.tscn" id="8_2fhi3"]
 
 [node name="Cursor" type="Node2D"]
 script = ExtResource("1_s765b")
@@ -31,15 +32,9 @@ right_tool = NodePath("RightTool")
 [node name="MakeupBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_nd7ao")]
 
 [node name="MakeupLineBrush" parent="ToolHolder/LeftTool" instance=ExtResource("5_2jram")]
-is_erase_brush = false
 
 [node name="MakeupShadowsBrush" parent="ToolHolder/LeftTool" instance=ExtResource("7_46361")]
-is_erase_brush = false
 
 [node name="RightTool" type="Node2D" parent="ToolHolder"]
 
-[node name="MakeupBrush" parent="ToolHolder/RightTool" instance=ExtResource("5_nd7ao")]
-is_erase_brush = true
-
-[node name="GUMA NA MAZANI" type="Polygon2D" parent="ToolHolder/RightTool/MakeupBrush"]
-polygon = PackedVector2Array(-21, 10, 29, 74, 66, 38, 3, -9)
+[node name="EraserBrush" parent="ToolHolder/RightTool" instance=ExtResource("8_2fhi3")]

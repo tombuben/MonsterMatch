@@ -15,3 +15,5 @@ var DialogueTimeStamps = {}
 var CurrentMonster: MonsterTypeEnum
 
 var CurrentGameState
+
+var quick_references = {}

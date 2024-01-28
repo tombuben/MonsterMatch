@@ -61,3 +61,7 @@ func _process(_delta):
 		
 	last_position = global_position
 
+
+func handle_visibility_change(value : bool):
+	if Globals.quick_references.has("Cutter"):
+		Globals.quick_references["Cutter"].visible = !value

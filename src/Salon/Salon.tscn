@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=15 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://y8ux72ol0oh2" path="res://src/Monsters/slime_monster.tscn" id="2_km51p"]
 [ext_resource type="PackedScene" uid="uid://cx02h70o5ru75" path="res://src/Monsters/medusa_monster.tscn" id="4_8nvxe"]
 [ext_resource type="PackedScene" uid="uid://bsxck2vktrnmb" path="res://src/dialogue/dialogue_scene.tscn" id="5_2kn52"]
+[ext_resource type="PackedScene" uid="uid://cupldv6vvhyn5" path="res://src/Monsters/base_monster.tscn" id="5_40msm"]
 [ext_resource type="Script" path="res://src/Salon/LightsOut.gd" id="5_vfuqq"]
 [ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
 [ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
+[ext_resource type="Script" path="res://src/Salon/AutoReference.gd" id="8_y1li6"]
 
 [sub_resource type="Animation" id="Animation_iaupg"]
 resource_name = "LightsOut"
@@ -85,10 +87,73 @@ glow_levels/7 = 5.92
 glow_intensity = 2.34
 glow_hdr_threshold = 0.7
 
+[sub_resource type="Animation" id="Animation_pgilc"]
+resource_name = "countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["3", "3", "2", "1", ""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%CanvasLayer/..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_trigger_state_change"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l74du"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pkgn"]
+_data = {
+"RESET": SubResource("Animation_l74du"),
+"countdown": SubResource("Animation_pgilc")
+}
+
 [node name="Salon" type="Node2D" node_paths=PackedStringArray("MonsterHolder")]
 script = ExtResource("1_rvt7j")
 MonsterHolder = NodePath("MonsterHolder")
-Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("4_8nvxe")])
+Scenes = Array[PackedScene]([ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("4_8nvxe"), ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("5_40msm"), ExtResource("1_ucilr"), ExtResource("2_km51p"), ExtResource("4_8nvxe")])
 CursorScene = ExtResource("2_ilg5p")
 DialogueScene = ExtResource("5_2kn52")
 TimerScene = ExtResource("6_187t4")
@@ -100,6 +165,43 @@ mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
 [node name="MonsterHolder" type="Node2D" parent="."]
+
+[node name="ToolTable" type="Node2D" parent="."]
+
+[node name="Lipstick" type="Node2D" parent="ToolTable"]
+position = Vector2(1380, 958)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Lipstick"]
+polygon = PackedVector2Array(-29, 116, -32, -61, 3, -71, 5, 121)
+
+[node name="Shadow" type="Node2D" parent="ToolTable"]
+position = Vector2(1188, 969)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Shadow"]
+polygon = PackedVector2Array(-8, 98, -15, 17, -22, -31, -20, -46, -10, -57, 1, -58, 11, -53, 16, -40, 15, -31, 9, 8, 23, 4)
+
+[node name="Line" type="Node2D" parent="ToolTable"]
+position = Vector2(1047, 940)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Line"]
+polygon = PackedVector2Array(-29, 122, -29, -14, 0, -12, 34, 115, 34, 130)
+
+[node name="Eraser" type="Node2D" parent="ToolTable"]
+position = Vector2(868, 969)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Eraser"]
+polygon = PackedVector2Array(-36, 72, -31, -117, 33, -116, 32, 70)
+
+[node name="Cutter" type="Node2D" parent="ToolTable"]
+position = Vector2(555, 916)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Cutter"]
+polygon = PackedVector2Array(-190, 153, -195, 85, -11, 73, 51, 104, 42, 105, 50, 110, 35, 114, 50, 118, 38, 124, 51, 130, 35, 136, 57, 139)
 
 [node name="LightsOut" type="CanvasModulate" parent="."]
 visible = false
@@ -122,3 +224,19 @@ environment = SubResource("Environment_6lltp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+
+[node name="CountDown" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 843.0
+offset_top = 339.0
+offset_right = 983.0
+offset_bottom = 675.0
+
+[node name="Label" type="Label" parent="CanvasLayer/CountDown"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 345
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/CountDown"]
+libraries = {
+"": SubResource("AnimationLibrary_3pkgn")
+}

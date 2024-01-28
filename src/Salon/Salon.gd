@@ -28,7 +28,7 @@ func _doState() -> void:
 			MonsterHolder.add_child(newMoster)
 			
 			Dialogue = DialogueScene.instantiate()
-			Dialogue.global_position = Vector2(1219,250)
+			Dialogue.global_position = Vector2(1319,150)
 			Dialogue.scale.x = 0.5
 			Dialogue.scale.y = 0.5
 			%CanvasLayer.add_child(Dialogue)
@@ -80,7 +80,6 @@ func _ready() -> void:
 	Globals.CurrentGameState = game_state
 	_doState()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("DebugNextPhase"):
@@ -90,3 +89,7 @@ func _process(_delta: float) -> void:
 func _trigger_state_change() -> void:
 	_goToNextState()
 	_doState()
+
+func _countdown():	
+	$CanvasLayer/CountDown/AnimationPlayer.play("countdown")
+
