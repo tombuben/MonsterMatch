@@ -24,7 +24,6 @@ var dialogueEnd = []
 var CurrentMonster : int
 var CurrentDateCount : int
 var monster_sfx_name : String = "pirate_hm1"
-var CurrentDateCount
 
 func _ready():
 	CurrentMonster = Globals.CurrentMonster
