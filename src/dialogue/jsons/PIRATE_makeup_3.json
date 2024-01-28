@@ -1,16 +1,16 @@
 [
 	{
-		"time": 45,
+		"time": 75,
 	  "text": "This is exciting! Somehow I feel more me than I did this whole time, if you know what I mean?",
 	  "sfx": "pirate_huh2"
 	},
 	{
-		"time": 30,
+		"time": 45,
 	  "text": "You really think somebody would like me for just me? It’s really hard to believe, I was trying to please others all my life. I’m not even sure what makes me me.",
-	  "sfx": ""
+	  "sfx": "pirate_huh"
 	},
 	{
-		"time": 15,
+		"time": 30,
 	  "text": "You know what this look needs? I really need to sparkle and be the prettiest boy!",
 	  "sfx": "pirate_hm1"
 	}

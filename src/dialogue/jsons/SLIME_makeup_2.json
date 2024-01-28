@@ -1,21 +1,21 @@
 [
 	{
-	  "time": 45,
+	  "time": 75,
 	  "text": "I don’t know why the dates never work out. I can’t help but think I would enjoy doing things on my own more, you know?",
 	  "sfx": "slime_hm2"
 	},
 	{
-	  "time": 40,
+	  "time": 70,
 	  "text": "But I think that’s just because I haven’t found the right partner yet, or at least that’s what everybody says.",
-	  "sfx": ""
+	  "sfx": "slime_ooh"
 	},
 	{
-	  "time": 30,
+	  "time": 45,
 	  "text": "Oh, I live just around the corner. I have a flat of my own, with a cat and a dog. I really like having my own space. And when we snuggle together in the evening, it’s the best feeling in the world.",
           "sfx": "slime_laugh"
 	},
 	{
-	  "time": 15,
+	  "time": 30,
 	  "text": "I almost forgot to ask you! I’m so sorry but could you make my eyes really stand out this time? With some heavy eyeliner and shadows. It’s okay if it’s too late, really, I don’t mind if you can’t do it.",
 	  "sfx": "slime_excite"
 	}

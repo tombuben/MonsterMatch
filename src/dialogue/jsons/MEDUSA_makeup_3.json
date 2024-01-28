@@ -1,17 +1,17 @@
 [
 	{
-		"time": 45,
+		"time": 75,
 	  "text": "Oh, I’m so excited about this date. I didn’t realize what an absolute pleasure it is just holding a conversation with someone.",
 	  "sfx": "medusa_excite"
 	},
 	{
-		"time": 30,
+		"time": 45,
 	  "text": "I must admit I didn’t really care when all the others turned into stone. I’m afraid I might be a tad disappointed if this one meets the same fate.",
 	  "sfx": "medusa_hm"
 	},
 	{
-		"time": 15,
+		"time": 30,
 	  "text": "Oh, come to think of it, could you add just a smidge more spark? Something to bring it all together, some oomph.",
-	  "sfx": ""
+	  "sfx": "medusa_laugh"
 	}
 ]

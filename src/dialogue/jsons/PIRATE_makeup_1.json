@@ -1,17 +1,17 @@
 [
 	{
-		"time": 45,
+		"time": 75,
 	  "text": "Don’t be afraid to smear as much product on my face as you can!",
-	  "sfx": ""
+	  "sfx": "pirate_hm1"
 	},
 	{
-		"time": 30,
+		"time": 45,
 	  "text": "I went to the gym this morning. I don’t really enjoy working out but anything to make me more likable, right?",
 	  "sfx": "pirate_hm2"
 	},
 	{
-		"time": 15,
+		"time": 30,
 	  "text": "The girl said in her profile she likes bright colors, do you think I have enough of those?",
-	  "sfx": ""
+	  "sfx": "pirate_huh2"
 	}
 ]

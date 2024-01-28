@@ -122,8 +122,10 @@ func _next_line():
 			
 		if (Globals.CurrentGameState == Globals.GameStateEnums.INTRO):
 			_start_countdown()
-		if (Globals.CurrentGameState == Globals.GameStateEnums.OUTRO || Globals.CurrentGameState == Globals.GameStateEnums.EPILOG):
+		if (Globals.CurrentGameState == Globals.GameStateEnums.OUTRO):
 			parent_node._trigger_state_change()
+		if (Globals.CurrentGameState == Globals.GameStateEnums.EPILOG):
+			parent_node._epilog_trigger()
 		return
 	
 	_show_text_box()

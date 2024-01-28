@@ -17,6 +17,8 @@ var GameTimer
 
 var date_count = 0
 
+var epilog_count = 0
+
 var monesterNames = [
 	"Barnabus Swellbelly",
 	"Mucos Glimmer",
@@ -49,7 +51,7 @@ func _playIntermezzo():
 	#$CanvasLayer/Curtain/Label2.text = "The %s Date" % dateTexts[date_count-1]
 		$CanvasLayer/Curtain/Label2.text = monesterNames[Globals.CurrentMonster]
 		$CanvasLayer/Curtain/Label3.text = "Day %s" % (date_count+1)
-		$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
+		$CanvasLayer/Curtain/AnimationPlayer.play("curtain")		
 
 func _doState() -> void:
 	match(game_state):
@@ -100,6 +102,10 @@ func _doState() -> void:
 			_playIntermezzo()
 			pass
 		Globals.GameStateEnums.EPILOG:
+			#epilog_count += 1;
+			#if (epilog_count > 1):
+				#await get_tree().create_timer(4.0).timeout
+			
 			if MonsterHolder.get_child_count() > 0:
 				var oldMonster = MonsterHolder.get_child(0)
 				if oldMonster != null:
@@ -153,6 +159,7 @@ func _goToNextState() -> void:
 			if CurrentSceneIndex < len(Scenes) - 1:
 				CurrentSceneIndex += 1
 				CurrentScene = Scenes[CurrentSceneIndex]
+				%CanvasLayer.remove_child(Dialogue)			
 			else:
 				game_state = Globals.GameStateEnums.CREDITS
 				Globals.CurrentGameState = game_state
@@ -176,6 +183,12 @@ func _process(_delta: float) -> void:
 func _trigger_state_change() -> void:
 	_goToNextState()
 	_doState()
+	
+func _epilog_trigger() -> void:
+	if (CurrentSceneIndex < len(Scenes) - 1):
+		_playIntermezzo()
+	else:
+		_trigger_state_change()
 
 func _countdown():	
 	$CanvasLayer/CountDown/AnimationPlayer.play("countdown")

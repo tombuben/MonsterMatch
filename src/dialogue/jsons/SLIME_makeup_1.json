@@ -1,16 +1,16 @@
 [
 	{
-		"time": 45,
+		"time": 75,
 	  "text": "I’m not really sure about this date, if I’m being honest. They want to go to an amusement park and that just isn’t for me. There are too many people everywhere. I’m sure it’s going to be fine though.",
 	  "sfx": "slime_hm2"
 	},
 	{
-		"time": 30,
+		"time": 45,
 	  "text": "Do you believe there’s someone there for everyone? I’m not so sure. I don’t want to sound harsh, I really don’t but I just… didn’t find anyone I would be interested in spending all this time with.",
-	  "sfx": ""
+	  "sfx": "slime_hm1"
 	},
 	{
-		"time": 15,
+		"time": 30,
 	  "text": "It feels like you’re applying a lot, would you mind too much toning it down a little? You don’t have to if it’s too difficult to change now.",
 	  "sfx": "slime_ooh"
 	}
