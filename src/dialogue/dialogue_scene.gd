@@ -24,6 +24,7 @@ var dialogueEnd = []
 var CurrentMonster : int
 var CurrentDateCount : int
 var monster_sfx_name : String = "pirate_hm1"
+var CurrentDateCount
 
 func _ready():
 	CurrentMonster = Globals.CurrentMonster
@@ -91,12 +92,12 @@ func _on_text_box_finished_displaying():
 	can_advance_line = true
 	play_speech_sfx()
 	
-	if(Globals.CurrentGameState == 1):
+	if(Globals.CurrentGameState == Globals.GameStateEnums.MAKEUP):
 		await get_tree().create_timer(3.0).timeout
 		_next_line()	
 
 func _input(event):
-	if Input.is_action_just_pressed("SkipDialogue") and Globals.CurrentGameState != 1 and text_box != null:
+	if Input.is_action_just_pressed("SkipDialogue") and Globals.CurrentGameState != Globals.GameStateEnums.MAKEUP and text_box != null:
 		_next_line()
 
 func _next_line():
@@ -108,7 +109,7 @@ func _next_line():
 		is_dialog_active = false
 		current_line_index = 0	
 			
-		if (Globals.CurrentGameState == 0):
+		if (Globals.CurrentGameState == Globals.GameStateEnums.INTRO):
 			_start_countdown()
 		return
 	
