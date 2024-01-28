@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=43 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bsxck2vktrnmb" path="res://src/dialogue/dialogue_scene.tscn" id="5_2kn52"]
 [ext_resource type="Script" path="res://src/Salon/LightsOut.gd" id="5_vfuqq"]
 [ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
+[ext_resource type="Texture2D" uid="uid://0bjwdianhxfl" path="res://assets/bg_blur.png" id="7_memi8"]
 [ext_resource type="Script" path="res://src/Salon/AutoReference.gd" id="8_y1li6"]
 [ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
 [ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="9_hfpap"]
@@ -242,11 +243,16 @@ CursorScene = ExtResource("2_ilg5p")
 DialogueScene = ExtResource("5_2kn52")
 TimerScene = ExtResource("6_187t4")
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-mouse_filter = 1
-color = Color(0.313726, 0.141176, 0.184314, 1)
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_memi8")
+expand_mode = 1
 
 [node name="MonsterUiSuplikLeftOpen" type="Sprite2D" parent="BackgroundColor"]
 position = Vector2(360, 524)

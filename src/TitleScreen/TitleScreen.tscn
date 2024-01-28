@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6ha6qqu8arar"]
+[gd_scene load_steps=15 format=3 uid="uid://b6ha6qqu8arar"]
 
 [ext_resource type="Script" path="res://src/TitleScreen/TitleScreen.gd" id="1_my4xg"]
 [ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="1_wvad5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cri726vtnvk0q" path="res://src/Salon/Salon.tscn" id="2_lv6i1"]
 [ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="3_dc7dn"]
 [ext_resource type="FontFile" uid="uid://bdlo7hfp6sjgv" path="res://assets/BAHNSCHRIFT.TTF" id="3_e7w3o"]
+[ext_resource type="Texture2D" uid="uid://0bjwdianhxfl" path="res://assets/bg_blur.png" id="4_gdh48"]
 [ext_resource type="Theme" uid="uid://cn42h3g40ubd7" path="res://assets/menu_theme.tres" id="6_78p4b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6kgre"]
@@ -38,8 +39,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_gdh48")
+expand_mode = 1
 
 [node name="BackgourndTemp" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,6 +91,7 @@ theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.364706, 0.184314, 0, 1)
 theme_override_fonts/font = ExtResource("3_e7w3o")
 theme_override_font_sizes/font_size = 127
 text = "Monster Match"
