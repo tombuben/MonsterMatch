@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=59 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -12,25 +12,42 @@
 [ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
 [ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="9_hfpap"]
 [ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="9_itt2x"]
+[ext_resource type="PackedScene" uid="uid://dg0vsldhw10a6" path="res://src/Tools/Dragable.tscn" id="9_xkaby"]
 [ext_resource type="Texture2D" uid="uid://dj7qtrujt6j7r" path="res://assets/Salon/monster_UI_suplik_right_open.png" id="10_e1134"]
+[ext_resource type="Texture2D" uid="uid://c025y0ay3rt41" path="res://assets/Items/beardleft.png" id="10_yky8q"]
+[ext_resource type="Texture2D" uid="uid://m4d7pesmk35f" path="res://assets/Items/beardmid.png" id="11_k11dk"]
+[ext_resource type="Texture2D" uid="uid://dcdjxeh5wbnra" path="res://assets/Items/beardright.png" id="12_lsw31"]
+[ext_resource type="Texture2D" uid="uid://bvgx8igiqgp1j" path="res://assets/Items/bleubeard.png" id="13_fd7eo"]
 [ext_resource type="Texture2D" uid="uid://lekod4mh6vy0" path="res://assets/Tools/Tools_lipstick.png" id="13_p6on3"]
 [ext_resource type="Texture2D" uid="uid://d4ae8ame43pwr" path="res://assets/Tools/Tools_shadows.png" id="14_1xnuh"]
 [ext_resource type="Texture2D" uid="uid://bro1w55vqx610" path="res://assets/KeyHints/gamepad/xbox_dpad_up.png" id="14_fetvg"]
+[ext_resource type="Texture2D" uid="uid://cmwtoys0w4by8" path="res://assets/Items/blondebeard.png" id="14_mf5th"]
 [ext_resource type="Texture2D" uid="uid://d3s4846q11g8" path="res://assets/Tools/Tools_pencil.png" id="15_5ubh4"]
 [ext_resource type="Texture2D" uid="uid://coafsg4pmornl" path="res://assets/KeyHints/keyboard/keyboard_w.png" id="15_wc8ea"]
+[ext_resource type="Texture2D" uid="uid://dn7w3rrpx6182" path="res://assets/Items/circle1.png" id="15_x2qe1"]
+[ext_resource type="Texture2D" uid="uid://gl3gdpa08110" path="res://assets/Items/circle2.png" id="16_e3x1n"]
 [ext_resource type="Texture2D" uid="uid://bpc43duc3xg4b" path="res://assets/Tools/Tools_cloth.png" id="16_mshxw"]
 [ext_resource type="Texture2D" uid="uid://bde17r2j6hkol" path="res://assets/KeyHints/gamepad/xbox_dpad_down.png" id="16_qrw4d"]
+[ext_resource type="Texture2D" uid="uid://p42drujjadxb" path="res://assets/Items/earring.png" id="17_3h4qp"]
 [ext_resource type="Texture2D" uid="uid://dxqg81k70e7qy" path="res://assets/Tools/Tools_trimmer.png" id="17_q215w"]
 [ext_resource type="Texture2D" uid="uid://kthlmte6dqh2" path="res://assets/KeyHints/keyboard/keyboard_s.png" id="17_x2v81"]
 [ext_resource type="Texture2D" uid="uid://brfjw7fa8aix8" path="res://assets/KeyHints/gamepad/xbox_dpad_left.png" id="18_pemxu"]
+[ext_resource type="Texture2D" uid="uid://byhy1uyty118q" path="res://assets/Barnabus/Barnabus_patch.png" id="18_uj1l3"]
+[ext_resource type="Texture2D" uid="uid://braxd4umv4gl4" path="res://assets/Items/eyehair.png" id="19_eumeb"]
 [ext_resource type="Texture2D" uid="uid://chwlvyi4bf0dv" path="res://assets/KeyHints/keyboard/keyboard_a.png" id="19_lbtjf"]
 [ext_resource type="Script" path="res://src/Keyhint/KeyHint.gd" id="19_wm8ir"]
+[ext_resource type="Texture2D" uid="uid://b2k68l56mjydp" path="res://assets/Items/hat.png" id="20_hx6b0"]
 [ext_resource type="Texture2D" uid="uid://yn5jflxchuq6" path="res://assets/KeyHints/gamepad/xbox_dpad_right.png" id="20_qqbr3"]
 [ext_resource type="Texture2D" uid="uid://q61s3fou0g11" path="res://assets/KeyHints/keyboard/keyboard_d.png" id="21_1sj48"]
+[ext_resource type="Texture2D" uid="uid://d02wcqldsi1fx" path="res://assets/Items/moon.png" id="21_u2poi"]
 [ext_resource type="Texture2D" uid="uid://brqkydi8lpm3d" path="res://assets/KeyHints/gamepad/xbox_lb.png" id="22_b6ty8"]
+[ext_resource type="Texture2D" uid="uid://cxjn5reaxvqyv" path="res://assets/Items/panacek.png" id="22_m2isp"]
 [ext_resource type="Texture2D" uid="uid://4p8afv8wmr2n" path="res://assets/KeyHints/keyboard/keyboard_q.png" id="23_jisso"]
+[ext_resource type="Texture2D" uid="uid://bm0qndibpcefr" path="res://assets/Items/smile.png" id="23_lc1a1"]
 [ext_resource type="Texture2D" uid="uid://dwd4vgwvwn4dc" path="res://assets/KeyHints/gamepad/xbox_rb.png" id="24_5ftec"]
+[ext_resource type="Texture2D" uid="uid://4rtl7tc1ju5d" path="res://assets/Items/star.png" id="24_j5yh8"]
 [ext_resource type="Texture2D" uid="uid://bhcptu2hx852t" path="res://assets/KeyHints/keyboard/keyboard_e.png" id="25_nyxyk"]
+[ext_resource type="Texture2D" uid="uid://c0xo0jsyvldni" path="res://assets/Items/tear.png" id="25_ruila"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2hby"]
 size = Vector2(300, 812)
@@ -281,6 +298,658 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_m2hby")
 
 [node name="MonsterHolder" type="Node2D" parent="."]
+
+[node name="Accessories" type="Node2D" parent="."]
+
+[node name="Patch" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1502, 286)
+
+[node name="Sprite2D" parent="Accessories/Patch" index="0"]
+texture = ExtResource("10_yky8q")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch25" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1500, 436)
+
+[node name="Sprite2D" parent="Accessories/Patch25" index="0"]
+texture = ExtResource("10_yky8q")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch25" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch21" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1494, 379)
+
+[node name="Sprite2D" parent="Accessories/Patch21" index="0"]
+texture = ExtResource("10_yky8q")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch21" index="1"]
+polygon = PackedVector2Array(-27, 34, -39, 67, -56, 41, -48, -5, -26, -38, 8, -58, 31, -66, 46, -50, 36, -14, -5, 18)
+
+[node name="Patch2" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1574, 314)
+
+[node name="Sprite2D" parent="Accessories/Patch2" index="0"]
+texture = ExtResource("11_k11dk")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch2" index="1"]
+polygon = PackedVector2Array(-8, 100, -39, 67, -56, 41, -67, -1, -65, -75, -28, -114, 24, -119, 70, -23, 42, 61, 12, 113)
+
+[node name="Patch22" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1571, 404)
+
+[node name="Sprite2D" parent="Accessories/Patch22" index="0"]
+texture = ExtResource("11_k11dk")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch22" index="1"]
+polygon = PackedVector2Array(-8, 100, -39, 67, -56, 41, -67, -1, -65, -75, -28, -114, 24, -119, 70, -23, 42, 61, 12, 113)
+
+[node name="Patch3" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1686, 299)
+
+[node name="Sprite2D" parent="Accessories/Patch3" index="0"]
+texture = ExtResource("12_lsw31")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch3" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch23" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1685, 351)
+
+[node name="Sprite2D" parent="Accessories/Patch23" index="0"]
+texture = ExtResource("12_lsw31")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch23" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch24" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1682, 424)
+
+[node name="Sprite2D" parent="Accessories/Patch24" index="0"]
+texture = ExtResource("12_lsw31")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch24" index="1"]
+polygon = PackedVector2Array(40, 33, 26, 25, -1, 13, -29, -5, -48, -42, -11, -44, 2, -39, 15, -32, 36, -9, 40, 13)
+
+[node name="Patch4" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1692, 462)
+
+[node name="Sprite2D" parent="Accessories/Patch4" index="0"]
+texture = ExtResource("13_fd7eo")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch4" index="1"]
+polygon = PackedVector2Array(90, 7, 26, 25, -28, 52, -76, 27, -96, -45, -80, -52, -57, -30, -39, -7, -4, -20, 40, -34, 64, -22)
+
+[node name="Patch20" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1689, 536)
+
+[node name="Sprite2D" parent="Accessories/Patch20" index="0"]
+texture = ExtResource("13_fd7eo")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch20" index="1"]
+polygon = PackedVector2Array(90, 7, 26, 25, -28, 52, -76, 27, -96, -45, -80, -52, -57, -30, -39, -7, -4, -20, 40, -34, 64, -22)
+
+[node name="Patch5" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1511, 489)
+
+[node name="Sprite2D" parent="Accessories/Patch5" index="0"]
+texture = ExtResource("13_fd7eo")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch5" index="1"]
+polygon = PackedVector2Array(99, -42, 87, 10, 42, 47, 20, 50, -3, 39, -36, 12, -96, 8, -86, -8, -64, -25, -44, -32, -22, -33, -4, -20, 37, -7, 62, -14, 69, -30, 59, -34, 82, -55)
+
+[node name="Patch19" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1502, 551)
+
+[node name="Sprite2D" parent="Accessories/Patch19" index="0"]
+texture = ExtResource("13_fd7eo")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch19" index="1"]
+polygon = PackedVector2Array(99, -42, 87, 10, 42, 47, 20, 50, -3, 39, -36, 12, -96, 8, -86, -8, -64, -25, -44, -32, -22, -33, -4, -20, 37, -7, 62, -14, 69, -30, 59, -34, 82, -55)
+
+[node name="Patch6" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1541, 668)
+
+[node name="Sprite2D" parent="Accessories/Patch6" index="0"]
+texture = ExtResource("14_mf5th")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch6" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 54, 28, 25, 28, -5, 20, -60, 14, -161, 37, -124, 9, -172, -1, -193, -29, -149, -16, -146, -35, -62, -15, -19, -29, 23, -31, 43, -30, 81, -25, 121, -38, 164, -25, 181, 9)
+
+[node name="Patch18" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1529, 615)
+
+[node name="Sprite2D" parent="Accessories/Patch18" index="0"]
+texture = ExtResource("14_mf5th")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch18" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 54, 28, 25, 28, -5, 20, -60, 14, -161, 37, -124, 9, -172, -1, -193, -29, -149, -16, -146, -35, -62, -15, -19, -29, 23, -31, 43, -30, 81, -25, 121, -38, 164, -25, 181, 9)
+
+[node name="Patch7" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1588, 753)
+
+[node name="Sprite2D" parent="Accessories/Patch7" index="0"]
+texture = ExtResource("14_mf5th")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch7" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 67, 7, 25, 28, -8, 29, -55, 30, -105, 37, -161, 37, -182, 3, -166, -28, -113, -40, -56, -30, -19, -29, 23, -31, 41, -25, 63, -14, 141, -35, 195, -25, 167, -1, 123, 10)
+
+[node name="Patch17" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1598, 720)
+
+[node name="Sprite2D" parent="Accessories/Patch17" index="0"]
+texture = ExtResource("14_mf5th")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch17" index="1"]
+polygon = PackedVector2Array(164, 38, 138, 35, 67, 7, 25, 28, -8, 29, -55, 30, -105, 37, -161, 37, -182, 3, -166, -28, -113, -40, -56, -30, -19, -29, 23, -31, 41, -25, 63, -14, 141, -35, 195, -25, 167, -1, 123, 10)
+
+[node name="Patch8" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1457, 840)
+
+[node name="Sprite2D" parent="Accessories/Patch8" index="0"]
+texture = ExtResource("15_x2qe1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch8" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch11" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1576, 837)
+
+[node name="Sprite2D" parent="Accessories/Patch11" index="0"]
+texture = ExtResource("15_x2qe1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch11" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch12" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1612, 835)
+
+[node name="Sprite2D" parent="Accessories/Patch12" index="0"]
+texture = ExtResource("15_x2qe1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch12" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch9" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1494, 841)
+
+[node name="Sprite2D" parent="Accessories/Patch9" index="0"]
+texture = ExtResource("16_e3x1n")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch9" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch10" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1537, 842)
+
+[node name="Sprite2D" parent="Accessories/Patch10" index="0"]
+texture = ExtResource("16_e3x1n")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch10" index="1"]
+polygon = PackedVector2Array(1, 15, -20, 10, -8, -25, 25, -12)
+
+[node name="Patch13" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1461, 883)
+
+[node name="Sprite2D" parent="Accessories/Patch13" index="0"]
+texture = ExtResource("17_3h4qp")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch13" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 32, -11, 30, 17)
+
+[node name="Patch14" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1545, 883)
+
+[node name="Sprite2D" parent="Accessories/Patch14" index="0"]
+texture = ExtResource("17_3h4qp")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch14" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 32, -11, 30, 17)
+
+[node name="Patch15" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1620, 885)
+
+[node name="Sprite2D" parent="Accessories/Patch15" index="0"]
+texture = ExtResource("17_3h4qp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch15" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch16" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1688, 889)
+
+[node name="Sprite2D" parent="Accessories/Patch16" index="0"]
+texture = ExtResource("17_3h4qp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch16" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch29" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1502, 931)
+
+[node name="Sprite2D" parent="Accessories/Patch29" index="0"]
+texture = ExtResource("17_3h4qp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch29" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch30" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(1627, 939)
+
+[node name="Sprite2D" parent="Accessories/Patch30" index="0"]
+texture = ExtResource("17_3h4qp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch30" index="1"]
+polygon = PackedVector2Array(11, 34, -20, 30, -35, 7, -28, -23, -8, -32, 17, -34, 32, -11, 30, 17)
+
+[node name="Patch26" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(445, 228)
+
+[node name="Sprite2D" parent="Accessories/Patch26" index="0"]
+texture = ExtResource("18_uj1l3")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch26" index="1"]
+polygon = PackedVector2Array(-203, -103, -148, -74, -80, -43, 13, -8, 46, -33, 97, -48, 126, -45, 177, -21, 186, 3, 204, 2, 204, 19, 188, 24, 183, 50, 166, 86, 153, 102, 114, 101, 73, 87, 39, 63, 16, 35, 7, 8, -86, -23, -154, -48, -207, -78)
+
+[node name="Patch27" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(307, 240)
+
+[node name="Sprite2D" parent="Accessories/Patch27" index="0"]
+texture = ExtResource("18_uj1l3")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch27" index="1"]
+polygon = PackedVector2Array(-188, 4, -181, -21, -144, -42, -80, -43, 1, -14, 46, -33, 97, -48, 205, -98, 207, -79, 118, -36, 7, 8, -23, 63, -83, 90, -153, 106, -190, 37, -208, 20, -205, 3)
+
+[node name="Patch28" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(260, 425)
+
+[node name="Sprite2D" parent="Accessories/Patch28" index="0"]
+texture = ExtResource("19_eumeb")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch28" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch31" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(372, 420)
+
+[node name="Sprite2D" parent="Accessories/Patch31" index="0"]
+texture = ExtResource("19_eumeb")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch31" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch32" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(451, 417)
+
+[node name="Sprite2D" parent="Accessories/Patch32" index="0"]
+texture = ExtResource("19_eumeb")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch32" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch33" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(249, 487)
+
+[node name="Sprite2D" parent="Accessories/Patch33" index="0"]
+texture = ExtResource("19_eumeb")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch33" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch34" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(364, 480)
+
+[node name="Sprite2D" parent="Accessories/Patch34" index="0"]
+texture = ExtResource("19_eumeb")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch34" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch35" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(470, 480)
+
+[node name="Sprite2D" parent="Accessories/Patch35" index="0"]
+texture = ExtResource("19_eumeb")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch35" index="1"]
+polygon = PackedVector2Array(34, 31, -4, 4, -40, 26, -56, 22, -35, -20, -8, -32, 17, -34, 54, -15, 67, 20)
+
+[node name="Patch36" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(239, 564)
+
+[node name="Sprite2D" parent="Accessories/Patch36" index="0"]
+texture = ExtResource("20_hx6b0")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch36" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch37" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(345, 571)
+
+[node name="Sprite2D" parent="Accessories/Patch37" index="0"]
+texture = ExtResource("20_hx6b0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch37" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch38" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(457, 565)
+
+[node name="Sprite2D" parent="Accessories/Patch38" index="0"]
+texture = ExtResource("20_hx6b0")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch38" index="1"]
+polygon = PackedVector2Array(-61, 92, 1, -111, 61, 97, 39, 107, 9, 111, -20, 110, -42, 103)
+
+[node name="Patch39" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(238, 680)
+
+[node name="Sprite2D" parent="Accessories/Patch39" index="0"]
+texture = ExtResource("21_u2poi")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch39" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch40" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(304, 681)
+
+[node name="Sprite2D" parent="Accessories/Patch40" index="0"]
+texture = ExtResource("21_u2poi")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch40" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch41" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(455, 682)
+
+[node name="Sprite2D" parent="Accessories/Patch41" index="0"]
+texture = ExtResource("21_u2poi")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch41" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch42" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(373, 682)
+
+[node name="Sprite2D" parent="Accessories/Patch42" index="0"]
+texture = ExtResource("21_u2poi")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch42" index="1"]
+polygon = PackedVector2Array(-31, -22, 1, -38, 32, -19, 33, 8, 24, 29, -5, 35, -30, 18)
+
+[node name="Patch43" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(239, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch43" index="0"]
+texture = ExtResource("22_m2isp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch43" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch44" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(288, 735)
+
+[node name="Sprite2D" parent="Accessories/Patch44" index="0"]
+texture = ExtResource("22_m2isp")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch44" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch45" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(330, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch45" index="0"]
+texture = ExtResource("22_m2isp")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch45" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch46" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(376, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch46" index="0"]
+texture = ExtResource("22_m2isp")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch46" index="1"]
+polygon = PackedVector2Array(0, -45, 11, -33, 14, 44, -19, 44, -8, -31)
+
+[node name="Patch47" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(435, 736)
+
+[node name="Sprite2D" parent="Accessories/Patch47" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch47" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch48" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(485, 779)
+
+[node name="Sprite2D" parent="Accessories/Patch48" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch48" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch49" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(426, 780)
+
+[node name="Sprite2D" parent="Accessories/Patch49" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch49" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch50" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(487, 723)
+
+[node name="Sprite2D" parent="Accessories/Patch50" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch50" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch51" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(458, 765)
+
+[node name="Sprite2D" parent="Accessories/Patch51" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch51" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch52" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(459, 800)
+
+[node name="Sprite2D" parent="Accessories/Patch52" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch52" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch53" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(437, 742)
+
+[node name="Sprite2D" parent="Accessories/Patch53" index="0"]
+texture = ExtResource("23_lc1a1")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch53" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch54" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(260, 849)
+
+[node name="Sprite2D" parent="Accessories/Patch54" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch54" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch55" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(309, 836)
+
+[node name="Sprite2D" parent="Accessories/Patch55" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch55" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch56" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(286, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch56" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch56" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch57" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(265, 831)
+
+[node name="Sprite2D" parent="Accessories/Patch57" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch57" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch58" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(244, 888)
+
+[node name="Sprite2D" parent="Accessories/Patch58" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch58" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch59" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(244, 888)
+
+[node name="Sprite2D" parent="Accessories/Patch59" index="0"]
+texture = ExtResource("24_j5yh8")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch59" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch60" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(244, 899)
+
+[node name="Sprite2D" parent="Accessories/Patch60" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch60" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch61" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(287, 899)
+
+[node name="Sprite2D" parent="Accessories/Patch61" index="0"]
+texture = ExtResource("24_j5yh8")
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch61" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch62" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(316, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch62" index="0"]
+texture = ExtResource("24_j5yh8")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch62" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch63" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(316, 867)
+
+[node name="Sprite2D" parent="Accessories/Patch63" index="0"]
+texture = ExtResource("24_j5yh8")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch63" index="1"]
+polygon = PackedVector2Array(20, -29, 34, -12, 35, 15, 16, 35, -16, 33, -30, 19, -36, 2, -28, -21, -8, -31)
+
+[node name="Patch64" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(414, 834)
+
+[node name="Sprite2D" parent="Accessories/Patch64" index="0"]
+texture = ExtResource("25_ruila")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch64" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch65" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(395, 881)
+
+[node name="Sprite2D" parent="Accessories/Patch65" index="0"]
+texture = ExtResource("25_ruila")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch65" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch66" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(436, 905)
+
+[node name="Sprite2D" parent="Accessories/Patch66" index="0"]
+texture = ExtResource("25_ruila")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch66" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch67" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(474, 844)
+
+[node name="Sprite2D" parent="Accessories/Patch67" index="0"]
+texture = ExtResource("25_ruila")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch67" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Patch68" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(481, 912)
+
+[node name="Sprite2D" parent="Accessories/Patch68" index="0"]
+texture = ExtResource("25_ruila")
+flip_h = true
+
+[node name="CollisionPolygon2D" parent="Accessories/Patch68" index="1"]
+polygon = PackedVector2Array(12, -29, 16, -12, 23, 10, 16, 35, -16, 33, -26, 17, -21, 2, -12, -20, -6, -38)
+
+[node name="Hat2" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(427, 335)
+
+[node name="CollisionPolygon2D" parent="Accessories/Hat2" index="1"]
+polygon = PackedVector2Array(-353, -14, -299, -13, -252, -11, -223, -21, -189, -52, -162, -92, -134, -125, -102, -154, -61, -169, -23, -169, -8, -162, -8, -129, 3, -128, 7, -160, 33, -169, 63, -167, 99, -153, 146, -112, 170, -74, 199, -38, 235, -14, 302, -18, 349, -17, 353, -12, 347, 16, 295, 81, 247, 121, 210, 129, 170, 129, 101, 144, 22, 166, -13, 166, -66, 152, -132, 138, -186, 130, -226, 129, -250, 121, -280, 93, -321, 51, -345, 14)
+
+[node name="Hat" parent="Accessories" instance=ExtResource("9_xkaby")]
+position = Vector2(245, 310)
+
+[node name="CollisionPolygon2D" parent="Accessories/Hat" index="1"]
+polygon = PackedVector2Array(-353, -14, -299, -13, -252, -11, -223, -21, -189, -52, -162, -92, -134, -125, -102, -154, -61, -169, -23, -169, -8, -162, -8, -129, 3, -128, 7, -160, 33, -169, 63, -167, 99, -153, 146, -112, 170, -74, 199, -38, 235, -14, 302, -18, 349, -17, 353, -12, 347, 16, 295, 81, 247, 121, 210, 129, 170, 129, 101, 144, 22, 166, -13, 166, -66, 152, -132, 138, -186, 130, -226, 129, -250, 121, -280, 93, -321, 51, -345, 14)
 
 [node name="ToolTable" type="Node2D" parent="."]
 
@@ -550,3 +1219,74 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_bg65y")
 }
+
+[editable path="Accessories/Patch"]
+[editable path="Accessories/Patch25"]
+[editable path="Accessories/Patch21"]
+[editable path="Accessories/Patch2"]
+[editable path="Accessories/Patch22"]
+[editable path="Accessories/Patch3"]
+[editable path="Accessories/Patch23"]
+[editable path="Accessories/Patch24"]
+[editable path="Accessories/Patch4"]
+[editable path="Accessories/Patch20"]
+[editable path="Accessories/Patch5"]
+[editable path="Accessories/Patch19"]
+[editable path="Accessories/Patch6"]
+[editable path="Accessories/Patch18"]
+[editable path="Accessories/Patch7"]
+[editable path="Accessories/Patch17"]
+[editable path="Accessories/Patch8"]
+[editable path="Accessories/Patch11"]
+[editable path="Accessories/Patch12"]
+[editable path="Accessories/Patch9"]
+[editable path="Accessories/Patch10"]
+[editable path="Accessories/Patch13"]
+[editable path="Accessories/Patch14"]
+[editable path="Accessories/Patch15"]
+[editable path="Accessories/Patch16"]
+[editable path="Accessories/Patch29"]
+[editable path="Accessories/Patch30"]
+[editable path="Accessories/Patch26"]
+[editable path="Accessories/Patch27"]
+[editable path="Accessories/Patch28"]
+[editable path="Accessories/Patch31"]
+[editable path="Accessories/Patch32"]
+[editable path="Accessories/Patch33"]
+[editable path="Accessories/Patch34"]
+[editable path="Accessories/Patch35"]
+[editable path="Accessories/Patch36"]
+[editable path="Accessories/Patch37"]
+[editable path="Accessories/Patch38"]
+[editable path="Accessories/Patch39"]
+[editable path="Accessories/Patch40"]
+[editable path="Accessories/Patch41"]
+[editable path="Accessories/Patch42"]
+[editable path="Accessories/Patch43"]
+[editable path="Accessories/Patch44"]
+[editable path="Accessories/Patch45"]
+[editable path="Accessories/Patch46"]
+[editable path="Accessories/Patch47"]
+[editable path="Accessories/Patch48"]
+[editable path="Accessories/Patch49"]
+[editable path="Accessories/Patch50"]
+[editable path="Accessories/Patch51"]
+[editable path="Accessories/Patch52"]
+[editable path="Accessories/Patch53"]
+[editable path="Accessories/Patch54"]
+[editable path="Accessories/Patch55"]
+[editable path="Accessories/Patch56"]
+[editable path="Accessories/Patch57"]
+[editable path="Accessories/Patch58"]
+[editable path="Accessories/Patch59"]
+[editable path="Accessories/Patch60"]
+[editable path="Accessories/Patch61"]
+[editable path="Accessories/Patch62"]
+[editable path="Accessories/Patch63"]
+[editable path="Accessories/Patch64"]
+[editable path="Accessories/Patch65"]
+[editable path="Accessories/Patch66"]
+[editable path="Accessories/Patch67"]
+[editable path="Accessories/Patch68"]
+[editable path="Accessories/Hat2"]
+[editable path="Accessories/Hat"]

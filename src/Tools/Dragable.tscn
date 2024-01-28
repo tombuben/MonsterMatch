@@ -10,7 +10,6 @@ radius = 18.9737
 collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_dyiva")
-state = 0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
