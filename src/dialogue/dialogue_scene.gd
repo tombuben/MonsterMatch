@@ -104,7 +104,7 @@ func _on_text_box_finished_displaying():
 	play_speech_sfx()
 	
 	if(Globals.CurrentGameState == Globals.GameStateEnums.MAKEUP):
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(5.0).timeout
 		_next_line()	
 
 func _input(event):
