@@ -4,6 +4,8 @@ extends Node2D
 @export var DrawArea : Polygon2D
 @export var MonsterEnum : Globals.MonsterTypeEnum
 
+@export var RemoveForPhoto : Array[Node2D]
+
 @onready var DrawValidityMatrix : ValidityMatrix = %DrawValidityMatrix
 
 # Called when the node enters the scene tree for the first time.
@@ -19,3 +21,7 @@ func _process(_delta: float) -> void:
 	#DEBUG
 	if Input.is_action_just_pressed("ui_accept"):
 		DrawValidityMatrix.validate_cells()
+
+func prepare_for_photo():
+	for node in RemoveForPhoto:
+		node.queue_free()

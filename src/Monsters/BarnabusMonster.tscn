@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dg0vsldhw10a6" path="res://src/Tools/Dragable.tscn" id="10_w5j40"]
 [ext_resource type="PackedScene" uid="uid://bqbvu7hpr7ld7" path="res://src/Monsters/Obstacles/fly.tscn" id="12_o8snn"]
 
-[node name="Monster" instance=ExtResource("1_3oco5")]
+[node name="Monster" node_paths=PackedStringArray("RemoveForPhoto") instance=ExtResource("1_3oco5")]
 MonsterEnum = 1
+RemoveForPhoto = [NodePath("Flies")]
 
 [node name="BarnabusBase" type="Sprite2D" parent="." index="0"]
 position = Vector2(1009, 455)

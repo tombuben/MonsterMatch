@@ -1,0 +1,282 @@
+[gd_scene load_steps=8 format=3 uid="uid://mlqnjglyvxe6"]
+
+[ext_resource type="FontFile" uid="uid://bdlo7hfp6sjgv" path="res://assets/BAHNSCHRIFT.TTF" id="1_28hba"]
+[ext_resource type="Script" path="res://src/Credits/Credits.gd" id="1_lq2np"]
+[ext_resource type="FontFile" uid="uid://brsgeumdbxnk4" path="res://assets/GreatVibes-Regular.ttf" id="3_xykw4"]
+
+[sub_resource type="FontVariation" id="FontVariation_hmt4y"]
+base_font = ExtResource("1_28hba")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nx050"]
+font = SubResource("FontVariation_hmt4y")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgot5"]
+font = ExtResource("3_xykw4")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_mawsc"]
+font = ExtResource("3_xykw4")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Node2D" node_paths=PackedStringArray("photoFrames")]
+script = ExtResource("1_lq2np")
+photoFrames = [NodePath("Photo/Monster1"), NodePath("Photo2/Monster2"), NodePath("Photo3/Monster3"), NodePath("Photo4/Monster4"), NodePath("Photo5/Monster5"), NodePath("Photo6/Monster6"), NodePath("Photo7/Monster7"), NodePath("Photo8/Monster8"), NodePath("Photo9/Monster9")]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 10000.0
+mouse_filter = 1
+color = Color(0.313726, 0.141176, 0.184314, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 755.0
+offset_top = 584.0
+offset_right = 1007.0
+offset_bottom = 785.0
+text = "Yuffie
+Theo
+Lucka
+Jožka
+Wizi
+Bubňa"
+label_settings = SubResource("LabelSettings_nx050")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 711.0
+offset_top = 2473.0
+offset_right = 1197.0
+offset_bottom = 2674.0
+text = "Thanks for playing"
+label_settings = SubResource("LabelSettings_pgot5")
+horizontal_alignment = 1
+
+[node name="Photo" type="ColorRect" parent="."]
+offset_left = 163.0
+offset_top = 204.0
+offset_right = 603.0
+offset_bottom = 704.0
+rotation = 0.203563
+
+[node name="Monster1" type="TextureRect" parent="Photo"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo"]
+layout_mode = 0
+offset_left = -0.529896
+offset_top = 422.838
+offset_right = 439.47
+offset_bottom = 499.838
+text = "Barnabus Swellbelly
+"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo2" type="ColorRect" parent="."]
+offset_left = 1295.0
+offset_top = 430.0
+offset_right = 1735.0
+offset_bottom = 930.0
+rotation = -0.0158362
+
+[node name="Monster2" type="TextureRect" parent="Photo2"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo2"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Mucos Glimmer"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo3" type="ColorRect" parent="."]
+offset_left = 302.0
+offset_top = 940.0
+offset_right = 742.0
+offset_bottom = 1440.0
+rotation = -0.158048
+
+[node name="Monster3" type="TextureRect" parent="Photo3"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo3"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Cressida Viper"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo4" type="ColorRect" parent="."]
+offset_left = 899.0
+offset_top = 1116.0
+offset_right = 1339.0
+offset_bottom = 1616.0
+rotation = -0.320985
+
+[node name="Monster4" type="TextureRect" parent="Photo4"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo4"]
+layout_mode = 0
+offset_left = -0.529896
+offset_top = 422.838
+offset_right = 439.47
+offset_bottom = 499.838
+text = "Barnabus Swellbelly
+"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo5" type="ColorRect" parent="."]
+offset_left = 151.0
+offset_top = 1487.0
+offset_right = 591.0
+offset_bottom = 1987.0
+rotation = 0.0455935
+
+[node name="Monster5" type="TextureRect" parent="Photo5"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo5"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Mucos Glimmer"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo6" type="ColorRect" parent="."]
+offset_left = 940.0
+offset_top = 1812.0
+offset_right = 1380.0
+offset_bottom = 2312.0
+rotation = -0.0646641
+
+[node name="Monster6" type="TextureRect" parent="Photo6"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo6"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Cressida Viper"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo7" type="ColorRect" parent="."]
+offset_left = 136.0
+offset_top = 2242.0
+offset_right = 576.0
+offset_bottom = 2742.0
+rotation = -0.236856
+
+[node name="Monster7" type="TextureRect" parent="Photo7"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo7"]
+layout_mode = 0
+offset_left = -0.529896
+offset_top = 422.838
+offset_right = 439.47
+offset_bottom = 499.838
+text = "Barnabus Swellbelly
+"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo8" type="ColorRect" parent="."]
+offset_left = 1432.0
+offset_top = 2338.0
+offset_right = 1872.0
+offset_bottom = 2838.0
+rotation = 0.372099
+
+[node name="Monster8" type="TextureRect" parent="Photo8"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo8"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Mucos Glimmer"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo9" type="ColorRect" parent="."]
+offset_left = 728.0
+offset_top = 2673.0
+offset_right = 1168.0
+offset_bottom = 3173.0
+rotation = 0.0469799
+
+[node name="Monster9" type="TextureRect" parent="Photo9"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 420.0
+
+[node name="Label" type="Label" parent="Photo9"]
+layout_mode = 0
+offset_left = 1.30049
+offset_top = 423.074
+offset_right = 441.3
+offset_bottom = 500.074
+text = "Cressida Viper"
+label_settings = SubResource("LabelSettings_mawsc")
+horizontal_alignment = 1
+vertical_alignment = 1

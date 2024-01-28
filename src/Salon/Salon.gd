@@ -57,8 +57,26 @@ func _doState() -> void:
 		INTERMEZZO:
 			remove_child(Dialogue)
 			remove_child(GameTimer)
+			
+			if MonsterHolder.get_child_count() > 0:
+				var oldMonster = MonsterHolder.get_child(0)
+				if oldMonster.has_method("prepare_for_photo"):
+					oldMonster.prepare_for_photo()
+			# wait frame for remove child to take effect
+			await get_tree().process_frame
+			var screenshot : Image = get_viewport().get_texture().get_image()
+		
+			var size = screenshot.get_size().y #square image
+			var offset = (screenshot.get_size().x - screenshot.get_size().y) / 2
+			var region := Rect2i(offset, 0, size, size)
+			var square = screenshot.get_region(region)
+			Globals.screenshots.append(square)
+			square.resize(400,400)
+
 			$CanvasLayer/Curtain/AnimationPlayer.play("curtain")
+			pass
 		CREDITS:
+			get_tree().change_scene_to_file("res://src/Credits/Credits.tscn")
 			pass
 	
 func _goToNextState() -> void:
@@ -80,7 +98,7 @@ func _goToNextState() -> void:
 				Globals.CurrentGameState = game_state
 			else:
 				game_state = CREDITS
-				Globals.CurrentGameState = game_state
+				Globals.CurrentGameState = game_state 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

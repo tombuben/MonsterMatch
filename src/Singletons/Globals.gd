@@ -20,3 +20,5 @@ var CurrentGameState
 var quick_references = {}
 
 var DateCounter = 1
+
+var screenshots : Array[Image]
