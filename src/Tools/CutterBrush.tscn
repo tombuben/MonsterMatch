@@ -17,7 +17,7 @@ stream = ExtResource("3_yei2a")
 bus = &"SoundEffects"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(122, 92)
+position = Vector2(72, 55)
 rotation = 0.834387
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_hg37k")

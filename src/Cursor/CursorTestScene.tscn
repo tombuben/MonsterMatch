@@ -15,6 +15,4 @@ polygon = PackedVector2Array(470, 74, 196, 166, 236, 419, 638, 534, 961, 385, 89
 [node name="TestCursor" parent="." instance=ExtResource("1_4hbur")]
 position = Vector2(721, 372)
 
-[node name="MakeupBrush" parent="TestCursor" node_paths=PackedStringArray("brush_stroke_container", "draw_area") instance=ExtResource("2_aq386")]
-brush_stroke_container = NodePath("../..")
-draw_area = NodePath("../../DrawArea")
+[node name="MakeupBrush" parent="TestCursor" instance=ExtResource("2_aq386")]

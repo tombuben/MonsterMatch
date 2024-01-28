@@ -8,7 +8,7 @@ colors = PackedColorArray(0.894922, 0.894922, 0.894922, 1, 1, 1, 1, 1, 1, 1, 1, 
 gradient = SubResource("Gradient_mlcco")
 
 [node name="BrushStroke" type="Line2D"]
-width = 3.0
+width = 5.0
 default_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture1D_lak3m")
 texture_mode = 1
