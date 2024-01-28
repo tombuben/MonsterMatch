@@ -86,7 +86,8 @@ func _doState() -> void:
 			%CanvasLayer.add_child(GameTimer)
 		Globals.GameStateEnums.OUTRO:			
 			%CanvasLayer.remove_child(GameTimer)
-			%LightsOut.turn_on_lights()
+			if (%LightsOut != null):
+				%LightsOut.turn_on_lights()
 			if (Globals.CurrentMonster == 0):
 				get_node("/root/Salon/LightsOut").turn_off_lights(false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
