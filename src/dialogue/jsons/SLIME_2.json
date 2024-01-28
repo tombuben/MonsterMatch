@@ -1,0 +1,32 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Hello, it’s me again. Do you remember me?",
+	  "sfx": "slime_excite"
+	},	
+	{
+	  "speaker": "char",
+	  "text": " People usually do remember me but I don’t want to make assumptions.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "The date was… okay, thank you for asking. I didn’t really enjoy any of the activities we did together and our personalities didn’t mesh well to be completely honest.",
+	  "sfx": "slime_hm2"
+	},
+	{
+	  "speaker": "char",
+	  "text": "But it could have been much worse, certainly. I don’t want to sound like I’m complaining.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "I’d like to try this dating thing again and one of the things that went well was your makeup.",
+	  "sfx": "slime_hm1"
+	},
+	{
+	  "speaker": "char",
+	  "text": "Do you think you could do a bit more than last time, would that be okay? I just really liked how I felt with the makeup on.",
+	  "sfx": "slime_excite"
+	}
+  ]

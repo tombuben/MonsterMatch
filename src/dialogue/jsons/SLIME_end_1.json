@@ -1,14 +1,17 @@
 [
 	{
-	  "speaker": "char",
-	  "text": "Oh, oh dear. This is really nice."
+		"speaker": "char",
+		"text": "Oh, oh dear. This is really nice.",
+		"sfx": "slime_ooh"
 	},
 	{
-	  "speaker": "char",
-	  "text": "Not that it’s surprising you did a good job of course! I just wasn’t really sure about this."
+		"speaker": "char",
+		"text": "Not that it’s surprising you did a good job of course! I just wasn’t really sure about this.",
+		"sfx": ""
 	},
 	{
-	  "speaker": "char",
-	  "text": "Thank you so much for accommodating me."
+		"speaker": "char",
+		"text": "Thank you so much for accommodating me.",
+		"sfx": "slime_excite"
 	}
-  ]
+]

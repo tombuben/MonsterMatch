@@ -1,0 +1,27 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Hiya, me again. Your friendly neighborhood slime.",
+	  "sfx": "slime_laugh"
+	},
+	{
+	  "speaker": "char",
+	  "text": "I’m going on another date, if you can believe it. I certainly can’t.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "When something isn’t working repeatedly, do you think I’m doing something wrong?",
+	  "sfx": "slime_hm2"
+	},
+	{
+	  "speaker": "char",
+	  "text": "I felt really good about my makeup but the date just wasn’t fun, the other person had so many expectations and was always talking and I just wanted to slow down for a moment, you know?",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "Just be quiet for a bit, enjoy my own thoughts. I want to try one more time, so do your best.",
+	  "sfx": "slime_ooh"
+	}
+  ]

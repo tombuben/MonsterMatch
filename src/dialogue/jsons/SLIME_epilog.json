@@ -1,0 +1,27 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Jiggly day to you! I’m feeling good today, thank you for asking. I decided to stop dating.",
+	  "sfx": "slime_excite"
+	},
+	{
+	  "speaker": "char",
+	  "text": "I really liked the last person, but I just couldn’t imagine being with them in a relationship.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "I’m truly happy on my own and simply don’t care about being in a relationship just for the sake of it. I think it’s better just to focus on myself rather than focus on something I’m not interested in, don’t you think?",
+	  "sfx": "slime_hm1"
+	},
+	{
+	  "speaker": "char",
+	  "text": "I think your makeup helped me realize it’s okay to do things just for myself. So please, do my makeup again, just for me this time.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "And you can leave the lights on.",
+	  "sfx": "slime_laugh"
+	}
+  ]

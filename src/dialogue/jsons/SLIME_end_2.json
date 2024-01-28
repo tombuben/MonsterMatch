@@ -1,0 +1,17 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Oh my, look at me! I’m so handsome.",
+	  "sfx": "slime_excite"
+	},
+	{
+	  "speaker": "char",
+	  "text": "This is really nice, you did such a good job, thank you so much. It’s almost a shame to waste this good look on a date.",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "But that doesn’t matter, it’s what one is supposed to do, right? At least I think.",
+	  "sfx": "slime_hm2"
+	}
+  ]

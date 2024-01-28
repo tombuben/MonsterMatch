@@ -1,42 +1,42 @@
 [
 	{
-	  "speaker": "char",
-	  "text": "H-hi. Do you do makeup here?",
-	  "sfx": "Slime_hm1"
+		"speaker": "char",
+		"text": "H-hi. Do you do makeup here?",
+		"sfx": "slime_excite"
 	},
 	{
-	  "speaker": "char",
-	  "text": "I’m going on a date tonight and I’d like to do something… I don’t know, something special?",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "I’m going on a date tonight and I’d like to do something… I don’t know, something special?",
+		"sfx": ""
 	},
 	{
-	  "speaker": "char",
-	  "text": "I’d like to look nice. Something simple that will complement my features well?",
-	  "sfx": "Slime_laugh"
+		"speaker": "char",
+		"text": "I’d like to look nice. Something simple that will complement my features well?",
+		"sfx": "slime_hm1"
 	},
 	{
-	  "speaker": "char",
-	  "text": "Oh and one more thing…",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "Oh and one more thing…",
+		"sfx": ""
 	},
 	{
-	  "speaker": "char",
-	  "text": "Would you be so kind and do my makeup in the dark?",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "Would you be so kind and do my makeup in the dark?",
+		"sfx": "slime_hm2"
 	},
 	{
-	  "speaker": "char",
-	  "text": "I just… I’d like to see the finished product all at once, you know?",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "I just… I’d like to see the finished product all at once, you know?",
+		"sfx": ""
 	},
 	{
-	  "speaker": "char",
-	  "text": "Like… I don’t want to feel self conscious during the process, I’d much rather see just the finished product.",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "Like… I don’t want to feel self conscious during the process, I’d much rather see just the end, how it all looks together.",
+		"sfx": ""
 	},
 	{
-	  "speaker": "char",
-	  "text": "Thank you so much. I’m sure you’ll make me look lovely.",
-	  "sfx": "Slime_hm2"
+		"speaker": "char",
+		"text": "Thank you so much. I’m sure you’ll make me look lovely.",
+		"sfx": "slime_excite"
 	}
-  ]
+]

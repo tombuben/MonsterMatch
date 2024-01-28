@@ -32,6 +32,7 @@ func _ready():
 	dialogueMakeup = load_dialogues(jsonPath + "%s_makeup_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
 	dialogueEnd = load_dialogues(jsonPath + "%s_end_%d.json" % [Globals.MonsterTypeEnum.keys()[CurrentMonster], CurrentDateCount])
 	
+	Globals.DialogueTimeStamps = {}
 	for line in dialogueMakeup:
 		if line.has("sfx"):
 			Globals.DialogueTimeStamps[int(line["time"])] = [line["text"],line["sfx"]]

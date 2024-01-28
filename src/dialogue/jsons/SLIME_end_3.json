@@ -1,0 +1,22 @@
+[
+	{
+	  "speaker": "char",
+	  "text": "Lovely job! Oh my, I look so pretty, thank you so much.",
+	  "sfx": "slime_laugh"
+	},
+	{
+	  "speaker": "char",
+	  "text": "This is really making me happy, just looking at myself in the mirror. Is that bad?",
+	  "sfx": ""
+	},
+	{
+	  "speaker": "char",
+	  "text": "I could really be happy just doing things for myself, you know? Does that make me selfish?",
+	  "sfx": "slime_hm2"
+	},
+	{
+	  "speaker": "char",
+	  "text": "Anyway, once more unto the breech, as they say. Maybe this time it will be okay.",
+	  "sfx": "slime_excite"
+	}
+  ]
