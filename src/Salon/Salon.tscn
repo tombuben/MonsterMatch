@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=43 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -12,10 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="9_hfpap"]
 [ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="9_itt2x"]
 [ext_resource type="Texture2D" uid="uid://dj7qtrujt6j7r" path="res://assets/Salon/monster_UI_suplik_right_open.png" id="10_e1134"]
-[ext_resource type="PackedScene" uid="uid://jgaculog2vpb" path="res://src/Keyhint/KeyHint.tscn" id="13_74gj5"]
+[ext_resource type="PackedScene" uid="uid://crf8tp0mvb1h3" path="res://src/Keyhint/KeyHint.tscn" id="13_74gj5"]
+[ext_resource type="Texture2D" uid="uid://lekod4mh6vy0" path="res://assets/Tools/Tools_lipstick.png" id="13_p6on3"]
+[ext_resource type="Texture2D" uid="uid://d4ae8ame43pwr" path="res://assets/Tools/Tools_shadows.png" id="14_1xnuh"]
 [ext_resource type="Texture2D" uid="uid://bro1w55vqx610" path="res://assets/KeyHints/gamepad/xbox_dpad_up.png" id="14_fetvg"]
+[ext_resource type="Texture2D" uid="uid://d3s4846q11g8" path="res://assets/Tools/Tools_pencil.png" id="15_5ubh4"]
 [ext_resource type="Texture2D" uid="uid://coafsg4pmornl" path="res://assets/KeyHints/keyboard/keyboard_w.png" id="15_wc8ea"]
+[ext_resource type="Texture2D" uid="uid://bpc43duc3xg4b" path="res://assets/Tools/Tools_cloth.png" id="16_mshxw"]
 [ext_resource type="Texture2D" uid="uid://bde17r2j6hkol" path="res://assets/KeyHints/gamepad/xbox_dpad_down.png" id="16_qrw4d"]
+[ext_resource type="Texture2D" uid="uid://dxqg81k70e7qy" path="res://assets/Tools/Tools_trimmer.png" id="17_q215w"]
 [ext_resource type="Texture2D" uid="uid://kthlmte6dqh2" path="res://assets/KeyHints/keyboard/keyboard_s.png" id="17_x2v81"]
 [ext_resource type="Texture2D" uid="uid://brfjw7fa8aix8" path="res://assets/KeyHints/gamepad/xbox_dpad_left.png" id="18_pemxu"]
 [ext_resource type="Texture2D" uid="uid://chwlvyi4bf0dv" path="res://assets/KeyHints/keyboard/keyboard_a.png" id="19_lbtjf"]
@@ -278,45 +283,89 @@ position = Vector2(950, 1041)
 scale = Vector2(0.37, 0.37)
 texture = ExtResource("9_hfpap")
 
-[node name="Lipstick" type="Node2D" parent="ToolTable"]
-position = Vector2(1380, 958)
-script = ExtResource("8_y1li6")
-
-[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Lipstick"]
-polygon = PackedVector2Array(-29, 116, -32, -61, 3, -71, 5, 121)
-
 [node name="Shadow" type="Node2D" parent="ToolTable"]
-position = Vector2(1188, 969)
+position = Vector2(299, 1017)
 script = ExtResource("8_y1li6")
 
 [node name="Polygon2D" type="Polygon2D" parent="ToolTable/Shadow"]
-polygon = PackedVector2Array(-8, 98, -15, 17, -22, -31, -20, -46, -10, -57, 1, -58, 11, -53, 16, -40, 15, -31, 9, 8, 23, 4)
+polygon = PackedVector2Array(89, 41, 0.606567, 18.5651, -108, -9, -47, -27, -23, -23, 110, 0, 127, 7, 129, 15, 122, 26)
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolTable/Shadow"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_1xnuh")
 
 [node name="Line" type="Node2D" parent="ToolTable"]
-position = Vector2(1047, 940)
+position = Vector2(109, 1029)
 script = ExtResource("8_y1li6")
 
 [node name="Polygon2D" type="Polygon2D" parent="ToolTable/Line"]
-polygon = PackedVector2Array(-29, 122, -29, -14, 0, -12, 34, 115, 34, 130)
+polygon = PackedVector2Array(-69, 27, -98, 16, -81, 2, -59, -9, 0, -12, 69, -23, 78, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolTable/Line"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_5ubh4")
+
+[node name="Lipstick" type="Node2D" parent="ToolTable"]
+position = Vector2(191, 1006)
+script = ExtResource("8_y1li6")
+
+[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Lipstick"]
+polygon = PackedVector2Array(-35, 69, -34, 27, -17, 16, -15, -16, -14, -67, 0, -82, 18, -88, 16, 3, 35, 25, 34, 66)
+
+[node name="Sprite2D" type="Sprite2D" parent="ToolTable/Lipstick"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_p6on3")
 
 [node name="Eraser" type="Node2D" parent="ToolTable"]
-position = Vector2(868, 969)
+position = Vector2(1597, 1009)
 script = ExtResource("8_y1li6")
 
-[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Eraser"]
-polygon = PackedVector2Array(-36, 72, -31, -117, 33, -116, 32, 70)
+[node name="Sprite2D" type="Sprite2D" parent="ToolTable/Eraser"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("16_mshxw")
+
+[node name="KeyHintRight" parent="ToolTable/Eraser" instance=ExtResource("13_74gj5")]
+position = Vector2(-36, -43)
+
+[node name="Gamepad2" type="TextureRect" parent="ToolTable/Eraser/KeyHintRight"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("20_qqbr3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Keyboard2" type="TextureRect" parent="ToolTable/Eraser/KeyHintRight"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("21_1sj48")
+metadata/_edit_use_anchors_ = true
 
 [node name="Cutter" type="Node2D" parent="ToolTable"]
-position = Vector2(555, 916)
+position = Vector2(1138, 1017)
 script = ExtResource("8_y1li6")
 
-[node name="Polygon2D" type="Polygon2D" parent="ToolTable/Cutter"]
-polygon = PackedVector2Array(-190, 153, -195, 85, -11, 73, 51, 104, 42, 105, 50, 110, 35, 114, 50, 118, 38, 124, 51, 130, 35, 136, 57, 139)
+[node name="Sprite2D" type="Sprite2D" parent="ToolTable/Cutter"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_q215w")
 
-[node name="KeyHintUp" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(584, 958)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
+[node name="KeyHintDown" parent="ToolTable/Cutter" instance=ExtResource("13_74gj5")]
+position = Vector2(-182, -27)
+
+[node name="Gamepad2" type="TextureRect" parent="ToolTable/Cutter/KeyHintDown"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_qrw4d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Keyboard2" type="TextureRect" parent="ToolTable/Cutter/KeyHintDown"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_x2v81")
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyHintUp" parent="ToolTable" instance=ExtResource("13_74gj5")]
+position = Vector2(702, 997)
 
 [node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintUp"]
 offset_right = 40.0
@@ -330,28 +379,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("15_wc8ea")
 
-[node name="KeyHintDown" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(930, 852)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
-
-[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintDown"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("16_qrw4d")
-metadata/_edit_use_anchors_ = true
-
-[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintDown"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("17_x2v81")
-metadata/_edit_use_anchors_ = true
-
-[node name="KeyHintLeft" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(1047, 852)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
+[node name="KeyHintLeft" parent="ToolTable" instance=ExtResource("13_74gj5")]
+position = Vector2(83, 892)
 
 [node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintLeft"]
 offset_right = 40.0
@@ -366,54 +395,32 @@ offset_bottom = 40.0
 texture = ExtResource("19_lbtjf")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyHintRight" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(1265, 868)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
+[node name="KeyHintSwapColorLeft" parent="ToolTable/KeyHintLeft" instance=ExtResource("13_74gj5")]
+position = Vector2(-47, -40)
 
-[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintRight"]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("20_qqbr3")
-metadata/_edit_use_anchors_ = true
-
-[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintRight"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("21_1sj48")
-metadata/_edit_use_anchors_ = true
-
-[node name="KeyHintSwapColorLeft" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(1211, 852)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
-
-[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintSwapColorLeft"]
+[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintLeft/KeyHintSwapColorLeft"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("22_b6ty8")
 metadata/_edit_use_anchors_ = true
 
-[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintSwapColorLeft"]
+[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintLeft/KeyHintSwapColorLeft"]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("23_jisso")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyHintSwapColorRight" parent="ToolTable" node_paths=PackedStringArray("gamepadHint", "keyboardHint") instance=ExtResource("13_74gj5")]
-position = Vector2(1329, 831)
-gamepadHint = NodePath("")
-keyboardHint = NodePath("")
+[node name="KeyHintSwapColorRight" parent="ToolTable/KeyHintLeft" instance=ExtResource("13_74gj5")]
+position = Vector2(46, -40)
 
-[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintSwapColorRight"]
+[node name="Gamepad2" type="TextureRect" parent="ToolTable/KeyHintLeft/KeyHintSwapColorRight"]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("24_5ftec")
 metadata/_edit_use_anchors_ = true
 
-[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintSwapColorRight"]
+[node name="Keyboard2" type="TextureRect" parent="ToolTable/KeyHintLeft/KeyHintSwapColorRight"]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0

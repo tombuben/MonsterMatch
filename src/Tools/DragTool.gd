@@ -3,6 +3,8 @@ extends Node2D
 var highlighted_item : Node2D
 var dragging_item : Node2D
 
+@export var openSprite : Sprite2D
+@export var closedSprite : Sprite2D
 
 enum {IDLE, DRAGGING}
 var brush_state = IDLE
@@ -11,6 +13,8 @@ var brush_state = IDLE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	openSprite.visible = true
+	closedSprite.visible = false
 	pass
 
 
@@ -22,9 +26,14 @@ func _process(_delta):
 				dragging_item = highlighted_item
 				brush_state = DRAGGING
 				
+				openSprite.visible = false
+				closedSprite.visible = true
+				
 		DRAGGING:	
 			if Input.is_action_just_released("UseToolRight") or dragging_item == null:
 				brush_state = IDLE
+				openSprite.visible = true
+				closedSprite.visible = false
 			else:
 				var translateDelta = global_position - last_position
 				dragging_item.translate(translateDelta)

@@ -11,7 +11,7 @@ var validity_matrix : ValidityMatrix
 @onready var brush_sfx : = %BrushSFX
 @export var colors : Array[Color]
 @export var selectedColorIndex : int
-@export var modulateImage : TextureRect
+@export var modulateColor : Polygon2D
 
 @export var toolBoxObject : String
 
@@ -29,8 +29,8 @@ func _ready() -> void:
 	brush_stroke_container = Globals.BrushContainer
 	draw_area = Globals.DrawArea
 	validity_matrix = Globals.DrawValidityMatrix
-	if modulateImage != null and len(colors) > selectedColorIndex:
-		modulateImage.modulate = colors[selectedColorIndex]
+	if modulateColor != null and len(colors) > selectedColorIndex:
+		modulateColor.color = colors[selectedColorIndex]
 
 func _isPointCloseToCursor(pointPos: Vector2):
 	var drawing_position = brush_stroke_container.get_global_transform().affine_inverse() * global_position
@@ -48,11 +48,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("SwitchColorRight"):
 		if len(colors) > 1:
 			selectedColorIndex = (selectedColorIndex + 1) % len(colors)
-			modulateImage.modulate = colors[selectedColorIndex]
+			modulateColor.color = colors[selectedColorIndex]
 	if Input.is_action_just_pressed("SwitchColorLeft"):
 		if len(colors) > 1:
 			selectedColorIndex = (selectedColorIndex - 1 + len(colors)) % len(colors)
-			modulateImage.modulate = colors[selectedColorIndex]
+			modulateColor.color = colors[selectedColorIndex]
 	
 	match brush_state:
 		IDLE:

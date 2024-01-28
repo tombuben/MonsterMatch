@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://s4o1luknp1o5"]
+[gd_scene load_steps=5 format=3 uid="uid://s4o1luknp1o5"]
 
 [ext_resource type="Script" path="res://src/Tools/MakeupBrush.gd" id="1_63jhs"]
 [ext_resource type="PackedScene" uid="uid://cirp6h7oof6ov" path="res://src/Tools/BrushStroke.tscn" id="2_fu5rx"]
-[ext_resource type="Texture2D" uid="uid://cc74coowjuv1y" path="res://assets/lipstick.png" id="3_6yg0g"]
+[ext_resource type="AudioStream" uid="uid://ddg0t0fw4gyx2" path="res://assets/Audio/SFX/lipstick_loop.wav" id="4_05yrq"]
+[ext_resource type="Texture2D" uid="uid://bpc43duc3xg4b" path="res://assets/Tools/Tools_cloth.png" id="4_j3do0"]
 
 [node name="EraserBrush" type="Node2D"]
 script = ExtResource("1_63jhs")
 point_distance_diff = 5.0
 is_erase_brush = true
 BRUSH_STROKE = ExtResource("2_fu5rx")
-modulateImage = NodePath("")
 toolBoxObject = "Eraser"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -7.0
-offset_top = -3.0
-offset_right = 121.0
-offset_bottom = 125.0
-texture = ExtResource("3_6yg0g")
-expand_mode = 1
+[node name="BrushSFX" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_05yrq")
+bus = &"SoundEffects"
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-17, 15, 36, 92, 88, 39, 0, -16)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(129, 77)
+rotation = 0.392699
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("4_j3do0")
