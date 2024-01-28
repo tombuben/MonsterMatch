@@ -111,6 +111,8 @@ func _next_line():
 			
 		if (Globals.CurrentGameState == Globals.GameStateEnums.INTRO):
 			_start_countdown()
+		if (Globals.CurrentGameState == Globals.GameStateEnums.OUTRO):
+			parent_node._trigger_state_change()
 		return
 	
 	_show_text_box()

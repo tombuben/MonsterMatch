@@ -59,19 +59,18 @@ func _doState() -> void:
 			GameTimer = TimerScene.instantiate()
 			GameTimer.trigger_dialogue.connect(Dialogue._on_timer_scene_trigger_dialogue)
 			GameTimer.trigger_gamestate_change.connect(_trigger_state_change)
-			add_child(GameTimer)
-		Globals.GameStateEnums.OUTRO:
+			%CanvasLayer.add_child(GameTimer)
+		Globals.GameStateEnums.OUTRO:			
+			%CanvasLayer.remove_child(GameTimer)
 			if (Globals.CurrentMonster == 0):
 				get_node("/root/Salon/LightsOut").turn_off_lights(false)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			remove_child(Cursor)
-			remove_child(GameTimer)
 			Cursor = null
 			date_count += 1
 			Dialogue._outro()
 		Globals.GameStateEnums.INTERMEZZO:
-			remove_child(Dialogue)
-			remove_child(GameTimer)
+			%CanvasLayer.remove_child(Dialogue)
 			
 			if MonsterHolder.get_child_count() > 0:
 				var oldMonster = MonsterHolder.get_child(0)
