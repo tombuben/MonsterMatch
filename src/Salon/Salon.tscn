@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cri726vtnvk0q"]
+[gd_scene load_steps=25 format=3 uid="uid://cri726vtnvk0q"]
 
 [ext_resource type="Script" path="res://src/Salon/Salon.gd" id="1_rvt7j"]
 [ext_resource type="PackedScene" uid="uid://bh4yv6ik2l2xy" path="res://src/Monsters/BarnabusMonster.tscn" id="1_ucilr"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bsn85l1ux8qb5" path="res://src/Timer/timer_scene.tscn" id="6_187t4"]
 [ext_resource type="Script" path="res://src/Salon/AutoReference.gd" id="8_y1li6"]
 [ext_resource type="AudioStream" uid="uid://mbw2wl7j27er" path="res://assets/Audio/SFX/switch.wav" id="9_h7cmu"]
+[ext_resource type="Texture2D" uid="uid://dg0br03m3bloq" path="res://assets/Salon/monster_UI_stul.png" id="9_hfpap"]
+[ext_resource type="Texture2D" uid="uid://vh87jmkwl5ad" path="res://assets/Salon/monster_UI_suplik_left_open.png" id="9_itt2x"]
+[ext_resource type="Texture2D" uid="uid://dj7qtrujt6j7r" path="res://assets/Salon/monster_UI_suplik_right_open.png" id="10_e1134"]
 
 [sub_resource type="Animation" id="Animation_iaupg"]
 resource_name = "LightsOut"
@@ -227,9 +230,24 @@ offset_bottom = 1080.0
 mouse_filter = 1
 color = Color(0.313726, 0.141176, 0.184314, 1)
 
+[node name="MonsterUiSuplikLeftOpen" type="Sprite2D" parent="BackgroundColor"]
+position = Vector2(360, 524)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_itt2x")
+
+[node name="MonsterUiSuplikRightOpen" type="Sprite2D" parent="BackgroundColor"]
+position = Vector2(1589, 524)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_e1134")
+
 [node name="MonsterHolder" type="Node2D" parent="."]
 
 [node name="ToolTable" type="Node2D" parent="."]
+
+[node name="MonsterUiStul" type="Sprite2D" parent="ToolTable"]
+position = Vector2(950, 1041)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("9_hfpap")
 
 [node name="Lipstick" type="Node2D" parent="ToolTable"]
 position = Vector2(1380, 958)

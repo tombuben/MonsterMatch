@@ -22,6 +22,7 @@ var dialogueMakeup = []
 var dialogueEnd = []
 
 var CurrentMonster : int
+var CurrentDateCount : int
 var monster_sfx_name : String = "pirate_hm1"
 
 func _ready():
